@@ -4,19 +4,11 @@
     <link rel="stylesheet" href="node_modules/xterm/css/xterm.css" />
     <link rel="stylesheet" href="main.css" />
     <script src="node_modules/xterm/lib/xterm.js"></script>
+    <script src="index.js"></script>
   </head>
   <body>
     <div id="terminal"></div>
-    <script>
-      var term = new Terminal();
-      term.open(document.getElementById('terminal'));
-      term.onKey((key, ev) => {
-        console.log(key);
-        if (key.domEvent.key == 'Enter') {
-          term.write('\n');
-        }
-        term.write(key.key);
-      });
-    </script>
+    <input type="file" id="file-input" />
+
   </body>
 </html>
