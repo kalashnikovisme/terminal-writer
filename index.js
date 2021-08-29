@@ -65,7 +65,7 @@ const showOutput = (output, actions, index) => {
         case 'text': {
           const nextPart = output[i + 1] 
           if (index == output.length - 1) {
-            term.write(part.data)
+            term.write(part.data + newLine)
           } else {
             if (nextPart && ['colorBegin', 'colorEnd'].includes(nextPart.type)) {
               term.write(part.data)

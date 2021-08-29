@@ -1,0 +1,29 @@
+audio:
+2-2-1.3.mp3
+
+input:
+ls
+
+output:
+test-1.txt test-2.txt test-3.txt
+
+delay:
+1000
+
+input:
+mv test-1.txt test-2.txt
+
+delay:
+3000
+
+input:
+ls
+
+output:
+test-1.txt test-3.txt
+
+delay:
+3000
+
+input:
+mv -i test-1.txt test-3.txt
