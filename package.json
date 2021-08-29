@@ -1,0 +1,12 @@
+{
+  "name": "terminal-writer",
+  "version": "0.1.0",
+  "scripts": {
+  },
+  "dependencies": {
+    "underscore": "latest",
+    "xterm": "latest"
+  },
+  "devDependencies": {
+  }
+}

@@ -1,0 +1,53 @@
+audio:
+2-2-1.2.mp3
+
+delay:
+7000
+
+input:
+ls
+
+output:
+%{begin:36m}dir%{end:36m} test-1.txt test-2.txt
+
+delay:
+500
+
+input:
+mv%{delay 4000} test-1.txt dir/
+
+delay:
+3000
+
+input:
+ls dir/
+
+output:
+test-1.txt
+
+delay:
+7000
+
+input:
+mv test-2.txt test-3.txt
+
+delay:
+3000
+
+input:
+ls
+
+output:
+test-3.txt dir/
+
+delay:
+5000
+
+input:
+mv test-3.txt dir/test-4.txt
+
+input:
+ls dir/
+
+output:
+test-1.txt test-4.txt
