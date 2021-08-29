@@ -1,22 +1,35 @@
 const bashPrompt = '\x1B[36m~:\x1B[0m '
 var term = new Terminal({ cols: 120, rows: 80, fontSize: '20' });
 
-const runInput = (command, actions, index) => {
-  const typingTimeout = 100
-  const overallTimeout = (command.length + 1) * typingTimeout
-
-  setTimeout(() => {
-    runAction(actions, index + 1)
-  }, overallTimeout)
-
+const typing = (command, typingTimeout) => {
   _.each(command, (ch, i) => {
     setTimeout(() => {
       term.write(ch)
     }, typingTimeout * i)
   })
+}
+
+const runInput = (data, actions, index) => {
+  const typingTimeout = 100
+  let overallTimeout = 0
+  _.each(data, (part) => {
+    switch(part.type) {
+      case 'typing':
+        overallTimeout += (part.data.length + 1) * typingTimeout
+    }
+  })
+
   setTimeout(() => {
     term.write('\n\r');
-  }, typingTimeout * command.length)
+    runAction(actions, index + 1)
+  }, overallTimeout)
+
+  _.each(data, (part) => {
+    switch(part.type) {
+      case 'typing':
+        typing(part.data, typingTimeout)
+    }
+  })
 }
 
 const showOutput = (output, actions, index) => {
@@ -51,6 +64,24 @@ const runScenario = (actions) => {
   runAction(actions, 0)
 }
 
+const parseInput = (line) => {
+  let action = {
+    action: 'input', 
+  }
+  const delayRegex = /\%\{delay \d\}/g;
+  if (line.match(delayRegex)) {
+    action = {
+      ...action
+    }
+  } else {
+    action = {
+      ...action,
+      data: [{ type: 'typing', data: line }],
+    }
+  }
+  return action
+}
+
 const readSingleFile = (e) => {
   var file = e.target.files[0];
   if (!file) {
@@ -64,7 +95,7 @@ const readSingleFile = (e) => {
     let actions = []
     for (var i = 0; i < lines.length; i++) {
       if (lines[i] == 'input:') {
-        actions.push({ action: 'input', data: lines[i + 1] })
+        actions.push(parseInput(lines[i + 1]))
         i++
       }
       if (lines[i] == 'output:') {
