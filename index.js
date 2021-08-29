@@ -48,6 +48,9 @@ const runInput = (data, actions, index) => {
 
   setTimeout(() => {
     term.write('\n\r');
+    if (actions[index + 1] && ['input', 'delay'].includes(actions[index + 1].action)) {
+      term.write(bashPrompt)
+    }
     runAction(actions, index + 1)
   }, overallTimeout)
 
