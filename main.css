@@ -1,3 +1,12 @@
+body {
+  margin: 0
+}
 #terminal {
-  padding: 15px;
+}
+#terminal .terminal.xterm {
+  /*width: 1920px;
+  height: 1080px;
+  */
+  padding-left: 4px !important;
+  padding-top: 4px !important;
 }

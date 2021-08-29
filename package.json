@@ -4,6 +4,7 @@
   "scripts": {
   },
   "dependencies": {
+    "underscore": "latest",
     "xterm": "latest"
   },
   "devDependencies": {
