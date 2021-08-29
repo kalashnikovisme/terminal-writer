@@ -1,0 +1,57 @@
+audio:
+2-2-1.5.mp3
+
+input:
+ls
+
+output:
+test-1.txt test-2.txt test-3.txt test-4.txt test-5.txt test-6.txt
+
+delay:
+3000
+
+input:
+rm%{delay 3000} test-1.txt
+
+delay:
+1000
+
+input:
+ls
+
+output:
+test-2.txt test-3.txt test-4.txt test-5.txt test-6.txt
+
+delay:
+3000
+
+input:
+rm -i%{delay 3000} test-2.txt
+
+output:
+rm: remove regular empty file 'test-2.txt'?%{delay 2000} yes
+
+delay:
+3000
+
+input:
+rm test-3.txt test-4.txt
+
+delay:
+5000
+
+input:
+ls
+
+output:
+test-5.txt test-6.txt
+
+delay:
+1000
+
+input:
+rm -i test-5.txt test-6.txt
+
+output:
+rm: remove regular empty file 'test-5.txt'?%{delay 500} yes
+rm: remove regular empty file 'test-6.txt'?%{delay 500} no
