@@ -1,7 +1,8 @@
 const bashPrompt = '\x1B[36m~:\x1B[0m '
-let term = new Terminal({ cols: 120, rows: 47, fontSize: '30' });
+let term = new Terminal({ cols: 120, rows: 47, fontSize: '20' });
 const typingTimeout = 100
 const directives = ['input:', 'output:', 'audio:', 'delay:']
+const newLine = '\n\r'
 
 const typing = (command, typingTimeout) => {
   _.each(command, (ch, i) => {
@@ -59,11 +60,29 @@ const runInput = (data, actions, index) => {
 
 const showOutput = (output, actions, index) => {
   setTimeout(() => {
-    _.each(output, (part, index) => {
-      if (index == output.length - 1) {
-        term.write(part.data)
-      } else {
-        term.write(part.data + '\n\r')
+    _.each(output, (part, i) => {
+      switch(part.type) {
+        case 'text': {
+          const nextPart = output[i + 1] 
+          if (index == output.length - 1) {
+            term.write(part.data)
+          } else {
+            if (nextPart && ['colorBegin', 'colorEnd'].includes(nextPart.type)) {
+              term.write(part.data)
+            } else {
+              term.write(part.data + newLine)
+            }
+          }
+          break
+        }
+        case 'colorBegin': {
+          term.write(`\x1B[1;${part.data}`)
+          break
+        }
+        case 'colorEnd': {
+          term.write('\x1B[0m')
+          break
+        }
       }
     })
     term.write(bashPrompt)
@@ -126,11 +145,21 @@ const parseOutput = (lines, index) => {
   }
   var data = []
   for (var j = index + 1; j < lines.length; j++) {
-    if (!directives.includes(lines[j])) {
+    const line = lines[j]
+    if (!directives.includes(line)) {
       const colorRegex = /\%\{begin:\d+m}.*\%\{end:\d+m\}/
-      if (lines[j].match(colorRegex)) {
+      if (line.match(colorRegex)) {
+        const colorCodeRegex = /\d+m/
+        const color = line.match(colorRegex)[0].match(colorCodeRegex)[0]
+        const beginRegex = /\%\{begin:\d+m}/
+        const endRegex = /\%\{end:\d+m}/
+        data.push({ type: 'text', data: line.split(beginRegex)[0] })
+        data.push({ type: 'colorBegin', data: color })
+        data.push({ type: 'text', data: line.split(beginRegex)[1].split(endRegex)[0] })
+        data.push({ type: 'colorEnd', data: color })
+        data.push({ type: 'text', data: line.split(endRegex)[1] })
       } else {
-        data.push({ type: 'text', data: lines[j] })
+        data.push({ type: 'text', data: line })
       }
     } else {
       break
