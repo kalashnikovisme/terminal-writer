@@ -1,3 +1,6 @@
+delay:
+5000
+
 input:
 touch%{delay 5000} --help
 

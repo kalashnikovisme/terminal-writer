@@ -67,16 +67,27 @@ const showOutput = (output, actions, index) => {
   runAction(actions, index + 1)
 }
 
+const delay = (milliseconds, actions, index) => {
+  setTimeout(() => {
+    runAction(actions, index + 1)
+  }, milliseconds)
+}
+
 const runAction = (actions, index) => {
   const action = actions[index]
   if (action) {
     switch(action.action) {
-      case 'input':
+      case 'input': {
         runInput(action.data, actions, index)
-      break
-      case 'output':
+        break
+      }
+      case 'output': {
         showOutput(action.data, actions, index)
-      break
+        break
+      }
+      case 'delay': {
+        delay(action.data, actions, index)
+      }
     }
   }
 }
@@ -139,6 +150,9 @@ const readSingleFile = (e) => {
         audio.appendChild(source)
         const body = document.getElementById('body')
         body.appendChild(audio)
+      }
+      if (lines[i] == 'delay:') {
+        actions.push({ action: 'delay', data: parseInt(lines[i + 1]) })
       }
     }
     console.log(actions)
