@@ -1,5 +1,5 @@
 input:
-touch --help
+touch%{delay 5000} --help
 
 output:
 Usage: touch [OPTION]... FILE...

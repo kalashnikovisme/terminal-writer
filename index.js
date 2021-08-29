@@ -1,5 +1,6 @@
 const bashPrompt = '\x1B[36m~:\x1B[0m '
-var term = new Terminal({ cols: 120, rows: 80, fontSize: '20' });
+let term = new Terminal({ cols: 120, rows: 80, fontSize: '20' });
+const typingTimeout = 100
 
 const typing = (command, typingTimeout) => {
   _.each(command, (ch, i) => {
@@ -9,13 +10,38 @@ const typing = (command, typingTimeout) => {
   })
 }
 
+const runPart = (data, index) => {
+  const part = data[index]
+  let timeoutBeforeTheNext;
+  if (part) {
+    switch(part.type) {
+      case 'typing': {
+        typing(part.data, typingTimeout)
+        timeoutBeforeTheNext = part.data.length * typingTimeout
+        break
+      }
+      case 'delay': {
+        timeoutBeforeTheNext = part.data
+      }
+    }
+  }
+  setTimeout(() => {
+    runPart(data, index + 1)
+  }, timeoutBeforeTheNext)
+}
+
 const runInput = (data, actions, index) => {
-  const typingTimeout = 100
   let overallTimeout = 0
   _.each(data, (part) => {
     switch(part.type) {
-      case 'typing':
+      case 'typing': {
         overallTimeout += (part.data.length + 1) * typingTimeout
+        break
+      }
+      case 'delay': {
+        overallTimeout += part.data
+        break
+      }
     }
   })
 
@@ -24,12 +50,7 @@ const runInput = (data, actions, index) => {
     runAction(actions, index + 1)
   }, overallTimeout)
 
-  _.each(data, (part) => {
-    switch(part.type) {
-      case 'typing':
-        typing(part.data, typingTimeout)
-    }
-  })
+  runPart(data, 0)
 }
 
 const showOutput = (output, actions, index) => {
@@ -65,21 +86,21 @@ const runScenario = (actions) => {
 }
 
 const parseInput = (line) => {
-  let action = {
+  const action = {
     action: 'input', 
   }
-  const delayRegex = /\%\{delay \d\}/g;
+  let data
+  const delayRegex = /\%\{delay \d+\}/g;
   if (line.match(delayRegex)) {
-    action = {
-      ...action
-    }
+    data = [
+      { type: 'typing', data: line.split(delayRegex)[0] },
+      { type: 'delay', data: 5000 },
+      { type: 'typing', data: line.split(delayRegex)[1] },
+    ]
   } else {
-    action = {
-      ...action,
-      data: [{ type: 'typing', data: line }],
-    }
+    data = [{ type: 'typing', data: line }]
   }
-  return action
+  return { ...action, data }
 }
 
 const readSingleFile = (e) => {
@@ -90,7 +111,6 @@ const readSingleFile = (e) => {
   var reader = new FileReader();
   reader.onload = function(e) {
     var contents = e.target.result;
-    console.log(contents);
     var lines = contents.split("\n")
     let actions = []
     for (var i = 0; i < lines.length; i++) {
