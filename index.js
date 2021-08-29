@@ -1,5 +1,5 @@
 const bashPrompt = '\x1B[36m~:\x1B[0m '
-let term = new Terminal({ cols: 120, rows: 80, fontSize: '20' });
+let term = new Terminal({ cols: 120, rows: 47, fontSize: '30' });
 const typingTimeout = 100
 const directives = ['input:', 'output:', 'audio:', 'delay:']
 
@@ -59,11 +59,11 @@ const runInput = (data, actions, index) => {
 
 const showOutput = (output, actions, index) => {
   setTimeout(() => {
-    _.each(output, (line, index) => {
+    _.each(output, (part, index) => {
       if (index == output.length - 1) {
-        term.write(line)
+        term.write(part.data)
       } else {
-        term.write(line + '\n\r')
+        term.write(part.data + '\n\r')
       }
     })
     term.write(bashPrompt)
@@ -120,6 +120,25 @@ const parseInput = (line) => {
   return { ...action, data }
 }
 
+const parseOutput = (lines, index) => {
+  const action = {
+    action: 'output'
+  }
+  var data = []
+  for (var j = index + 1; j < lines.length; j++) {
+    if (!directives.includes(lines[j])) {
+      const colorRegex = /\%\{begin:\d+m}.*\%\{end:\d+m\}/
+      if (lines[j].match(colorRegex)) {
+      } else {
+        data.push({ type: 'text', data: lines[j] })
+      }
+    } else {
+      break
+    }
+  }
+  return { ...action, data }
+}
+
 const readSingleFile = (e) => {
   var file = e.target.files[0];
   if (!file) {
@@ -136,15 +155,7 @@ const readSingleFile = (e) => {
         i++
       }
       if (lines[i] == 'output:') {
-        var output = []
-        for (var j = i + 1; j < lines.length; j++) {
-          if (!directives.includes(lines[j])) {
-            output.push(lines[j])
-          } else {
-            break
-          }
-        }
-        actions.push({ action: 'output', data: output })
+        actions.push(parseOutput(lines, i))
       }
       if (lines[i] == 'audio:') {
         const audio = document.createElement('audio')
