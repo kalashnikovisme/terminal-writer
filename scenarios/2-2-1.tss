@@ -2,10 +2,10 @@ audio:
 2-2-1.1.mp3
 
 delay:
-5000
+12000
 
 input:
-touch%{delay 5000} --help
+touch%{delay 10000} --help
 
 output:
 Usage: touch [OPTION]... FILE...
@@ -39,3 +39,12 @@ Note that the -d and -t options accept different time-date formats.
 GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
 Full documentation at: <https://www.gnu.org/software/coreutils/touch>
 or available locally via: info '(coreutils) touch invocation'
+
+delay:
+5000
+
+input:
+touch test-1.txt
+
+input:
+

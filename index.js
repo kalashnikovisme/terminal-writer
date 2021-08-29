@@ -1,6 +1,7 @@
 const bashPrompt = '\x1B[36m~:\x1B[0m '
 let term = new Terminal({ cols: 120, rows: 80, fontSize: '20' });
 const typingTimeout = 100
+const directives = ['input:', 'output:', 'audio:', 'delay:']
 
 const typing = (command, typingTimeout) => {
   _.each(command, (ch, i) => {
@@ -134,7 +135,7 @@ const readSingleFile = (e) => {
       if (lines[i] == 'output:') {
         var output = []
         for (var j = i + 1; j < lines.length; j++) {
-          if (lines[j] != 'input:' && lines[j] != 'output:') {
+          if (!directives.includes(lines[j])) {
             output.push(lines[j])
           } else {
             break
