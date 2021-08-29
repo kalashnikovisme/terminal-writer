@@ -1,5 +1,5 @@
 const bashPrompt = '\x1B[36m~:\x1B[0m '
-let term = new Terminal({ cols: 120, rows: 47, fontSize: '20' });
+let term = new Terminal({ cols: 120, rows: 47, fontSize: '30' });
 const typingTimeout = 100
 const directives = ['input:', 'output:', 'audio:', 'delay:']
 const newLine = '\n\r'
