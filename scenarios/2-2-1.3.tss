@@ -5,7 +5,7 @@ input:
 ls
 
 output:
-test-1.txt test-2.txt test-3.txt
+%{begin:36m}dir%{end:36m} test-1.txt test-2.txt test-3.txt
 
 delay:
 1000
@@ -20,10 +20,37 @@ input:
 ls
 
 output:
-test-1.txt test-3.txt
+%{begin:36m}dir%{end:36m} test-1.txt test-3.txt
 
 delay:
 3000
 
 input:
 mv -i test-1.txt test-3.txt
+
+output:
+mv: overwrite 'test-3.txt'?%{delay 3000} no
+
+delay:
+5000
+
+input:
+ls
+
+output:
+%{begin:36m}dir%{end:36m} test-1.txt test-3.txt
+
+delay:
+25000
+
+input:
+mv -t dir/ test-1.txt test-3.txt
+
+delay:
+2000
+
+input:
+ls dir/
+
+output:
+test-1.txt test-3.txt
