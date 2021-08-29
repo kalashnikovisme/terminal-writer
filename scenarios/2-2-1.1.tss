@@ -47,4 +47,19 @@ input:
 touch test-1.txt
 
 input:
+ls
 
+output:
+test-1.txt
+
+delay:
+30000
+
+input:
+> test-2.txt
+
+input:
+ls
+
+output:
+test-1.txt test-2.txt
