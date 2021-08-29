@@ -92,9 +92,11 @@ const parseInput = (line) => {
   let data
   const delayRegex = /\%\{delay \d+\}/g;
   if (line.match(delayRegex)) {
+    const millisecondsRegex = /\d+/
+    const mil = parseInt(line.match(delayRegex)[0].match(millisecondsRegex)[0])
     data = [
       { type: 'typing', data: line.split(delayRegex)[0] },
-      { type: 'delay', data: 5000 },
+      { type: 'delay', data: mil },
       { type: 'typing', data: line.split(delayRegex)[1] },
     ]
   } else {
