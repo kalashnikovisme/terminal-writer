@@ -1,3 +1,4 @@
+const bashPrompt = '\x1B[36m~:\x1B[0m '
 var term = new Terminal({ cols: 120, rows: 80, fontSize: '20' });
 
 const runInput = (command, actions, index) => {
@@ -20,9 +21,14 @@ const runInput = (command, actions, index) => {
 
 const showOutput = (output, actions, index) => {
   setTimeout(() => {
-    _.each(output, (line) => {
-      term.write(line + '\n\r')
+    _.each(output, (line, index) => {
+      if (index == output.length - 1) {
+        term.write(line)
+      } else {
+        term.write(line + '\n\r')
+      }
     })
+    term.write(bashPrompt)
   }, 100)
   runAction(actions, index + 1)
 }
@@ -72,6 +78,15 @@ const readSingleFile = (e) => {
         }
         actions.push({ action: 'output', data: output })
       }
+      if (lines[i] == 'audio:') {
+        const audio = document.createElement('audio')
+        audio.autoplay = true
+        const source = document.createElement('source')
+        source.src = `./scenarios/${lines[i + 1]}`
+        audio.appendChild(source)
+        const body = document.getElementById('body')
+        body.appendChild(audio)
+      }
     }
     console.log(actions)
 
@@ -80,15 +95,19 @@ const readSingleFile = (e) => {
   reader.readAsText(file);
 }
 
+const pressEnter = () => {
+  term.write('\n');
+  setTimeout(() => {
+    term.write(bashPrompt)
+  }, 50)
+}
+
 window.addEventListener('load', () => {
   term.open(document.getElementById('terminal'));
-  term.write('~: ')
+  term.write(bashPrompt)
   term.onKey((key, ev) => {
     if (key.domEvent.key == 'Enter') {
-      term.write('\n');
-      setTimeout(() => {
-        term.write('~: ')
-      }, 50)
+      pressEnter()
     }
     if (key.domEvent.key == 'Backspace') {
       term.write('\b');
