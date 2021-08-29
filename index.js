@@ -3,6 +3,7 @@ let term = new Terminal({ cols: 120, rows: 47, fontSize: '30' });
 const typingTimeout = 100
 const directives = ['input:', 'output:', 'audio:', 'delay:']
 const newLine = '\n\r'
+const delayRegex = /\%\{delay \d+\}/g;
 
 const typing = (command, typingTimeout) => {
   _.each(command, (ch, i) => {
@@ -12,7 +13,7 @@ const typing = (command, typingTimeout) => {
   })
 }
 
-const runPart = (data, index) => {
+const runInputPart = (data, index) => {
   const part = data[index]
   let timeoutBeforeTheNext;
   if (part) {
@@ -28,7 +29,7 @@ const runPart = (data, index) => {
     }
   }
   setTimeout(() => {
-    runPart(data, index + 1)
+    runInputPart(data, index + 1)
   }, timeoutBeforeTheNext)
 }
 
@@ -55,37 +56,49 @@ const runInput = (data, actions, index) => {
     runAction(actions, index + 1)
   }, overallTimeout)
 
-  runPart(data, 0)
+  runInputPart(data, 0)
+}
+
+const showPart = (output, index) => {
+  const part = output[index]
+  let timeoutBeforeTheNext = 0;
+  if (part) {
+    switch(part.type) {
+      case 'text': {
+        const nextPart = output[index + 1] 
+        if (index == output.length - 1) {
+          term.write(part.data + bashPrompt)
+        } else {
+          if (nextPart && ['colorBegin', 'colorEnd', 'delay'].includes(nextPart.type)) {
+            term.write(part.data)
+          } else {
+            term.write(part.data + newLine)
+          }
+        }
+        break
+      }
+      case 'colorBegin': {
+        term.write(`\x1B[1;${part.data}`)
+        break
+      }
+      case 'colorEnd': {
+        term.write('\x1B[0m')
+        break
+      }
+      case 'delay': {
+        timeoutBeforeTheNext = part.data
+        break
+      }
+    }
+  }
+  setTimeout(() => {
+    showPart(output, index + 1)
+  }, timeoutBeforeTheNext)
 }
 
 const showOutput = (output, actions, index) => {
   setTimeout(() => {
-    _.each(output, (part, i) => {
-      switch(part.type) {
-        case 'text': {
-          const nextPart = output[i + 1] 
-          if (index == output.length - 1) {
-            term.write(part.data + newLine)
-          } else {
-            if (nextPart && ['colorBegin', 'colorEnd'].includes(nextPart.type)) {
-              term.write(part.data)
-            } else {
-              term.write(part.data + newLine)
-            }
-          }
-          break
-        }
-        case 'colorBegin': {
-          term.write(`\x1B[1;${part.data}`)
-          break
-        }
-        case 'colorEnd': {
-          term.write('\x1B[0m')
-          break
-        }
-      }
-    })
-    term.write(bashPrompt)
+    showPart(output, 0)
   }, 100)
   runAction(actions, index + 1)
 }
@@ -124,7 +137,6 @@ const parseInput = (line) => {
     action: 'input', 
   }
   let data
-  const delayRegex = /\%\{delay \d+\}/g;
   if (line.match(delayRegex)) {
     const millisecondsRegex = /\d+/
     const mil = parseInt(line.match(delayRegex)[0].match(millisecondsRegex)[0])
@@ -158,6 +170,12 @@ const parseOutput = (lines, index) => {
         data.push({ type: 'text', data: line.split(beginRegex)[1].split(endRegex)[0] })
         data.push({ type: 'colorEnd', data: color })
         data.push({ type: 'text', data: line.split(endRegex)[1] })
+      } else if (line.match(delayRegex)) {
+        const millisecondsRegex = /\d+/
+        const mil = parseInt(line.match(delayRegex)[0].match(millisecondsRegex)[0])
+        data.push({ type: 'text', data: line.split(delayRegex)[0] })
+        data.push({ type: 'delay', data: mil })
+        data.push({ type: 'text', data: line.split(delayRegex)[1] })
       } else {
         data.push({ type: 'text', data: line })
       }
