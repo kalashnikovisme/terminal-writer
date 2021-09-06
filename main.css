@@ -10,3 +10,10 @@ body {
   padding-left: 4px !important;
   padding-top: 4px !important;
 }
+#timer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  font-size: 25pt;
+  color: white;
+}
