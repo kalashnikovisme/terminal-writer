@@ -128,7 +128,16 @@ const runAction = (actions, index) => {
   }
 }
 
+const runTimer = () => {
+  const timer = document.getElementById('timer')
+  setInterval(() => {
+    const time = parseInt(timer.innerHTML)
+    timer.innerHTML = time + 1
+  }, 1000)
+}
+
 const runScenario = (actions) => {
+  runTimer()
   runAction(actions, 0)
 }
 
