@@ -8,13 +8,15 @@ input:
 ls -l
 
 output:
--rw-rw-r-- 1 pavel pavel  540 сен  6 15:52 index.html
--rw-rw-r-- 1 pavel pavel 6613 сен  7 04:08 index.js
--rw-rw-r-- 1 pavel pavel  263 сен  7 05:29 main.css
--rw-rw-r-- 1 pavel pavel   15 авг 29 23:34 Makefile
-drwxrwxr-x 4 pavel pavel 4096 авг 29 14:35 node_modules
--rw-rw-r-- 1 pavel pavel  177 авг 29 23:34 package.json
--rw-rw-r-- 1 pavel pavel   97 авг 28 13:22 README.md
-drwxr-xr-x 4 pavel pavel 4096 сен  7 05:32 scenarios
-lrwxrwxrwx 1 pavel pavel    8 сен  7 05:34 SoftLinkToMakefile -> Makefile
--rw-rw-r-- 1 pavel pavel  600 авг 29 14:35 yarn.lock
+total 44
+-rw-rw-r-- 2 slurm slurm   15 авг 29 23:34 HardLinkToMakefile
+-rw-rw-r-- 1 slurm slurm  540 сен  6 15:52 index.html
+-rw-rw-r-- 1 slurm slurm 6613 сен  7 04:08 index.js
+-rw-rw-r-- 1 slurm slurm  263 сен  7 05:29 main.css
+-rw-rw-r-- 2 slurm slurm   15 авг 29 23:34 Makefile
+drwxrwxr-x 4 slurm slurm 4096 авг 29 14:35 node_modules
+-rw-rw-r-- 1 slurm slurm  177 авг 29 23:34 package.json
+-rw-rw-r-- 1 slurm slurm   97 авг 28 13:22 README.md
+drwxr-xr-x 4 slurm slurm 4096 сен  7 05:32 scenarios
+lrwxrwxrwx 1 slurm slurm    8 сен  7 05:34 SoftLinkToMakefile -> Makefile
+-rw-rw-r-- 1 slurm slurm  600 авг 29 14:35 yarn.lock
