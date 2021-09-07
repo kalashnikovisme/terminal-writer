@@ -13,7 +13,7 @@ body {
 #timer {
   position: fixed;
   right: 0;
-  bottom: 0;
+  bottom: 50px;
   font-size: 25pt;
   color: white;
 }
