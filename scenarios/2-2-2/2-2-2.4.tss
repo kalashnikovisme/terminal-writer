@@ -1,0 +1,31 @@
+audio:
+2-2-2/2-2-2.4.mp3
+
+delay:
+6000
+
+input:
+sudo apt-get install ncdu
+
+output:
+Reading package lists... Done
+%{delay 300}Building dependency tree       
+%{delay 200}Reading state information... Done
+%{delay 300}The following NEW packages will be installed:
+  ncdu
+%{delay 200}Need to get 42,8 kB of archives.
+After this operation, 105 kB of additional disk space will be used.
+Get:1 http://ru.archive.ubuntu.com/ubuntu focal/universe amd64 ncdu amd64 1.14.1-1 [42,8 kB]
+Fetched 42,8 kB in 0s (312 kB/s)
+Selecting previously unselected package ncdu.
+(Reading database ... 363051 files and directories currently installed.)
+Preparing to unpack .../ncdu_1.14.1-1_amd64.deb ...
+Unpacking ncdu (1.14.1-1) ...
+Setting up ncdu (1.14.1-1) ...
+Processing triggers for man-db (2.9.1-1) ...
+
+delay:
+11000
+
+input:
+ncdu
