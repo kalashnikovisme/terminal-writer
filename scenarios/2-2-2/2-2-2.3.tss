@@ -1,0 +1,32 @@
+audio:
+2-2-2/2-2-2.3.mp3
+
+delay:
+1000
+
+input:
+cp -r%{delay 1000} test another_directory/
+
+delay:
+5000
+
+input:
+ls test/
+
+output:
+file-1.txt file-2.txt
+
+delay:
+500
+
+input:
+ls another_directory/test/
+
+output:
+file-1.txt file-2.txt
+
+delay:
+12000
+
+input:
+rm -r test
