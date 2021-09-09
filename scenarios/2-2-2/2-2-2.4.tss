@@ -29,3 +29,8 @@ delay:
 
 input:
 ncdu
+
+delay:
+2000
+
+clear:

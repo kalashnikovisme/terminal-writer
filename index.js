@@ -109,6 +109,10 @@ const delay = (milliseconds, actions, index) => {
   }, milliseconds)
 }
 
+const clear = () => {
+  term.clear()
+}
+
 const runAction = (actions, index) => {
   const action = actions[index]
   if (action) {
@@ -123,6 +127,10 @@ const runAction = (actions, index) => {
       }
       case 'delay': {
         delay(action.data, actions, index)
+        break
+      }
+      case 'clear': {
+        clear()
       }
     }
   }
@@ -224,6 +232,9 @@ const readSingleFile = (e) => {
       }
       if (lines[i] == 'delay:') {
         actions.push({ action: 'delay', data: parseInt(lines[i + 1]) })
+      }
+      if (lines[i] == 'clear:') {
+        actions.push({ action: 'clear' })
       }
     }
     console.log(actions)
