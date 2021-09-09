@@ -26,7 +26,32 @@ output:
 file-1.txt file-2.txt
 
 delay:
-12000
+10000
 
 input:
 rm -r test
+
+delay:
+5000
+
+input:
+ls
+
+output:
+%{begin:36m}another_directory/%{end:36m}
+
+delay:
+34000
+
+input:
+ls -R
+
+output:
+.:
+another_directory
+
+./another_directory:
+test
+
+./another_directory/test:
+file-1.txt  file-2.txt
