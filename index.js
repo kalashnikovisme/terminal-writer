@@ -50,12 +50,10 @@ const runInput = (data, actions, index) => {
 
   setTimeout(() => {
     term.write('\n\r');
-    if (actions[index + 1] && ['input', 'delay'].includes(actions[index + 1].action)) {
-      term.write(bashPrompt)
-    }
     runAction(actions, index + 1)
   }, overallTimeout)
 
+  term.write(bashPrompt)
   runInputPart(data, 0)
 }
 
@@ -66,9 +64,7 @@ const showPart = (output, index) => {
     switch(part.type) {
       case 'text': {
         const nextPart = output[index + 1] 
-        if (index == output.length - 1) {
-          term.write(part.data + bashPrompt)
-        } else {
+        if (index != output.length - 1) {
           if (nextPart && ['colorBegin', 'colorEnd', 'delay'].includes(nextPart.type)) {
             term.write(part.data)
           } else {
@@ -97,10 +93,21 @@ const showPart = (output, index) => {
 }
 
 const showOutput = (output, actions, index) => {
+  let overallTimeout = 0
+  _.each(output, (part) => {
+    switch(part.type) {
+      case 'delay': {
+        overallTimeout += part.data
+        break
+      }
+    }
+  })
+  setTimeout(() => {
+    runAction(actions, index + 1)
+  }, overallTimeout)
   setTimeout(() => {
     showPart(output, 0)
   }, 100)
-  runAction(actions, index + 1)
 }
 
 const delay = (milliseconds, actions, index) => {
@@ -253,7 +260,6 @@ const pressEnter = () => {
 
 window.addEventListener('load', () => {
   term.open(document.getElementById('terminal'));
-  term.write(bashPrompt)
   term.onKey((key, ev) => {
     if (key.domEvent.key == 'Enter') {
       pressEnter()
