@@ -1,7 +1,6 @@
 audio:
 2-2-2/2-2-2.4.mp3
 
-
 input:
 %{delay 6000}sudo apt-get install ncdu
 
@@ -50,10 +49,6 @@ output:
 H   4,0 KiB [          ]  Makefile
 H   4,0 KiB [          ]  HardLinkToMakefile
 @   0,0   B [          ]  SoftLinkToMakefile
-
-
-
-
 
 
 
