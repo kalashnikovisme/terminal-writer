@@ -1,44 +1,42 @@
 audio:
 2-2-2/2-2-2.4.mp3
 
-#delay:
-#6000
-#
-#input:
-#sudo apt-get install ncdu
-#
-#output:
-#Reading package lists... Done
-#%{delay 300}Building dependency tree       
-#%{delay 200}Reading state information... Done
-#%{delay 300}The following NEW packages will be installed:
-#  ncdu
-#%{delay 200}Need to get 42,8 kB of archives.
-#After this operation, 105 kB of additional disk space will be used.
-#Get:1 http://ru.archive.ubuntu.com/ubuntu focal/universe amd64 ncdu amd64 1.14.1-1 [42,8 kB]
-#Fetched 42,8 kB in 0s (312 kB/s)
-#Selecting previously unselected package ncdu.
-#(Reading database ... 363051 files and directories currently installed.)
-#Preparing to unpack .../ncdu_1.14.1-1_amd64.deb ...
-#Unpacking ncdu (1.14.1-1) ...
-#Setting up ncdu (1.14.1-1) ...
-#Processing triggers for man-db (2.9.1-1) ...
-#
-#delay:
-#11000
-#
-#input:
-#ncdu
-#
-#delay:
-#2000
 
-#clear:
+input:
+%{delay 6000}sudo apt-get install ncdu
 
 output:
-%{begin:107m}ncdu 1.14.1 ~ Use the arrow keys to navigate, press ? for help                                            %{end:107m}
+Reading package lists... Done
+%{delay 300}Building dependency tree       
+%{delay 200}Reading state information... Done
+%{delay 300}The following NEW packages will be installed:
+  ncdu
+%{delay 200}Need to get 42,8 kB of archives.
+After this operation, 105 kB of additional disk space will be used.
+Get:1 http://ru.archive.ubuntu.com/ubuntu focal/universe amd64 ncdu amd64 1.14.1-1 [42,8 kB]
+Fetched 42,8 kB in 0s (312 kB/s)
+Selecting previously unselected package ncdu.
+(Reading database ... 363051 files and directories currently installed.)
+Preparing to unpack .../ncdu_1.14.1-1_amd64.deb ...
+Unpacking ncdu (1.14.1-1) ...
+Setting up ncdu (1.14.1-1) ...
+Processing triggers for man-db (2.9.1-1) ...
+
+delay:
+2000
+
+input:
+%{delay 9000}ncdu
+
+delay:
+2000
+
+clear:
+
+output:
+%{begin:107m;30m}ncdu 1.14.1 ~ Use the arrow keys to navigate, press ? for help                                            %{end:107m;30m}
 --- /home/pavel/projects/terminal-writer -------------------------------------------------------------------------------
-   12,5 MiB [##########] /scenarios                                                                                              
+%{begin:107m;30m}   12,5 MiB [##########] /scenarios                                                                       %{end:107m;30m} 
     5,0 MiB [####      ] /node_modules
     1,3 MiB [#         ] /.git
    20,0 KiB [          ]  .index.js.swp
@@ -55,4 +53,9 @@ H   4,0 KiB [          ]  HardLinkToMakefile
 
 
 
- Total disk usage:  18,8 MiB  Apparent size:  16,1 MiB  Items: 989                                                                                                                            
+
+
+
+
+
+%{begin:107m;30m} Total disk usage:  18,8 MiB  Apparent size:  16,1 MiB  Items: 989                                        %{end:107m;30m}                                                                                   
