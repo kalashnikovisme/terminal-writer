@@ -116,8 +116,11 @@ const delay = (milliseconds, actions, index) => {
   }, milliseconds)
 }
 
-const clear = () => {
+const clear = (actions, index) => {
   term.clear()
+  setTimeout(() => {
+    runAction(actions, index + 1)
+  }, 100)
 }
 
 const runAction = (actions, index) => {
@@ -137,7 +140,8 @@ const runAction = (actions, index) => {
         break
       }
       case 'clear': {
-        clear()
+        clear(actions, index)
+        break
       }
     }
   }
