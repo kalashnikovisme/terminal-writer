@@ -1,5 +1,5 @@
 const bashPrompt = '\x1B[36m~:\x1B[0m '
-let term = new Terminal({ cols: 120, rows: 25, fontSize: '30' });
+let term = new Terminal({ cols: 120, rows: 27, fontSize: '30' });
 const typingTimeout = 100
 const directives = ['input:', 'output:', 'audio:', 'delay:']
 const newLine = '\n\r'
@@ -74,7 +74,7 @@ const showPart = (output, index) => {
         break
       }
       case 'colorBegin': {
-        term.write(`\x1B[1;${part.data}`)
+        term.write(`\x1B[0;${part.data.textColor}\x1B[${part.data.backgroundColor}`)
         break
       }
       case 'colorEnd': {
@@ -183,16 +183,17 @@ const parseOutput = (lines, index) => {
   for (var j = index + 1; j < lines.length; j++) {
     const line = lines[j]
     if (!directives.includes(line)) {
-      const colorRegex = /\%\{begin:\d+m}.*\%\{end:\d+m\}/
+      const beginRegex = /\%\{begin:\d+m;\d+m}/
+      const endRegex = /\%\{end:\d+m;\d+m}/
+      const colorRegex = /\%\{begin:\d+m;\d+m\}.*\%\{end:\d+m;\d+m\}/
       if (line.match(colorRegex)) {
-        const colorCodeRegex = /\d+m/
-        const color = line.match(colorRegex)[0].match(colorCodeRegex)[0]
-        const beginRegex = /\%\{begin:\d+m}/
-        const endRegex = /\%\{end:\d+m}/
+        const colorCodeRegex = /\d+\m/g
+        const backgroundColor = line.match(colorRegex)[0].match(colorCodeRegex)[0]
+        const textColor = line.match(colorRegex)[0].match(colorCodeRegex)[1]
         data.push({ type: 'text', data: line.split(beginRegex)[0] })
-        data.push({ type: 'colorBegin', data: color })
+        data.push({ type: 'colorBegin', data: { backgroundColor, textColor } })
         data.push({ type: 'text', data: line.split(beginRegex)[1].split(endRegex)[0] })
-        data.push({ type: 'colorEnd', data: color })
+        data.push({ type: 'colorEnd', data: { backgroundColor, textColor } })
         data.push({ type: 'text', data: line.split(endRegex)[1] })
       } else if (line.match(delayRegex)) {
         const millisecondsRegex = /\d+/
