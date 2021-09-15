@@ -1,0 +1,51 @@
+audio:
+2-2-3/2-2-3.1.mp3
+
+input:
+%{delay 3000}cat test-1.txt
+
+output:
+I love Linux!
+
+delay:
+100
+
+input:
+%{delay 4000}ln -s test-1.txt soft-link-1.txt
+
+delay:
+2000
+
+input:
+ls -l
+
+output:
+lrwxrwxrwx 1 pavel pavel   10 сен 15 11:12 soft-link-1.txt -> test-1.txt
+-rw-rw-r-- 1 pavel pavel    0 сен 15 11:12 test-1.txt
+
+delay:
+100
+
+input:
+%{delay 10000}cat soft-link-1.txt
+
+output:
+I love Linux!
+
+delay:
+100
+
+input:
+%{delay 10000}rm test-1.txt
+
+input:
+%{delay 1000}cat soft-link-1.txt
+
+output:
+cat: soft-link-1.txt: No such file or directory
+
+delay:
+100
+
+input:
+%{delay 10000}
