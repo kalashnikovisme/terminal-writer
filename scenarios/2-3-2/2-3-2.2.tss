@@ -1,0 +1,166 @@
+audio:
+2-3-2/2-3-2.2.mp3
+
+paste:
+%{delay 500}sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+
+paste:
+%{delay 500}wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+
+output:
+OK
+
+delay:
+100
+
+input:
+%{delay 12000}sudo apt-get update
+
+output:
+Hit:1 http://ru.archive.ubuntu.com/ubuntu focal InRelease
+Get:2 http://ru.archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]
+Hit:3 http://dl.google.com/linux/chrome/deb stable InRelease
+Hit:4 https://dl.yarnpkg.com/debian stable InRelease
+Get:5 http://ru.archive.ubuntu.com/ubuntu focal-backports InRelease [101 kB]
+Hit:6 http://ppa.launchpad.net/ansible/ansible/ubuntu focal InRelease
+Get:7 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]
+Get:8 https://linux.teamviewer.com/deb stable InRelease [11,9 kB]
+Hit:9 http://ppa.launchpad.net/gezakovacs/ppa/ubuntu focal InRelease
+Hit:10 https://repo.steampowered.com/steam stable InRelease                                                                        
+Hit:11 http://ppa.launchpad.net/longsleep/golang-backports/ubuntu focal InRelease                                                       
+Hit:12 http://ppa.launchpad.net/obsproject/obs-studio/ubuntu focal InRelease   
+Get:13 http://ru.archive.ubuntu.com/ubuntu focal-updates/main i386 Packages [535 kB]
+Get:14 http://ru.archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [1 213 kB]   
+Get:15 http://security.ubuntu.com/ubuntu bionic-security InRelease [88,7 kB]                                          
+Hit:16 https://deb.nodesource.com/node_16.x focal InRelease                                     
+Get:17 http://ru.archive.ubuntu.com/ubuntu focal-updates/main amd64 DEP-11 Metadata [282 kB]
+Get:18 http://ru.archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages [855 kB]
+Get:19 http://ru.archive.ubuntu.com/ubuntu focal-updates/universe i386 Packages [633 kB]
+Get:20 http://ru.archive.ubuntu.com/ubuntu focal-updates/universe amd64 DEP-11 Metadata [352 kB]
+Get:21 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [867 kB]      
+Get:22 http://ru.archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 DEP-11 Metadata [944 B]   
+Get:23 http://ru.archive.ubuntu.com/ubuntu focal-backports/universe amd64 DEP-11 Metadata [10,4 kB]
+Get:24 http://security.ubuntu.com/ubuntu focal-security/main i386 Packages [282 kB]                           
+Get:25 http://security.ubuntu.com/ubuntu focal-security/main Translation-en [167 kB]
+Get:26 http://security.ubuntu.com/ubuntu focal-security/main amd64 DEP-11 Metadata [27,6 kB]
+Get:27 http://security.ubuntu.com/ubuntu focal-security/universe amd64 Packages [639 kB]
+Get:28 http://security.ubuntu.com/ubuntu focal-security/universe i386 Packages [507 kB]
+Get:29 http://security.ubuntu.com/ubuntu focal-security/universe Translation-en [102 kB]
+Get:30 http://security.ubuntu.com/ubuntu focal-security/universe amd64 DEP-11 Metadata [61,1 kB]
+Get:31 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 DEP-11 Metadata [2 464 B]
+Get:32 http://security.ubuntu.com/ubuntu bionic-security/main amd64 Packages [1 869 kB]
+Get:33 http://security.ubuntu.com/ubuntu bionic-security/main i386 Packages [1 041 kB]
+Get:34 http://security.ubuntu.com/ubuntu bionic-security/main amd64 DEP-11 Metadata [51,4 kB]
+Get:35 http://apt.postgresql.org/pub/repos/apt focal-pgdg InRelease [86,7 kB]
+Get:36 http://apt.postgresql.org/pub/repos/apt focal-pgdg/main amd64 Packages [214 kB]
+Fetched 10,2 MB in 12s (887 kB/s) 
+Reading package lists... Done
+
+delay:
+500
+
+input:
+%{delay 6000}sudo apt-get install postgresql
+
+output:
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following additional packages will be installed:
+  libpq-dev libpq5 postgresql-13 postgresql-client-13
+Suggested packages:
+  postgresql-doc-13 postgresql-doc
+The following NEW packages will be installed:
+  postgresql postgresql-13 postgresql-client-13
+The following packages will be upgraded:
+  libpq-dev libpq5
+2 upgraded, 3 newly installed, 0 to remove and 194 not upgraded.
+Need to get 17,0 MB of archives.
+After this operation, 56,0 MB of additional disk space will be used.
+Do you want to continue? [Y/n] %{delay 2000}Y
+Get:1 http://apt.postgresql.org/pub/repos/apt focal-pgdg/main amd64 libpq-dev amd64 13.4-1.pgdg20.04+1 [138 kB]
+Get:2 http://apt.postgresql.org/pub/repos/apt focal-pgdg/main amd64 libpq5 amd64 13.4-1.pgdg20.04+1 [179 kB]
+Get:3 http://apt.postgresql.org/pub/repos/apt focal-pgdg/main amd64 postgresql-client-13 amd64 13.4-1.pgdg20.04+1 [1 507 kB]
+Get:4 http://apt.postgresql.org/pub/repos/apt focal-pgdg/main amd64 postgresql-13 amd64 13.4-1.pgdg20.04+1 [15,1 MB]
+Get:5 http://apt.postgresql.org/pub/repos/apt focal-pgdg/main amd64 postgresql all 13+226.pgdg20.04+1 [65,2 kB]                                                                              
+Fetched 17,0 MB in 19s (916 kB/s)                                                                                                                                                            
+Preconfiguring packages ...
+(Reading database ... 376015 files and directories currently installed.)
+Preparing to unpack .../libpq-dev_13.4-1.pgdg20.04+1_amd64.deb ...
+Unpacking libpq-dev (13.4-1.pgdg20.04+1) over (12.8-0ubuntu0.20.04.1) ...
+Preparing to unpack .../libpq5_13.4-1.pgdg20.04+1_amd64.deb ...
+Unpacking libpq5:amd64 (13.4-1.pgdg20.04+1) over (12.8-0ubuntu0.20.04.1) ...
+Selecting previously unselected package postgresql-client-13.
+Preparing to unpack .../postgresql-client-13_13.4-1.pgdg20.04+1_amd64.deb ...
+Unpacking postgresql-client-13 (13.4-1.pgdg20.04+1) ...
+Selecting previously unselected package postgresql-13.
+Preparing to unpack .../postgresql-13_13.4-1.pgdg20.04+1_amd64.deb ...
+Unpacking postgresql-13 (13.4-1.pgdg20.04+1) ...
+Selecting previously unselected package postgresql.
+Preparing to unpack .../postgresql_13+226.pgdg20.04+1_all.deb ...
+Unpacking postgresql (13+226.pgdg20.04+1) ...
+Setting up libpq5:amd64 (13.4-1.pgdg20.04+1) ...
+Setting up libpq-dev (13.4-1.pgdg20.04+1) ...
+Setting up postgresql-client-13 (13.4-1.pgdg20.04+1) ...
+update-alternatives: using /usr/share/postgresql/13/man/man1/psql.1.gz to provide /usr/share/man/man1/psql.1.gz (psql.1.gz) in auto mode
+Setting up postgresql-13 (13.4-1.pgdg20.04+1) ...
+Creating new PostgreSQL cluster 13/main ...
+/usr/lib/postgresql/13/bin/initdb -D /var/lib/postgresql/13/main --auth-local peer --auth-host md5
+The files belonging to this database system will be owned by user "postgres".
+This user must also own the server process.
+
+The database cluster will be initialized with locales
+  COLLATE:  en_US.UTF-8
+  CTYPE:    en_US.UTF-8
+  MESSAGES: en_US.UTF-8
+  MONETARY: ru_RU.UTF-8
+  NUMERIC:  ru_RU.UTF-8
+  TIME:     ru_RU.UTF-8
+The default database encoding has accordingly been set to "UTF8".
+The default text search configuration will be set to "english".
+
+Data page checksums are disabled.
+
+fixing permissions on existing directory /var/lib/postgresql/13/main ... ok
+creating subdirectories ... ok
+selecting dynamic shared memory implementation ... posix
+selecting default max_connections ... 100
+selecting default shared_buffers ... 128MB
+selecting default time zone ... Europe/Ulyanovsk
+creating configuration files ... ok
+running bootstrap script ... ok
+performing post-bootstrap initialization ... ok
+syncing data to disk ... ok
+
+Success. You can now start the database server using:
+
+    pg_ctlcluster 13 main start
+
+Ver Cluster Port Status Owner    Data directory              Log file
+13  main    5433 down   postgres /var/lib/postgresql/13/main /var/log/postgresql/postgresql-13-main.log
+update-alternatives: using /usr/share/postgresql/13/man/man1/postmaster.1.gz to provide /usr/share/man/man1/postmaster.1.gz (postmaster.1.gz) in auto mode
+Setting up postgresql (13+226.pgdg20.04+1) ...
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for postgresql-common (214ubuntu0.1) ...
+Building PostgreSQL dictionaries from installed myspell/hunspell packages...
+  en_us
+Removing obsolete dictionary files:
+Processing triggers for libc-bin (2.31-0ubuntu9.2) ...
+
+delay:
+3000
+
+input:
+%{delay 8000}psql --version
+
+delay:
+100
+
+output:
+psql (PostgreSQL) 13.4 (Ubuntu 13.4-1.pgdg20.04+1)
+
+delay:
+100
+
+input:
+%{delay 100000}
