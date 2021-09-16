@@ -151,7 +151,7 @@ delay:
 3000
 
 input:
-%{delay 8000}psql --version
+%{delay 6000}psql --version
 
 delay:
 100
