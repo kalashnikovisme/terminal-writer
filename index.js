@@ -1,9 +1,13 @@
-const bashPrompt = '\x1B[36m~:\x1B[0m '
+let bashPrompt = '~:'
 let term = new Terminal({ cols: 120, rows: 27, fontSize: '30' });
 const typingTimeout = 100
 const directives = ['input:', 'output:', 'audio:', 'delay:']
 const newLine = '\n\r'
 const delayRegex = /\%\{delay \d+\}/g;
+
+const buildPrompt = () => {
+  return `\x1B[36m${bashPrompt}\x1B[0m `
+}
 
 const typing = (command, typingTimeout) => {
   _.each(command, (ch, i) => {
@@ -53,7 +57,7 @@ const runPaste = (data, actions, index) => {
     runAction(actions, index + 1)
   }, overallTimeout)
 
-  term.write(bashPrompt)
+  term.write(bashPrompt())
   runPastePart(data, 0)
 }
 
@@ -97,7 +101,7 @@ const runInput = (data, actions, index) => {
     runAction(actions, index + 1)
   }, overallTimeout)
 
-  term.write(bashPrompt)
+  term.write(buildPrompt())
   runInputPart(data, 0)
 }
 
@@ -167,6 +171,13 @@ const clear = (actions, index) => {
   }, 100)
 }
 
+const changePrompt = (prompt, actions, index) => {
+  bashPrompt = prompt
+  setTimeout(() => {
+    runAction(actions, index + 1)
+  }, 100)
+}
+
 const runAction = (actions, index) => {
   const action = actions[index]
   if (action) {
@@ -190,6 +201,9 @@ const runAction = (actions, index) => {
       case 'paste': {
         runPaste(action.data, actions, index)
         break
+      }
+      case 'prompt': {
+        changePrompt(action.data, actions, index)
       }
     }
   }
@@ -319,6 +333,10 @@ const readSingleFile = (e) => {
         actions.push(parsePaste(lines[i + 1]))
         i++ 
       }
+      if (lines[i] == 'prompt:') {
+        actions.push({ action: 'prompt', data: lines[i + 1] })
+        i++
+      }
     }
     console.log(actions)
 
@@ -330,7 +348,7 @@ const readSingleFile = (e) => {
 const pressEnter = () => {
   term.write('\n');
   setTimeout(() => {
-    term.write(bashPrompt)
+    term.write(buildPrompt())
   }, 50)
 }
 
