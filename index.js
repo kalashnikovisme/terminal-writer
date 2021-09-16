@@ -13,6 +13,50 @@ const typing = (command, typingTimeout) => {
   })
 }
 
+const runPastePart = (data, index) => {
+  const part = data[index]
+  let timeoutBeforeTheNext;
+  if (part) {
+    switch(part.type) {
+      case 'insert': {
+        term.write(part.data)
+        timeoutBeforeTheNext = 100
+        break
+      }
+      case 'delay': {
+        timeoutBeforeTheNext = part.data
+      }
+    }
+  }
+  setTimeout(() => {
+    runPastePart(data, index + 1)
+  }, timeoutBeforeTheNext)
+}
+
+const runPaste = (data, actions, index) => {
+  let overallTimeout = 0
+  _.each(data, (part) => {
+    switch(part.type) {
+      case 'insert': {
+        overallTimeout += 100
+        break
+      }
+      case 'delay': {
+        overallTimeout += part.data
+        break
+      }
+    }
+  })
+
+  setTimeout(() => {
+    term.write('\n\r');
+    runAction(actions, index + 1)
+  }, overallTimeout)
+
+  term.write(bashPrompt)
+  runPastePart(data, 0)
+}
+
 const runInputPart = (data, index) => {
   const part = data[index]
   let timeoutBeforeTheNext;
@@ -143,6 +187,10 @@ const runAction = (actions, index) => {
         clear(actions, index)
         break
       }
+      case 'paste': {
+        runPaste(action.data, actions, index)
+        break
+      }
     }
   }
 }
@@ -158,6 +206,25 @@ const runTimer = () => {
 const runScenario = (actions) => {
   runTimer()
   runAction(actions, 0)
+}
+
+const parsePaste = (line) => {
+  const action = {
+    action: 'paste', 
+  }
+  let data
+  if (line.match(delayRegex)) {
+    const millisecondsRegex = /\d+/
+    const mil = parseInt(line.match(delayRegex)[0].match(millisecondsRegex)[0])
+    data = [
+      { type: 'insert', data: line.split(delayRegex)[0] },
+      { type: 'delay', data: mil },
+      { type: 'insert', data: line.split(delayRegex)[1] },
+    ]
+  } else {
+    data = [{ type: 'insert', data: line }]
+  }
+  return { ...action, data }
 }
 
 const parseInput = (line) => {
@@ -247,6 +314,10 @@ const readSingleFile = (e) => {
       }
       if (lines[i] == 'clear:') {
         actions.push({ action: 'clear' })
+      }
+      if (lines[i] == 'paste:') {
+        actions.push(parsePaste(lines[i + 1]))
+        i++ 
       }
     }
     console.log(actions)
