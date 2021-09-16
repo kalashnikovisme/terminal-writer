@@ -1,218 +1,160 @@
-#audio:
-#2-3-2/2-3-2.5.mp3
-#
-#input:
-#%{delay 3000}sudo apt-cache policy
-#
-#delay:
-#100
-#
-#output:
-#Package files:
-# 100 /var/lib/dpkg/status
-#     release a=now
-# 500 https://dl.yarnpkg.com/debian stable/main all Packages
-#     release o=yarn,a=stable,n=stable,l=yarn-stable,c=main,b=all
-#     origin dl.yarnpkg.com
-# 500 https://dl.yarnpkg.com/debian stable/main i386 Packages
-#     release o=yarn,a=stable,n=stable,l=yarn-stable,c=main,b=i386
-#     origin dl.yarnpkg.com
-# 500 https://dl.yarnpkg.com/debian stable/main amd64 Packages
-#     release o=yarn,a=stable,n=stable,l=yarn-stable,c=main,b=amd64
-#     origin dl.yarnpkg.com
-# 500 https://linux.teamviewer.com/deb stable/main i386 Packages
-#     release o=TeamViewer GmbH,a=stable,l=TeamViewer,c=main,b=i386
-#     origin linux.teamviewer.com
-# 500 https://linux.teamviewer.com/deb stable/main amd64 Packages
-#     release o=TeamViewer GmbH,a=stable,l=TeamViewer,c=main,b=amd64
-#     origin linux.teamviewer.com
-# 500 https://repo.steampowered.com/steam stable/steam i386 Packages
-#     release o=Valve Software LLC,n=stable,l=Steam launcher,c=steam,b=i386
-#     origin repo.steampowered.com
-# 500 https://repo.steampowered.com/steam stable/steam amd64 Packages
-#     release o=Valve Software LLC,n=stable,l=Steam launcher,c=steam,b=amd64
-#     origin repo.steampowered.com
-# 500 http://apt.postgresql.org/pub/repos/apt focal-pgdg/main amd64 Packages
-#     release o=apt.postgresql.org,a=focal-pgdg,n=focal-pgdg,l=PostgreSQL for Debian/Ubuntu repository,c=main,b=amd64
-#     origin apt.postgresql.org
-# 500 http://ppa.launchpad.net/obsproject/obs-studio/ubuntu focal/main amd64 Packages
-#     release v=20.04,o=LP-PPA-obsproject-obs-studio,a=focal,n=focal,l=OBS Studio,c=main,b=amd64
-#     origin ppa.launchpad.net
-# 500 https://deb.nodesource.com/node_16.x focal/main amd64 Packages
-#     release o=Node Source,n=focal,l=Node Source,c=main,b=amd64
-#     origin deb.nodesource.com
-# 500 http://ppa.launchpad.net/longsleep/golang-backports/ubuntu focal/main i386 Packages
-#     release v=20.04,o=LP-PPA-longsleep-golang-backports,a=focal,n=focal,l=Golang Backports,c=main,b=i386
-#     origin ppa.launchpad.net
-# 500 http://ppa.launchpad.net/longsleep/golang-backports/ubuntu focal/main amd64 Packages
-#     release v=20.04,o=LP-PPA-longsleep-golang-backports,a=focal,n=focal,l=Golang Backports,c=main,b=amd64
-#     origin ppa.launchpad.net
-# 500 http://dl.google.com/linux/chrome/deb stable/main amd64 Packages
-#     release v=1.0,o=Google LLC,a=stable,n=stable,l=Google,c=main,b=amd64
-#     origin dl.google.com
-# 500 http://ppa.launchpad.net/gezakovacs/ppa/ubuntu focal/main i386 Packages
-#     release v=20.04,o=LP-PPA-gezakovacs,a=focal,n=focal,l=UNetbootin PPA,c=main,b=i386
-#     origin ppa.launchpad.net
-# 500 http://ppa.launchpad.net/gezakovacs/ppa/ubuntu focal/main amd64 Packages
-#     release v=20.04,o=LP-PPA-gezakovacs,a=focal,n=focal,l=UNetbootin PPA,c=main,b=amd64
-#     origin ppa.launchpad.net
-# 500 http://ppa.launchpad.net/ansible/ansible/ubuntu focal/main i386 Packages
-#     release v=20.04,o=LP-PPA-ansible-ansible,a=focal,n=focal,l=ansible,c=main,b=i386
-#     origin ppa.launchpad.net
-# 500 http://ppa.launchpad.net/ansible/ansible/ubuntu focal/main amd64 Packages
-#     release v=20.04,o=LP-PPA-ansible-ansible,a=focal,n=focal,l=ansible,c=main,b=amd64
-#     origin ppa.launchpad.net
-# 500 http://security.ubuntu.com/ubuntu bionic-security/main i386 Packages
-#     release v=18.04,o=Ubuntu,a=bionic-security,n=bionic,l=Ubuntu,c=main,b=i386
-#     origin security.ubuntu.com
-# 500 http://security.ubuntu.com/ubuntu bionic-security/main amd64 Packages
-#     release v=18.04,o=Ubuntu,a=bionic-security,n=bionic,l=Ubuntu,c=main,b=amd64
-#     origin security.ubuntu.com
-# 500 http://security.ubuntu.com/ubuntu focal-security/multiverse i386 Packages
-#     release v=20.04,o=Ubuntu,a=focal-security,n=focal,l=Ubuntu,c=multiverse,b=i386
-#     origin security.ubuntu.com
-# 500 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 Packages
-#     release v=20.04,o=Ubuntu,a=focal-security,n=focal,l=Ubuntu,c=multiverse,b=amd64
-#     origin security.ubuntu.com
-# 500 http://security.ubuntu.com/ubuntu focal-security/universe i386 Packages
-#     release v=20.04,o=Ubuntu,a=focal-security,n=focal,l=Ubuntu,c=universe,b=i386
-#     origin security.ubuntu.com
-# 500 http://security.ubuntu.com/ubuntu focal-security/universe amd64 Packages
-#     release v=20.04,o=Ubuntu,a=focal-security,n=focal,l=Ubuntu,c=universe,b=amd64
-#     origin security.ubuntu.com
-# 500 http://security.ubuntu.com/ubuntu focal-security/restricted i386 Packages
-#     release v=20.04,o=Ubuntu,a=focal-security,n=focal,l=Ubuntu,c=restricted,b=i386
-#     origin security.ubuntu.com
-# 500 http://security.ubuntu.com/ubuntu focal-security/restricted amd64 Packages
-#     release v=20.04,o=Ubuntu,a=focal-security,n=focal,l=Ubuntu,c=restricted,b=amd64
-#     origin security.ubuntu.com
-# 500 http://security.ubuntu.com/ubuntu focal-security/main i386 Packages
-#     release v=20.04,o=Ubuntu,a=focal-security,n=focal,l=Ubuntu,c=main,b=i386
-#     origin security.ubuntu.com
-# 500 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages
-#     release v=20.04,o=Ubuntu,a=focal-security,n=focal,l=Ubuntu,c=main,b=amd64
-#     origin security.ubuntu.com
-# 100 http://ru.archive.ubuntu.com/ubuntu focal-backports/universe i386 Packages
-#     release v=20.04,o=Ubuntu,a=focal-backports,n=focal,l=Ubuntu,c=universe,b=i386
-#     origin ru.archive.ubuntu.com
-# 100 http://ru.archive.ubuntu.com/ubuntu focal-backports/universe amd64 Packages
-#     release v=20.04,o=Ubuntu,a=focal-backports,n=focal,l=Ubuntu,c=universe,b=amd64
-#     origin ru.archive.ubuntu.com
-# 100 http://ru.archive.ubuntu.com/ubuntu focal-backports/main i386 Packages
-#     release v=20.04,o=Ubuntu,a=focal-backports,n=focal,l=Ubuntu,c=main,b=i386
-#     origin ru.archive.ubuntu.com
-# 100 http://ru.archive.ubuntu.com/ubuntu focal-backports/main amd64 Packages
-#     release v=20.04,o=Ubuntu,a=focal-backports,n=focal,l=Ubuntu,c=main,b=amd64
-#     origin ru.archive.ubuntu.com
-# 500 http://ru.archive.ubuntu.com/ubuntu focal-updates/multiverse i386 Packages
-#     release v=20.04,o=Ubuntu,a=focal-updates,n=focal,l=Ubuntu,c=multiverse,b=i386
-#     origin ru.archive.ubuntu.com
-# 500 http://ru.archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 Packages
-#     release v=20.04,o=Ubuntu,a=focal-updates,n=focal,l=Ubuntu,c=multiverse,b=amd64
-#     origin ru.archive.ubuntu.com
-# 500 http://ru.archive.ubuntu.com/ubuntu focal-updates/universe i386 Packages
-#     release v=20.04,o=Ubuntu,a=focal-updates,n=focal,l=Ubuntu,c=universe,b=i386
-#     origin ru.archive.ubuntu.com
-# 500 http://ru.archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages
-#     release v=20.04,o=Ubuntu,a=focal-updates,n=focal,l=Ubuntu,c=universe,b=amd64
-#     origin ru.archive.ubuntu.com
-# 500 http://ru.archive.ubuntu.com/ubuntu focal-updates/restricted i386 Packages
-#     release v=20.04,o=Ubuntu,a=focal-updates,n=focal,l=Ubuntu,c=restricted,b=i386
-#     origin ru.archive.ubuntu.com
-# 500 http://ru.archive.ubuntu.com/ubuntu focal-updates/restricted amd64 Packages
-#     release v=20.04,o=Ubuntu,a=focal-updates,n=focal,l=Ubuntu,c=restricted,b=amd64
-#     origin ru.archive.ubuntu.com
-# 500 http://ru.archive.ubuntu.com/ubuntu focal-updates/main i386 Packages
-#     release v=20.04,o=Ubuntu,a=focal-updates,n=focal,l=Ubuntu,c=main,b=i386
-#     origin ru.archive.ubuntu.com
-# 500 http://ru.archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages
-#     release v=20.04,o=Ubuntu,a=focal-updates,n=focal,l=Ubuntu,c=main,b=amd64
-#     origin ru.archive.ubuntu.com
-# 500 http://ru.archive.ubuntu.com/ubuntu focal/multiverse i386 Packages
-#     release v=20.04,o=Ubuntu,a=focal,n=focal,l=Ubuntu,c=multiverse,b=i386
-#     origin ru.archive.ubuntu.com
-# 500 http://ru.archive.ubuntu.com/ubuntu focal/multiverse amd64 Packages
-#     release v=20.04,o=Ubuntu,a=focal,n=focal,l=Ubuntu,c=multiverse,b=amd64
-#     origin ru.archive.ubuntu.com
-# 500 http://ru.archive.ubuntu.com/ubuntu focal/universe i386 Packages
-#     release v=20.04,o=Ubuntu,a=focal,n=focal,l=Ubuntu,c=universe,b=i386
-#     origin ru.archive.ubuntu.com
-# 500 http://ru.archive.ubuntu.com/ubuntu focal/universe amd64 Packages
-#     release v=20.04,o=Ubuntu,a=focal,n=focal,l=Ubuntu,c=universe,b=amd64
-#     origin ru.archive.ubuntu.com
-# 500 http://ru.archive.ubuntu.com/ubuntu focal/restricted i386 Packages
-#     release v=20.04,o=Ubuntu,a=focal,n=focal,l=Ubuntu,c=restricted,b=i386
-#     origin ru.archive.ubuntu.com
-# 500 http://ru.archive.ubuntu.com/ubuntu focal/restricted amd64 Packages
-#     release v=20.04,o=Ubuntu,a=focal,n=focal,l=Ubuntu,c=restricted,b=amd64
-#     origin ru.archive.ubuntu.com
-# 500 http://ru.archive.ubuntu.com/ubuntu focal/main i386 Packages
-#     release v=20.04,o=Ubuntu,a=focal,n=focal,l=Ubuntu,c=main,b=i386
-#     origin ru.archive.ubuntu.com
-# 500 http://ru.archive.ubuntu.com/ubuntu focal/main amd64 Packages
-#     release v=20.04,o=Ubuntu,a=focal,n=focal,l=Ubuntu,c=main,b=amd64
-#     origin ru.archive.ubuntu.com
-#
-#delay:
-#2000
-#
-#input:
-#%{delay 13000}vim /etc/apt/sources.list
-#
-#delay:
-#500
+audio:
+2-3-2/2-3-2.5.mp3
 
-#clear:
+input:
+%{delay 3000}sudo apt-cache policy
+
+delay:
+100
 
 output:
-%{begin:36m;0m}# deb cdrom:[Ubuntu 20.04.2.0 LTS _Focal Fossa_ - Release amd64 (20210209.1)]/ focal main restricted%{end:36m;0m}
+Package files:
+ 100 /var/lib/dpkg/status
+     release a=now
+ 500 https://dl.yarnpkg.com/debian stable/main all Packages
+     release o=yarn,a=stable,n=stable,l=yarn-stable,c=main,b=all
+     origin dl.yarnpkg.com
+ 500 https://dl.yarnpkg.com/debian stable/main i386 Packages
+     release o=yarn,a=stable,n=stable,l=yarn-stable,c=main,b=i386
+     origin dl.yarnpkg.com
+ 500 https://dl.yarnpkg.com/debian stable/main amd64 Packages
+     release o=yarn,a=stable,n=stable,l=yarn-stable,c=main,b=amd64
+     origin dl.yarnpkg.com
+ 500 https://linux.teamviewer.com/deb stable/main i386 Packages
+     release o=TeamViewer GmbH,a=stable,l=TeamViewer,c=main,b=i386
+     origin linux.teamviewer.com
+ 500 https://linux.teamviewer.com/deb stable/main amd64 Packages
+     release o=TeamViewer GmbH,a=stable,l=TeamViewer,c=main,b=amd64
+     origin linux.teamviewer.com
+ 500 https://repo.steampowered.com/steam stable/steam i386 Packages
+     release o=Valve Software LLC,n=stable,l=Steam launcher,c=steam,b=i386
+     origin repo.steampowered.com
+ 500 https://repo.steampowered.com/steam stable/steam amd64 Packages
+     release o=Valve Software LLC,n=stable,l=Steam launcher,c=steam,b=amd64
+     origin repo.steampowered.com
+ 500 http://apt.postgresql.org/pub/repos/apt focal-pgdg/main amd64 Packages
+     release o=apt.postgresql.org,a=focal-pgdg,n=focal-pgdg,l=PostgreSQL for Debian/Ubuntu repository,c=main,b=amd64
+     origin apt.postgresql.org
+ 500 http://ppa.launchpad.net/obsproject/obs-studio/ubuntu focal/main amd64 Packages
+     release v=20.04,o=LP-PPA-obsproject-obs-studio,a=focal,n=focal,l=OBS Studio,c=main,b=amd64
+     origin ppa.launchpad.net
+ 500 https://deb.nodesource.com/node_16.x focal/main amd64 Packages
+     release o=Node Source,n=focal,l=Node Source,c=main,b=amd64
+     origin deb.nodesource.com
+ 500 http://ppa.launchpad.net/longsleep/golang-backports/ubuntu focal/main i386 Packages
+     release v=20.04,o=LP-PPA-longsleep-golang-backports,a=focal,n=focal,l=Golang Backports,c=main,b=i386
+     origin ppa.launchpad.net
+ 500 http://ppa.launchpad.net/longsleep/golang-backports/ubuntu focal/main amd64 Packages
+     release v=20.04,o=LP-PPA-longsleep-golang-backports,a=focal,n=focal,l=Golang Backports,c=main,b=amd64
+     origin ppa.launchpad.net
+ 500 http://dl.google.com/linux/chrome/deb stable/main amd64 Packages
+     release v=1.0,o=Google LLC,a=stable,n=stable,l=Google,c=main,b=amd64
+     origin dl.google.com
+ 500 http://ppa.launchpad.net/gezakovacs/ppa/ubuntu focal/main i386 Packages
+     release v=20.04,o=LP-PPA-gezakovacs,a=focal,n=focal,l=UNetbootin PPA,c=main,b=i386
+     origin ppa.launchpad.net
+ 500 http://ppa.launchpad.net/gezakovacs/ppa/ubuntu focal/main amd64 Packages
+     release v=20.04,o=LP-PPA-gezakovacs,a=focal,n=focal,l=UNetbootin PPA,c=main,b=amd64
+     origin ppa.launchpad.net
+ 500 http://ppa.launchpad.net/ansible/ansible/ubuntu focal/main i386 Packages
+     release v=20.04,o=LP-PPA-ansible-ansible,a=focal,n=focal,l=ansible,c=main,b=i386
+     origin ppa.launchpad.net
+ 500 http://ppa.launchpad.net/ansible/ansible/ubuntu focal/main amd64 Packages
+     release v=20.04,o=LP-PPA-ansible-ansible,a=focal,n=focal,l=ansible,c=main,b=amd64
+     origin ppa.launchpad.net
+ 500 http://security.ubuntu.com/ubuntu bionic-security/main i386 Packages
+     release v=18.04,o=Ubuntu,a=bionic-security,n=bionic,l=Ubuntu,c=main,b=i386
+     origin security.ubuntu.com
+ 500 http://security.ubuntu.com/ubuntu bionic-security/main amd64 Packages
+     release v=18.04,o=Ubuntu,a=bionic-security,n=bionic,l=Ubuntu,c=main,b=amd64
+     origin security.ubuntu.com
+ 500 http://security.ubuntu.com/ubuntu focal-security/multiverse i386 Packages
+     release v=20.04,o=Ubuntu,a=focal-security,n=focal,l=Ubuntu,c=multiverse,b=i386
+     origin security.ubuntu.com
+ 500 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 Packages
+     release v=20.04,o=Ubuntu,a=focal-security,n=focal,l=Ubuntu,c=multiverse,b=amd64
+     origin security.ubuntu.com
+ 500 http://security.ubuntu.com/ubuntu focal-security/universe i386 Packages
+     release v=20.04,o=Ubuntu,a=focal-security,n=focal,l=Ubuntu,c=universe,b=i386
+     origin security.ubuntu.com
+ 500 http://security.ubuntu.com/ubuntu focal-security/universe amd64 Packages
+     release v=20.04,o=Ubuntu,a=focal-security,n=focal,l=Ubuntu,c=universe,b=amd64
+     origin security.ubuntu.com
+ 500 http://security.ubuntu.com/ubuntu focal-security/restricted i386 Packages
+     release v=20.04,o=Ubuntu,a=focal-security,n=focal,l=Ubuntu,c=restricted,b=i386
+     origin security.ubuntu.com
+ 500 http://security.ubuntu.com/ubuntu focal-security/restricted amd64 Packages
+     release v=20.04,o=Ubuntu,a=focal-security,n=focal,l=Ubuntu,c=restricted,b=amd64
+     origin security.ubuntu.com
+ 500 http://security.ubuntu.com/ubuntu focal-security/main i386 Packages
+     release v=20.04,o=Ubuntu,a=focal-security,n=focal,l=Ubuntu,c=main,b=i386
+     origin security.ubuntu.com
+ 500 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages
+     release v=20.04,o=Ubuntu,a=focal-security,n=focal,l=Ubuntu,c=main,b=amd64
+     origin security.ubuntu.com
+ 100 http://ru.archive.ubuntu.com/ubuntu focal-backports/universe i386 Packages
+     release v=20.04,o=Ubuntu,a=focal-backports,n=focal,l=Ubuntu,c=universe,b=i386
+     origin ru.archive.ubuntu.com
+ 100 http://ru.archive.ubuntu.com/ubuntu focal-backports/universe amd64 Packages
+     release v=20.04,o=Ubuntu,a=focal-backports,n=focal,l=Ubuntu,c=universe,b=amd64
+     origin ru.archive.ubuntu.com
+ 100 http://ru.archive.ubuntu.com/ubuntu focal-backports/main i386 Packages
+     release v=20.04,o=Ubuntu,a=focal-backports,n=focal,l=Ubuntu,c=main,b=i386
+     origin ru.archive.ubuntu.com
+ 100 http://ru.archive.ubuntu.com/ubuntu focal-backports/main amd64 Packages
+     release v=20.04,o=Ubuntu,a=focal-backports,n=focal,l=Ubuntu,c=main,b=amd64
+     origin ru.archive.ubuntu.com
+ 500 http://ru.archive.ubuntu.com/ubuntu focal-updates/multiverse i386 Packages
+     release v=20.04,o=Ubuntu,a=focal-updates,n=focal,l=Ubuntu,c=multiverse,b=i386
+     origin ru.archive.ubuntu.com
+ 500 http://ru.archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 Packages
+     release v=20.04,o=Ubuntu,a=focal-updates,n=focal,l=Ubuntu,c=multiverse,b=amd64
+     origin ru.archive.ubuntu.com
+ 500 http://ru.archive.ubuntu.com/ubuntu focal-updates/universe i386 Packages
+     release v=20.04,o=Ubuntu,a=focal-updates,n=focal,l=Ubuntu,c=universe,b=i386
+     origin ru.archive.ubuntu.com
+ 500 http://ru.archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages
+     release v=20.04,o=Ubuntu,a=focal-updates,n=focal,l=Ubuntu,c=universe,b=amd64
+     origin ru.archive.ubuntu.com
+ 500 http://ru.archive.ubuntu.com/ubuntu focal-updates/restricted i386 Packages
+     release v=20.04,o=Ubuntu,a=focal-updates,n=focal,l=Ubuntu,c=restricted,b=i386
+     origin ru.archive.ubuntu.com
+ 500 http://ru.archive.ubuntu.com/ubuntu focal-updates/restricted amd64 Packages
+     release v=20.04,o=Ubuntu,a=focal-updates,n=focal,l=Ubuntu,c=restricted,b=amd64
+     origin ru.archive.ubuntu.com
+ 500 http://ru.archive.ubuntu.com/ubuntu focal-updates/main i386 Packages
+     release v=20.04,o=Ubuntu,a=focal-updates,n=focal,l=Ubuntu,c=main,b=i386
+     origin ru.archive.ubuntu.com
+ 500 http://ru.archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages
+     release v=20.04,o=Ubuntu,a=focal-updates,n=focal,l=Ubuntu,c=main,b=amd64
+     origin ru.archive.ubuntu.com
+ 500 http://ru.archive.ubuntu.com/ubuntu focal/multiverse i386 Packages
+     release v=20.04,o=Ubuntu,a=focal,n=focal,l=Ubuntu,c=multiverse,b=i386
+     origin ru.archive.ubuntu.com
+ 500 http://ru.archive.ubuntu.com/ubuntu focal/multiverse amd64 Packages
+     release v=20.04,o=Ubuntu,a=focal,n=focal,l=Ubuntu,c=multiverse,b=amd64
+     origin ru.archive.ubuntu.com
+ 500 http://ru.archive.ubuntu.com/ubuntu focal/universe i386 Packages
+     release v=20.04,o=Ubuntu,a=focal,n=focal,l=Ubuntu,c=universe,b=i386
+     origin ru.archive.ubuntu.com
+ 500 http://ru.archive.ubuntu.com/ubuntu focal/universe amd64 Packages
+     release v=20.04,o=Ubuntu,a=focal,n=focal,l=Ubuntu,c=universe,b=amd64
+     origin ru.archive.ubuntu.com
+ 500 http://ru.archive.ubuntu.com/ubuntu focal/restricted i386 Packages
+     release v=20.04,o=Ubuntu,a=focal,n=focal,l=Ubuntu,c=restricted,b=i386
+     origin ru.archive.ubuntu.com
+ 500 http://ru.archive.ubuntu.com/ubuntu focal/restricted amd64 Packages
+     release v=20.04,o=Ubuntu,a=focal,n=focal,l=Ubuntu,c=restricted,b=amd64
+     origin ru.archive.ubuntu.com
+ 500 http://ru.archive.ubuntu.com/ubuntu focal/main i386 Packages
+     release v=20.04,o=Ubuntu,a=focal,n=focal,l=Ubuntu,c=main,b=i386
+     origin ru.archive.ubuntu.com
+ 500 http://ru.archive.ubuntu.com/ubuntu focal/main amd64 Packages
+     release v=20.04,o=Ubuntu,a=focal,n=focal,l=Ubuntu,c=main,b=amd64
+     origin ru.archive.ubuntu.com
 
-%{begin:36m;0m}# See http://help.ubuntu.com/community/UpgradeNotes for how to upgrade to%{end:36m;0m}
-%{begin:36m;0m}# newer versions of the distribution.%{end:36m;0m}
-deb http://ru.archive.ubuntu.com/ubuntu/ focal main restricted
-%{begin:36m;0m}# deb-src http://ru.archive.ubuntu.com/ubuntu/ focal main restricted%{end:36m;0m}
+delay:
+2000
 
-%{begin:36m;0m}## Major bug fix updates produced after the final release of the%{end:36m;0m}
-%{begin:36m;0m}## distribution.%{end:36m;0m}
-deb http://ru.archive.ubuntu.com/ubuntu/ focal-updates main restricted
-%{begin:36m;0m}# deb-src http://ru.archive.ubuntu.com/ubuntu/ focal-updates main restricted%{end:36m;0m}
-
-%{begin:36m;0m}## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu%{end:36m;0m}
-%{begin:36m;0m}## team. Also, please note that software in universe WILL NOT receive any%{end:36m;0m}
-%{begin:36m;0m}## review or updates from the Ubuntu security team.%{end:36m;0m}
-deb http://ru.archive.ubuntu.com/ubuntu/ focal universe
-%{begin:36m;0m}# deb-src http://ru.archive.ubuntu.com/ubuntu/ focal universe%{end:36m;0m}
-deb http://ru.archive.ubuntu.com/ubuntu/ focal-updates universe
-%{begin:36m;0m}# deb-src http://ru.archive.ubuntu.com/ubuntu/ focal-updates universe%{end:36m;0m}
-
-%{begin:36m;0m}## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu %{end:36m;0m}
-%{begin:36m;0m}## team, and may not be under a free licence. Please satisfy yourself as to %{end:36m;0m}
-%{begin:36m;0m}## your rights to use the software. Also, please note that software in %{end:36m;0m}
-%{begin:36m;0m}## multiverse WILL NOT receive any review or updates from the Ubuntu%{end:36m;0m}
-%{begin:36m;0m}## security team.%{end:36m;0m}
-deb http://ru.archive.ubuntu.com/ubuntu/ focal multiverse
-%{begin:36m;0m}# deb-src http://ru.archive.ubuntu.com/ubuntu/ focal multiverse%{end:36m;0m}
-deb http://ru.archive.ubuntu.com/ubuntu/ focal-updates multiverse
-%{begin:36m;0m}# deb-src http://ru.archive.ubuntu.com/ubuntu/ focal-updates multiverse%{end:36m;0m}
-
-%{begin:36m;0m}## N.B. software from this repository may not have been tested as%{end:36m;0m}
-%{begin:36m;0m}## extensively as that contained in the main release, although it includes%{end:36m;0m}
-%{begin:36m;0m}## newer versions of some applications which may provide useful features.%{end:36m;0m}
-%{begin:36m;0m}## Also, please note that software in backports WILL NOT receive any review%{end:36m;0m}
-%{begin:36m;0m}## or updates from the Ubuntu security team.%{end:36m;0m}
-deb http://ru.archive.ubuntu.com/ubuntu/ focal-backports main restricted universe multiverse
-%{begin:36m;0m}# deb-src http://ru.archive.ubuntu.com/ubuntu/ focal-backports main restricted universe multiverse%{end:36m;0m}
-
-%{begin:36m;0m}## Uncomment the following two lines to add software from Canonical's%{end:36m;0m}
-%{begin:36m;0m}## 'partner' repository.%{end:36m;0m}
-%{begin:36m;0m}## This software is not part of Ubuntu, but is offered by Canonical and the%{end:36m;0m}
-%{begin:36m;0m}## respective vendors as a service to Ubuntu users.%{end:36m;0m}
-%{begin:36m;0m}# deb http://archive.canonical.com/ubuntu focal partner%{end:36m;0m}
-%{begin:36m;0m}# deb-src http://archive.canonical.com/ubuntu focal partner%{end:36m;0m}
-
-deb http://security.ubuntu.com/ubuntu focal-security main restricted
-%{begin:36m;0m}# deb-src http://security.ubuntu.com/ubuntu focal-security main restricted%{end:36m;0m}
-deb http://security.ubuntu.com/ubuntu focal-security universe
-%{begin:36m;0m}# deb-src http://security.ubuntu.com/ubuntu focal-security universe%{end:36m;0m}
-deb http://security.ubuntu.com/ubuntu focal-security multiverse
-%{begin:36m;0m}# deb-src http://security.ubuntu.com/ubuntu focal-security multiverse%{end:36m;0m}
+input:
+%{delay 11000}vim /etc/apt/sources.list%{delay 5000}
