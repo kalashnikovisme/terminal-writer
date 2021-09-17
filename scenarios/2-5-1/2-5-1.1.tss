@@ -1,0 +1,47 @@
+audio:
+2-5-1/2-5-1.1.mp3
+
+input:
+%{delay 7000}env
+
+output:
+SHELL=/bin/bash
+rvm_prefix=/home/slurm
+rvm_version=1.29.12 (latest)
+rvm_pretty_print_flag=auto
+rvm_bin_path=/home/slurm/.rvm/bin
+GNOME_SHELL_SESSION_MODE=ubuntu
+DESKTOP_SESSION=ubuntu
+LC_MONETARY=ru_RU.UTF-8
+SSH_AGENT_PID=2694
+GOBIN=/home/slurm/go/bin
+GTK_MODULES=gail:atk-bridge
+RUBY_VERSION=ruby-3.0.0
+PWD=/home/slurm/
+XDG_SESSION_DESKTOP=ubuntu
+XDG_SESSION_TYPE=x11
+GJS_DEBUG_TOPICS=JS ERROR;JS LOG
+WINDOWPATH=2
+HOME=/home/slurm
+XDG_CURRENT_DESKTOP=ubuntu:GNOME
+XDG_SESSION_CLASS=user
+TERM=xterm-256color
+LC_IDENTIFICATION=ru_RU.UTF-8
+USER=slurm
+PS1=\[\033[36m\]\w$(__git_ps1 "\[\033[32m\](%s)") \[\033[34m\][\D{%H:%M}]: \[\033[37m\]
+LC_TIME=ru_RU.UTF-8
+XDG_DATA_DIRS=/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+PATH=/home/slurm/.rvm/gems/ruby-3.0.0/bin:/home/slurm/.rvm/gems/ruby-3.0.0@global/bin:/home/slurm/.rvm/rubies/ruby-3.0.0/bin:/home/slurm/.poetry/bin:/home/slurm/.pyenv/shims:/home/slurm/.pyenv/bin:/home/slurm/.poetry/bin:/home/slurm/.pyenv/shims:/home/slurm/.pyenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/slurm/go/bin:/home/slurm/.rvm/bin
+GDMSESSION=ubuntu
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+IRBRC=/home/slurm/.rvm/rubies/ruby-3.0.0/.irbrc
+rvm_path=/home/slurm/.rvm
+LC_NUMERIC=ru_RU.UTF-8
+OLDPWD=/home/slurm/projects/
+_=/usr/bin/env
+
+delay:
+500
+
+input:
+%{delay 130000}USER=pavel program

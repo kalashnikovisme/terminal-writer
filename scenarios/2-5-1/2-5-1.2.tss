@@ -1,0 +1,8 @@
+audio:
+2-5-1/2-5-1.1.mp3
+
+input:
+%{delay 30000}export USER=pavel
+
+input:
+%{delay 100000}
