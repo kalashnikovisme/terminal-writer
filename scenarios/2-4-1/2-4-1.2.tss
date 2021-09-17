@@ -1,0 +1,24 @@
+audio:
+2-4-1/2-4-1.2.mp3
+
+input:
+%{delay 4000}sudo userdel pavel
+
+output:
+userdel: pavel mail spool (/var/mail/pavel) not found
+
+delay:
+100
+
+input:
+%{delay 5000}sudo userdel -r slurm
+
+output:
+userdel: slurm mail spool (/var/mail/slurm) not found
+userdel: slurm home directory (/home/slurm) not found
+
+delay:
+200
+
+input:
+%{delay 100000}
