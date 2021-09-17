@@ -1,0 +1,71 @@
+audio:
+2-4-4/2-4-4.1.mp3
+
+prompt:
+~(as slurm):
+
+input:
+%{delay 15000}sudo echo Slurm
+
+delay:
+5000
+
+output:
+slurm is not in the sudoers file.  This incident will be reported.
+
+delay:
+11000
+
+clear:
+
+prompt:
+/home/slurm(as root):
+
+input:
+%{delay 5000}usermod -a -G sudo slurm
+
+input:
+%{delay 5000}exit
+
+delay:
+100
+
+clear:
+
+prompt:
+~(as slurm):
+
+delay:
+100
+
+input:
+%{delay 500}sudo echo Slurm
+
+output:
+Slurm
+
+delay:
+45000
+
+clear:
+
+input:
+%{delay 6000}sudo mkdir test1
+
+output:
+[sudo] password for slurm: 
+
+delay:
+3000
+
+input:
+%{delay 6000}ls -la
+
+output:
+drwxrwxr--  15 root root   4096 авг 20 18:58 test1
+
+delay:
+200
+
+input:
+%{delay 100000}
