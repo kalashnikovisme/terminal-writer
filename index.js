@@ -1,5 +1,5 @@
 let bashPrompt = '~:'
-let term = new Terminal({ cols: 120, rows: 42, fontSize: '20' });
+let term = new Terminal({ cols: 120, rows: 40, fontSize: '20' });
 const typingTimeout = 100
 const directives = ['input:', 'output:', 'audio:', 'delay:']
 const newLine = '\n\r'
