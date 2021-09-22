@@ -17,9 +17,16 @@ const typing = (command, typingTimeout) => {
           case 'b': {
             term.write("\b \b")
           }
+          case ';': {
+            term.write('\\')
+          }
         }
       } else {
-        if (command[i - 1] != '\\') {
+        if (command[i - 1] == '\\') {
+          if (ch === ';') {
+            term.write(ch)
+          }
+        } else {
           term.write(ch)
         }
       }
