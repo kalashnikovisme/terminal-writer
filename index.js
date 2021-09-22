@@ -295,10 +295,15 @@ const parseOutput = (lines, index) => {
         data.push({ type: 'text', data: line.split(endRegex)[1] })
       } else if (line.match(delayRegex)) {
         const millisecondsRegex = /\d+/
-        const mil = parseInt(line.match(delayRegex)[0].match(millisecondsRegex)[0])
-        data.push({ type: 'text', data: line.split(delayRegex)[0] })
-        data.push({ type: 'delay', data: mil })
-        data.push({ type: 'text', data: line.split(delayRegex)[1] })
+        const delays = line.match(delayRegex)
+        const parts = line.split(delayRegex)
+        _.each(parts, (part, i) => {
+          data.push({ type: 'text', data: part })
+          if (delays.length >= (i + 1)) {
+            const mil = parseInt(delays[i].match(millisecondsRegex)[0])
+            data.push({ type: 'delay', data: mil })
+          }
+        })
       } else {
         data.push({ type: 'text', data: line })
       }
