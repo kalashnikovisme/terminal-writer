@@ -1,0 +1,85 @@
+audio:
+3-1-1/3-1-1.1.mp3
+
+input:
+%{delay 17000}find
+
+output:
+./directory1
+./directory2
+./test1
+./Test1
+
+delay:
+200
+
+input:
+%{delay 9000}find .
+
+output:
+./test1
+./Test1
+
+delay:
+200
+
+input:
+%{delay 15000}find -name test1
+
+output:
+./test1
+
+delay:
+100
+
+input:
+%{delay 23000}find -iname%{delay 1000} test1
+
+output:
+./test1
+./Test1
+
+delay:
+200
+
+input:
+%{delay 35000}find -name "test*"
+
+output:
+./test1
+
+delay:
+100
+
+input:
+%{delay 6000}find -iname "test*"
+
+output:
+./test1
+./Test1
+
+delay:
+200
+
+input:
+%{delay 57000}find . -type -d%{delay 2000}
+
+output:
+./directory1
+./directory2
+
+delay:
+200
+
+input:
+%{delay 8000}find . -type -f
+
+output:
+./test1
+./Test1
+
+delay:
+200
+
+input:
+cd directory1/
