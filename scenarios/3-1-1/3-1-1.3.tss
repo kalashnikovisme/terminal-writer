@@ -1,0 +1,42 @@
+audio:
+3-1-1/3-1-1.3.mp3
+
+prompt:
+~/testfind3:
+
+input:
+%{delay 21000}echo slurm > test1
+
+input:
+%{delay 2000}find . %{delay 800}-mmin %{delay 500}-10
+
+output:
+./test1
+
+delay:
+100
+
+input:
+%{delay 10000}find . -mtime -5
+
+output:
+./test1
+./Test1
+
+delay:
+200
+
+input:
+%{delay 18000}find . -amin%{delay 1000} -10
+
+output:
+./test1
+
+delay:
+200
+
+input:
+%{delay 32000}find . %{delay 500}-perm %{delay 500}777
+
+input:
+%{delay 10000}
