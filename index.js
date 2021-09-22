@@ -12,7 +12,17 @@ const buildPrompt = () => {
 const typing = (command, typingTimeout) => {
   _.each(command, (ch, i) => {
     setTimeout(() => {
-      term.write(ch)
+      if (ch === '\\') {
+        switch(command[i + 1]) {
+          case 'b': {
+            term.write("\b \b")
+          }
+        }
+      } else {
+        if (command[i - 1] != '\\') {
+          term.write(ch)
+        }
+      }
     }, typingTimeout * i)
   })
 }
