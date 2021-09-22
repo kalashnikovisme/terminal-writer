@@ -1,0 +1,12 @@
+audio:
+2-6-1/2-6-1.2.mp3
+
+
+
+input:
+%{delay 3000}alias%{delay 1000} gc%{delay 4000}="%{delay 3000}git commit"
+
+input:
+%{delay 28000}alias mv="mv -i"
+
+
