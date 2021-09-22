@@ -1,6 +1,9 @@
 audio:
 2-1-2/2-1-2.4.mp3
 
+prompt:
+~/projects/slurm_project:
+
 input:
 %{delay 43000}rails server
 
@@ -13,7 +16,12 @@ I, [2021-09-22T19:17:20.681000 #30808]  INFO -- : worker=0 spawning...
 I, [2021-09-22T19:17:20.683670 #30808]  INFO -- : master process ready
 I, [2021-09-22T19:17:20.684184 #30826]  INFO -- : worker=0 spawned pid=30826
 I, [2021-09-22T19:17:20.684373 #30826]  INFO -- : worker=0 ready
-%{delay 15000}^CI, [2021-09-22T19:18:51.637334 #30808]  INFO -- : reaped #<Process::Status: pid 30826 exit 0> worker=0
+%{delay 4000}^CI, [2021-09-22T19:18:51.637334 #30808]  INFO -- : reaped #<Process::Status: pid 30826 exit 0> worker=0
 I, [2021-09-22T19:18:51.637737 #30808]  INFO -- : master complete
 Exiting
 
+delay:
+2000
+
+input:
+%{delay 100000}
