@@ -109,6 +109,7 @@ const runInput = (data, actions, index) => {
   setTimeout(() => {
     term.write('\n\r');
     runAction(actions, index + 1)
+    console.log(`Input ends at ${time}`)
   }, overallTimeout)
 
   term.write(buildPrompt())
@@ -162,6 +163,7 @@ const showOutput = (output, actions, index) => {
   })
   setTimeout(() => {
     runAction(actions, index + 1)
+    console.log(`Output ends at ${time}`)
   }, overallTimeout)
   setTimeout(() => {
     showPart(output, 0)
@@ -171,6 +173,7 @@ const showOutput = (output, actions, index) => {
 const delay = (milliseconds, actions, index) => {
   setTimeout(() => {
     runAction(actions, index + 1)
+    console.log(`Delay ends at ${time}`)
   }, milliseconds)
 }
 
@@ -178,6 +181,7 @@ const clear = (actions, index) => {
   term.clear()
   setTimeout(() => {
     runAction(actions, index + 1)
+    console.log(`Clear ends at ${time}`)
   }, 100)
 }
 
@@ -185,6 +189,7 @@ const changePrompt = (prompt, actions, index) => {
   bashPrompt = prompt
   setTimeout(() => {
     runAction(actions, index + 1)
+    console.log(`Change Prompt ends at ${time}`)
   }, 100)
 }
 
@@ -219,10 +224,12 @@ const runAction = (actions, index) => {
   }
 }
 
+let time;
+
 const runTimer = () => {
   const timer = document.getElementById('timer')
   setInterval(() => {
-    const time = parseInt(timer.innerHTML)
+    time = parseInt(timer.innerHTML)
     timer.innerHTML = time + 1
   }, 1000)
 }
