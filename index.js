@@ -255,15 +255,18 @@ const parseInput = (line) => {
   const action = {
     action: 'input', 
   }
-  let data
+  let data = []
   if (line.match(delayRegex)) {
     const millisecondsRegex = /\d+/
-    const mil = parseInt(line.match(delayRegex)[0].match(millisecondsRegex)[0])
-    data = [
-      { type: 'typing', data: line.split(delayRegex)[0] },
-      { type: 'delay', data: mil },
-      { type: 'typing', data: line.split(delayRegex)[1] },
-    ]
+    const delays = line.match(delayRegex)
+    const parts = line.split(delayRegex)
+    _.each(parts, (part, i) => {
+      data.push({ type: 'typing', data: part })
+      if (delays.length >= (i + 1)) {
+        const mil = parseInt(delays[i].match(millisecondsRegex)[0])
+        data.push({ type: 'delay', data: mil })
+      }
+    })
   } else {
     data = [{ type: 'typing', data: line }]
   }
