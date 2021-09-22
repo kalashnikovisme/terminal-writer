@@ -1,0 +1,47 @@
+audio:
+2-1-2/2-1-2.3.mp3
+
+input:
+%{delay 11000}pwd
+
+output:
+/home/slurm
+
+delay:
+100
+
+input:
+%{delay 18000}cd test1/
+
+prompt:
+~/test1:
+
+input:
+%{delay 26000}pwd
+
+output:
+/home/slurm/test1
+
+delay:
+100
+
+input:
+%{delay 12000}cd ../
+
+prompt:
+~:
+
+input:
+%{delay 9000}cd ../../
+
+prompt:
+/:
+
+input:
+%{delay 21000}cd ~
+
+prompt:
+~:
+
+input:
+%{delay 100000}
