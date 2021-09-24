@@ -202,8 +202,16 @@ const changePrompt = (prompt, actions, index) => {
 }
 
 const scrollLines = (data, actions, index) => {
-  const count = parseInt(`-${data}`)
-  term.scrollLines(count)
+  const count = parseInt(data)
+  _.times(Math.abs(data), (i) => {
+    setTimeout(() => {
+      if (data > 0) {
+        term.scrollLines(1)
+      } else {
+        term.scrollLines(-1)
+      }
+    }, 10 * i)
+  })
   setTimeout(() => {
     runAction(actions, index + 1)
     console.log(`Scroll Lines ends at ${time}`)
