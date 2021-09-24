@@ -1,0 +1,76 @@
+audio:
+2-4-2/2-4-2.1.mp3
+
+input:
+%{delay 11000}cut -d: -f1 /etc/passwd
+
+output:
+root
+kirill
+nastya
+ilya
+sasha
+pavel
+maria
+
+delay:
+200
+
+input:
+%{delay 15000}sudo groupadd lawyers
+
+input:
+%{delay 4000}getent group
+
+output:
+root:x:0
+kirill:x:1
+nastya:x:2
+ilya:x:3
+sasha:x:4
+pavel:x:5
+maria:x:6
+lawyers:x:7
+
+delay:
+200
+
+input:
+%{delay 25000}sudo usermod -a -G lawyers kirill
+
+input:
+%{delay 35000}getent group lawyers
+
+output:
+kirill:x:1000
+
+delay:
+100
+
+input:
+%{delay 8000}sudo usermod -a -G lawyers ilya
+
+input:
+%{delay 3000}getent group lawyers
+
+output:
+kirill:x:1000
+ilya:x:1002
+
+delay:
+200
+
+input:
+%{delay 16000}sudo gpasswd --delete ilya lawyers
+
+input:
+%{delay 10000}getent group lawyers
+
+output:
+kirill:x:1000
+
+delay:
+100
+
+input:
+%{delay 100000}

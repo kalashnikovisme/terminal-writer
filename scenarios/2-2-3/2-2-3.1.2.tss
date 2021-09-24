@@ -1,0 +1,44 @@
+audio:
+2-2-3/2-2-3.1.2.mp3
+
+input:
+ls -l
+
+output:
+drw-rw-r-- 1 slurm slurm    0 сен 15 11:12 directory/
+-rw-rw-r-- 1 slurm slurm    0 сен 15 11:12 my-file.txt
+
+delay:
+200
+
+input:
+%{delay 3000}ln -s /home/user/my-file.txt soft-link.txt
+
+input:
+ls -l
+
+output:
+drw-rw-r-- 1 slurm slurm    0 сен 15 11:12 directory/
+-rw-rw-r-- 1 slurm slurm    0 сен 15 11:12 my-file.txt
+lrwxrwxrwx 1 slurm slurm   10 сен 15 11:12 soft-link.txt -> my-file.txt
+
+delay:
+200
+
+input:
+%{delay 5000}ln -s my-file.txt directory/soft-link.txt
+
+input:
+%{delay 500}cat directory/soft-link.txt
+
+delay:
+100
+
+output:
+cat: soft-link-1.txt: No such file or directory
+
+delay:
+100
+
+input:
+%{delay 10000}

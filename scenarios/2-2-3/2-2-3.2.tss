@@ -1,0 +1,50 @@
+audio:
+2-2-3/2-2-3.2.mp3
+
+input:
+%{delay 7000}cat test-2.txt
+
+output:
+I love Slurm!
+
+delay:
+100
+
+input:
+%{delay 2000}ls -li
+
+output:
+12357274 -rw-rw-r-- 1 slurm slurm    0 сен 15 11:52 test-2.txt
+
+delay:
+200
+
+input:
+%{delay 2000}ln test-2.txt hard-link.txt
+
+input:
+ls -li
+
+output:
+12357274 -rw-rw-r-- 2 slurm slurm    0 сен 15 11:52 hard-link.txt
+12357274 -rw-rw-r-- 2 slurm slurm    0 сен 15 11:52 test-2.txt
+
+delay:
+200
+
+input:
+%{delay 39000}cp test-2.txt test-3.txt
+
+input:
+ls -li
+
+output:
+12357274 -rw-rw-r-- 2 slurm slurm    0 сен 15 11:52 hard-link.txt
+12357274 -rw-rw-r-- 2 slurm slurm    0 сен 15 11:52 test-2.txt
+12357283 -rw-rw-r-- 1 slurm slurm    0 сен 15 11:53 test-3.txt
+
+delay:
+200
+
+input:
+%{delay 20000}

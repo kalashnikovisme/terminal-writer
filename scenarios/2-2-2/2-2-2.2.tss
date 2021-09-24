@@ -1,0 +1,29 @@
+audio:
+2-2-2/2-2-2.2.mp3
+
+delay:
+7000
+
+input:
+mkdir%{delay 6000} test
+
+delay:
+5000
+
+input:
+ls
+
+output:
+%{begin:36m}test another_dir%{end:36m}
+
+delay:
+5000
+
+input:
+mv test another_dir/
+
+input:
+ls another_dir/
+
+output:
+%{begin:36m}test%{end:36m}

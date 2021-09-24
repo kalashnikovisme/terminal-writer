@@ -1,0 +1,44 @@
+audio:
+2-3-1/2-3-1.2.mp3
+
+input:
+%{delay 5000}sudo apt-get remove postgresql
+
+output:
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages will be REMOVED:
+  postgresql
+0 upgraded, 0 newly installed, 1 to remove and 188 not upgraded.
+After this operation, 67,6 kB disk space will be freed.
+Do you want to continue? [Y/n] 
+%{delay 500}(Reading database ... 382512 files and directories currently installed.)
+Removing postgresql (12+214ubuntu0.1) ...
+
+delay:
+1000
+
+input:
+%{delay 5000}psql --version
+
+delay:
+100
+
+output:
+psql: command not found
+
+delay:
+100
+
+input:
+%{delay 8000}sudo service postgresql status
+
+output:
+Unit postgresql.service could not be found.
+
+delay:
+100
+
+input:
+%{delay 45000}sudo apt-get purge postgresql%{delay 10000}

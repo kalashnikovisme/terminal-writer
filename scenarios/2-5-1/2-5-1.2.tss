@@ -1,0 +1,67 @@
+audio:
+2-5-1/2-5-1.2.mp3
+
+input:
+%{delay 10000}export USER=pavel
+
+input:
+%{delay 5000}echo $USER
+
+output:
+pavel
+
+delay:
+100
+
+input:
+%{delay 45000}nano script.rb
+
+delay:
+100
+
+clear:
+
+output:
+%{begin:107m;30m}  GNU nano 4.8                                               New Buffer                            %{end:107m;30m}
+%{delay 2000}p%{delay 100}u%{delay 100}t%{delay 100}s%{delay 100} %{delay 1000}E%{delay 100}N%{delay 100}V%{delay 100}[%{delay 2000}'%{delay 100}U%{delay 100}S%{delay 100}E%{delay 100}R%{delay 100}'%{delay 100}]
+
+delay:
+8000
+
+clear:
+
+input:
+ruby script.rb
+
+output:
+pavel
+
+delay:
+100
+
+input:
+%{delay 13000}USER=%{delay 1000}maria ruby script.rb
+
+output:
+maria
+
+delay:
+100
+
+input:
+%{delay 16000}export USER=dasha
+
+input:
+%{delay 5000}ruby script.rb
+
+output:
+dasha
+
+delay:
+100
+
+input:
+%{delay 2000}ruby script.rb
+
+output:
+dasha

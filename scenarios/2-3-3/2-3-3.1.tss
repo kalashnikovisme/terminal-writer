@@ -1,0 +1,29 @@
+audio:
+2-3-3/2-3-3.1.mp3
+
+input:
+%{delay 5000}cd ~/Downloads/
+
+prompt:
+~/Downloads:
+
+input:
+%{delay 14000}chmod +x install.bin
+
+delay:
+29000
+
+input:
+%{delay 6000}./install.bin
+
+delay:
+1000
+
+output:
+Installation complete
+
+delay:
+100
+
+input:
+%{delay 100000}

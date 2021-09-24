@@ -1,16 +1,82 @@
-const bashPrompt = '\x1B[36m~:\x1B[0m '
-let term = new Terminal({ cols: 120, rows: 47, fontSize: '30' });
+let bashPrompt = '~:'
+let term = new Terminal({ cols: 120, rows: 40, fontSize: '20' });
 const typingTimeout = 100
 const directives = ['input:', 'output:', 'audio:', 'delay:']
 const newLine = '\n\r'
 const delayRegex = /\%\{delay \d+\}/g;
 
+const buildPrompt = () => {
+  return `\x1B[36m${bashPrompt}\x1B[0m `
+}
+
 const typing = (command, typingTimeout) => {
   _.each(command, (ch, i) => {
     setTimeout(() => {
-      term.write(ch)
+      if (ch === '\\') {
+        switch(command[i + 1]) {
+          case 'b': {
+            console.log('hui')
+            term.write("\b \b")
+          }
+          case ';': {
+            term.write('\\')
+          }
+        }
+      } else {
+        if (command[i - 1] == '\\') {
+          if (ch === ';') {
+            term.write(ch)
+          }
+        } else {
+          term.write(ch)
+        }
+      }
     }, typingTimeout * i)
   })
+}
+
+const runPastePart = (data, index) => {
+  const part = data[index]
+  let timeoutBeforeTheNext;
+  if (part) {
+    switch(part.type) {
+      case 'insert': {
+        term.write(part.data)
+        timeoutBeforeTheNext = 100
+        break
+      }
+      case 'delay': {
+        timeoutBeforeTheNext = part.data
+      }
+    }
+  }
+  setTimeout(() => {
+    runPastePart(data, index + 1)
+  }, timeoutBeforeTheNext)
+}
+
+const runPaste = (data, actions, index) => {
+  let overallTimeout = 0
+  _.each(data, (part) => {
+    switch(part.type) {
+      case 'insert': {
+        overallTimeout += 100
+        break
+      }
+      case 'delay': {
+        overallTimeout += part.data
+        break
+      }
+    }
+  })
+
+  setTimeout(() => {
+    term.write('\n\r');
+    runAction(actions, index + 1)
+  }, overallTimeout)
+
+  term.write(bashPrompt())
+  runPastePart(data, 0)
 }
 
 const runInputPart = (data, index) => {
@@ -50,12 +116,11 @@ const runInput = (data, actions, index) => {
 
   setTimeout(() => {
     term.write('\n\r');
-    if (actions[index + 1] && ['input', 'delay'].includes(actions[index + 1].action)) {
-      term.write(bashPrompt)
-    }
     runAction(actions, index + 1)
+    console.log(`Input ends at ${time}`)
   }, overallTimeout)
 
+  term.write(buildPrompt())
   runInputPart(data, 0)
 }
 
@@ -66,9 +131,7 @@ const showPart = (output, index) => {
     switch(part.type) {
       case 'text': {
         const nextPart = output[index + 1] 
-        if (index == output.length - 1) {
-          term.write(part.data + bashPrompt)
-        } else {
+        if (index != output.length - 1) {
           if (nextPart && ['colorBegin', 'colorEnd', 'delay'].includes(nextPart.type)) {
             term.write(part.data)
           } else {
@@ -78,7 +141,7 @@ const showPart = (output, index) => {
         break
       }
       case 'colorBegin': {
-        term.write(`\x1B[1;${part.data}`)
+        term.write(`\x1B[0;${part.data.textColor}\x1B[${part.data.backgroundColor}`)
         break
       }
       case 'colorEnd': {
@@ -97,16 +160,54 @@ const showPart = (output, index) => {
 }
 
 const showOutput = (output, actions, index) => {
+  let overallTimeout = 0
+  _.each(output, (part) => {
+    switch(part.type) {
+      case 'delay': {
+        overallTimeout += part.data
+        break
+      }
+    }
+  })
+  setTimeout(() => {
+    runAction(actions, index + 1)
+    console.log(`Output ends at ${time}`)
+  }, overallTimeout)
   setTimeout(() => {
     showPart(output, 0)
   }, 100)
-  runAction(actions, index + 1)
 }
 
 const delay = (milliseconds, actions, index) => {
   setTimeout(() => {
     runAction(actions, index + 1)
+    console.log(`Delay ends at ${time}`)
   }, milliseconds)
+}
+
+const clear = (actions, index) => {
+  term.clear()
+  setTimeout(() => {
+    runAction(actions, index + 1)
+    console.log(`Clear ends at ${time}`)
+  }, 100)
+}
+
+const changePrompt = (prompt, actions, index) => {
+  bashPrompt = prompt
+  setTimeout(() => {
+    runAction(actions, index + 1)
+    console.log(`Change Prompt ends at ${time}`)
+  }, 100)
+}
+
+const scrollLines = (data, actions, index) => {
+  const count = parseInt(`-${data}`)
+  term.scrollLines(count)
+  setTimeout(() => {
+    runAction(actions, index + 1)
+    console.log(`Scroll Lines ends at ${time}`)
+  }, 100)
 }
 
 const runAction = (actions, index) => {
@@ -123,15 +224,32 @@ const runAction = (actions, index) => {
       }
       case 'delay': {
         delay(action.data, actions, index)
+        break
+      }
+      case 'clear': {
+        clear(actions, index)
+        break
+      }
+      case 'paste': {
+        runPaste(action.data, actions, index)
+        break
+      }
+      case 'prompt': {
+        changePrompt(action.data, actions, index)
+      }
+      case 'scroll_lines': {
+        scrollLines(action.data, actions, index)
       }
     }
   }
 }
 
+let time;
+
 const runTimer = () => {
   const timer = document.getElementById('timer')
   setInterval(() => {
-    const time = parseInt(timer.innerHTML)
+    time = parseInt(timer.innerHTML)
     timer.innerHTML = time + 1
   }, 1000)
 }
@@ -141,19 +259,41 @@ const runScenario = (actions) => {
   runAction(actions, 0)
 }
 
-const parseInput = (line) => {
+const parsePaste = (line) => {
   const action = {
-    action: 'input', 
+    action: 'paste', 
   }
   let data
   if (line.match(delayRegex)) {
     const millisecondsRegex = /\d+/
     const mil = parseInt(line.match(delayRegex)[0].match(millisecondsRegex)[0])
     data = [
-      { type: 'typing', data: line.split(delayRegex)[0] },
+      { type: 'insert', data: line.split(delayRegex)[0] },
       { type: 'delay', data: mil },
-      { type: 'typing', data: line.split(delayRegex)[1] },
+      { type: 'insert', data: line.split(delayRegex)[1] },
     ]
+  } else {
+    data = [{ type: 'insert', data: line }]
+  }
+  return { ...action, data }
+}
+
+const parseInput = (line) => {
+  const action = {
+    action: 'input', 
+  }
+  let data = []
+  if (line.match(delayRegex)) {
+    const millisecondsRegex = /\d+/
+    const delays = line.match(delayRegex)
+    const parts = line.split(delayRegex)
+    _.each(parts, (part, i) => {
+      data.push({ type: 'typing', data: part })
+      if (delays.length >= (i + 1)) {
+        const mil = parseInt(delays[i].match(millisecondsRegex)[0])
+        data.push({ type: 'delay', data: mil })
+      }
+    })
   } else {
     data = [{ type: 'typing', data: line }]
   }
@@ -168,23 +308,29 @@ const parseOutput = (lines, index) => {
   for (var j = index + 1; j < lines.length; j++) {
     const line = lines[j]
     if (!directives.includes(line)) {
-      const colorRegex = /\%\{begin:\d+m}.*\%\{end:\d+m\}/
+      const beginRegex = /\%\{begin:\d+m;\d+m}/
+      const endRegex = /\%\{end:\d+m;\d+m}/
+      const colorRegex = /\%\{begin:\d+m;\d+m\}.*\%\{end:\d+m;\d+m\}/
       if (line.match(colorRegex)) {
-        const colorCodeRegex = /\d+m/
-        const color = line.match(colorRegex)[0].match(colorCodeRegex)[0]
-        const beginRegex = /\%\{begin:\d+m}/
-        const endRegex = /\%\{end:\d+m}/
+        const colorCodeRegex = /\d+\m/g
+        const backgroundColor = line.match(colorRegex)[0].match(colorCodeRegex)[0]
+        const textColor = line.match(colorRegex)[0].match(colorCodeRegex)[1]
         data.push({ type: 'text', data: line.split(beginRegex)[0] })
-        data.push({ type: 'colorBegin', data: color })
+        data.push({ type: 'colorBegin', data: { backgroundColor, textColor } })
         data.push({ type: 'text', data: line.split(beginRegex)[1].split(endRegex)[0] })
-        data.push({ type: 'colorEnd', data: color })
+        data.push({ type: 'colorEnd', data: { backgroundColor, textColor } })
         data.push({ type: 'text', data: line.split(endRegex)[1] })
       } else if (line.match(delayRegex)) {
         const millisecondsRegex = /\d+/
-        const mil = parseInt(line.match(delayRegex)[0].match(millisecondsRegex)[0])
-        data.push({ type: 'text', data: line.split(delayRegex)[0] })
-        data.push({ type: 'delay', data: mil })
-        data.push({ type: 'text', data: line.split(delayRegex)[1] })
+        const delays = line.match(delayRegex)
+        const parts = line.split(delayRegex)
+        _.each(parts, (part, i) => {
+          data.push({ type: 'text', data: part })
+          if (delays.length >= (i + 1)) {
+            const mil = parseInt(delays[i].match(millisecondsRegex)[0])
+            data.push({ type: 'delay', data: mil })
+          }
+        })
       } else {
         data.push({ type: 'text', data: line })
       }
@@ -225,6 +371,21 @@ const readSingleFile = (e) => {
       if (lines[i] == 'delay:') {
         actions.push({ action: 'delay', data: parseInt(lines[i + 1]) })
       }
+      if (lines[i] == 'clear:') {
+        actions.push({ action: 'clear' })
+      }
+      if (lines[i] == 'paste:') {
+        actions.push(parsePaste(lines[i + 1]))
+        i++ 
+      }
+      if (lines[i] == 'prompt:') {
+        actions.push({ action: 'prompt', data: lines[i + 1] })
+        i++
+      }
+      if (lines[i] == 'scroll_lines:') {
+        actions.push({ action: 'scroll_lines', data: lines[i + 1] })
+        i++
+      }
     }
     console.log(actions)
 
@@ -236,13 +397,12 @@ const readSingleFile = (e) => {
 const pressEnter = () => {
   term.write('\n');
   setTimeout(() => {
-    term.write(bashPrompt)
+    term.write(buildPrompt())
   }, 50)
 }
 
 window.addEventListener('load', () => {
   term.open(document.getElementById('terminal'));
-  term.write(bashPrompt)
   term.onKey((key, ev) => {
     if (key.domEvent.key == 'Enter') {
       pressEnter()

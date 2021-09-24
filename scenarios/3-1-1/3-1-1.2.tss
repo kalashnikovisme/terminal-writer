@@ -1,0 +1,49 @@
+audio:
+3-1-1/3-1-1.2.mp3
+
+prompt:
+~/testfind2:
+
+input:
+%{delay 3000}find . -name test1
+
+output:
+./test1
+find: ‘./important’: Permission denied
+find: ‘./private’: Permission denied
+
+delay:
+300
+
+input:
+%{delay 27000}find . -type d%{delay 1000} -name "%{delay 1000}dir*"
+
+output:
+./directory1
+./directory2
+
+delay:
+200
+
+input:
+%{delay 29000}find . -size +1M
+
+output:
+./amazing.mp3
+./forever.mp3
+
+delay:
+200
+
+input:
+%{delay 8000}find . -size -1M
+
+output:
+./diplom.docx
+./invoice.pdf
+
+delay:
+200
+
+input:
+%{delay 15000}find . -empty
