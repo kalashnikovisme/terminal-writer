@@ -1,0 +1,273 @@
+audio:
+3-1-1/3-1-1.5.mp3
+
+prompt:
+~/testfind5:
+
+input:
+grep%{delay 27000} -rn slurm
+
+output:
+test1:1:%{begin:31m;0m}slurm%{end:31m;0m}
+Test1:1:%{begin:31m;0m}slurm%{end:31m;0m}
+
+delay:
+200
+
+input:
+%{delay 30000}ps %{delay 1000}aux
+
+output:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         551  0.1  0.0      0     0 ?        I<   сен22   0:59 [kworker/u25:2-i915_flip]
+systemd+     874  0.0  0.0  24168 13176 ?        Ss   сен22   0:05 /lib/systemd/systemd-resolved
+systemd+     875  0.0  0.0  90260  6096 ?        Ssl  сен22   0:00 /lib/systemd/systemd-timesyncd
+root         880  0.0  0.0 247248  7916 ?        Ssl  сен22   0:01 /usr/lib/accountsservice/accounts-daemon
+root         881  0.0  0.0   2548   780 ?        Ss   сен22   0:09 /usr/sbin/acpid
+avahi        884  0.0  0.0   8536  3184 ?        Ss   сен22   0:01 avahi-daemon: running [FemaleKidKiller.local]
+root         885  0.0  0.0   8428  4540 ?        Ss   сен22   0:00 /usr/lib/bluetooth/bluetoothd
+root         886  0.0  0.0  18052  3088 ?        Ss   сен22   0:00 /usr/sbin/cron -f
+message+     888  0.0  0.0   9980  6628 ?        Ss   сен22   0:10 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root         889  0.1  0.1 345240 20676 ?        Ssl  сен22   1:09 /usr/sbin/NetworkManager --no-daemon
+root         894  0.0  0.0  81944  3692 ?        Ssl  сен22   0:04 /usr/sbin/irqbalance --foreground
+root         897  0.0  0.1  47968 19924 ?        Ss   сен22   0:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+root         902  0.0  0.0 249868 11996 ?        Ssl  сен22   0:03 /usr/lib/policykit-1/polkitd --no-debug
+syslog       904  0.0  0.0 224356  5040 ?        Ssl  сен22   0:01 /usr/sbin/rsyslogd -n -iNONE
+root         905  0.0  0.1 2335024 29236 ?       Ssl  сен22   0:10 /usr/lib/snapd/snapd
+root         921  0.0  0.0 244240  6120 ?        Ssl  сен22   0:00 /usr/libexec/switcheroo-control
+root         923  0.0  0.0  16752  8168 ?        Ss   сен22   0:00 /lib/systemd/systemd-logind
+root         924  0.0  0.0 282388 10644 ?        Ssl  сен22   0:31 /usr/sbin/thermald --systemd --dbus-enable --adaptive
+root         925  0.0  0.0 393368 13644 ?        Ssl  сен22   0:04 /usr/lib/udisks2/udisksd
+root         926  0.0  0.0  13940  7924 ?        Ss   сен22   0:00 /sbin/wpa_supplicant -u -s -O /run/wpa_supplicant
+avahi        932  0.0  0.0   8352   328 ?        S    сен22   0:00 avahi-daemon: chroot helper
+root        1008  0.0  0.0 240016 10400 ?        Ssl  сен22   0:00 /usr/sbin/ModemManager --filter-policy=strict
+colord      1011  0.0  0.0 255000 14540 ?        Ssl  сен22   0:00 /usr/libexec/colord
+root        1019  0.0  0.1 126660 22880 ?        Ssl  сен22   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root        1028  0.0  0.0 260996  9808 ?        Ssl  сен22   0:01 /usr/lib/upower/upowerd
+root        1030  0.0  0.2 2009192 48476 ?       Ssl  сен22   0:31 /usr/bin/containerd
+root        1073  0.0  0.0 248248  8568 ?        Ssl  сен22   0:00 /usr/sbin/gdm3
+redis       1098  0.2  0.0  61432  5256 ?        Ssl  сен22   1:30 /usr/bin/redis-server 127.0.0.1:6379
+postgres    1275  0.0  0.1 227000 28464 ?        Ss   сен22   0:01 /usr/lib/postgresql/13/bin/postgres -D /var/lib/postgresql/13/main -c config_file=/etc/postgresql/13/main/postgresql.con
+postgres    1276  0.0  0.1 226932 28276 ?        Ss   сен22   0:02 /usr/lib/postgresql/12/bin/postgres -D /var/lib/postgresql/12/main -c config_file=/etc/postgresql/12/main/postgresql.con
+whoopsie    1429  0.0  0.0 253320 15524 ?        Ssl  сен22   0:00 /usr/bin/whoopsie -f
+kernoops    1439  0.0  0.0  11264   448 ?        Ss   сен22   0:02 /usr/sbin/kerneloops --test
+kernoops    1441  0.0  0.0  11264   444 ?        Ss   сен22   0:02 /usr/sbin/kerneloops
+postgres    1461  0.0  0.0 227100  6156 ?        Ss   сен22   0:00 postgres: 13/main: checkpointer 
+postgres    1462  0.0  0.0 227000  5644 ?        Ss   сен22   0:00 postgres: 13/main: background writer 
+postgres    1463  0.0  0.0 227000  9832 ?        Ss   сен22   0:00 postgres: 13/main: walwriter 
+postgres    1464  0.0  0.0 227544  8292 ?        Ss   сен22   0:00 postgres: 13/main: autovacuum launcher 
+postgres    1465  0.0  0.0  81356  4776 ?        Ss   сен22   0:00 postgres: 13/main: stats collector 
+postgres    1466  0.0  0.0 227556  6464 ?        Ss   сен22   0:00 postgres: 13/main: logical replication launcher 
+root        1469  0.0  0.0 1667308 11484 ?       Sl   сен22   0:27 /opt/teamviewer/tv_bin/teamviewerd -d
+rtkit       1514  0.0  0.0 152940  2968 ?        SNsl сен22   0:00 /usr/libexec/rtkit-daemon
+root        1532  0.0  0.5 1686008 91312 ?       Ssl  сен22   0:22 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+postgres    1537  0.0  0.0 227036  9192 ?        Ss   сен22   0:00 postgres: 12/main: checkpointer   
+postgres    1538  0.0  0.0 226932  5556 ?        Ss   сен22   0:00 postgres: 12/main: background writer   
+postgres    1539  0.0  0.0 226932  9768 ?        Ss   сен22   0:00 postgres: 12/main: walwriter   
+postgres    1540  0.0  0.0 227600  8124 ?        Ss   сен22   0:01 postgres: 12/main: autovacuum launcher   
+postgres    1541  0.0  0.0  81568  5096 ?        Ss   сен22   0:02 postgres: 12/main: stats collector   
+postgres    1542  0.0  0.0 227472  6484 ?        Ss   сен22   0:00 postgres: 12/main: logical replication launcher   
+root        1760  0.0  0.0   2496   580 ?        S    сен22   0:00 bpfilter_umh
+root        2514  0.0  0.0 175840  9608 ?        Sl   сен22   0:00 gdm-session-worker [pam/gdm-password]
+slurm       2525  0.0  0.0  19368 10592 ?        Ss   сен22   0:01 /lib/systemd/systemd --user
+slurm       2526  0.0  0.0 169280  3236 ?        S    сен22   0:00 (sd-pam)
+slurm       2531  4.3  0.1 4638328 24412 ?       S<sl сен22  32:22 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+slurm       2533  0.0  0.1 521604 28396 ?        SNsl сен22   0:07 /usr/libexec/tracker-miner-fs
+slurm       2537  0.0  0.0   8856  5700 ?        Ss   сен22   0:17 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+slurm       2552  0.0  0.0 248448  7840 ?        Ssl  сен22   0:00 /usr/libexec/gvfsd
+slurm       2557  0.0  0.0 378344  6552 ?        Sl   сен22   0:00 /usr/libexec/gvfsd-fuse /run/user/1000/gvfs -f -o big_writes
+slurm       2563  0.0  0.0 322888  9432 ?        Ssl  сен22   0:02 /usr/libexec/gvfs-udisks2-volume-monitor
+slurm       2569  0.0  0.0 246744  6464 ?        Ssl  сен22   0:00 /usr/libexec/gvfs-gphoto2-volume-monitor
+slurm       2573  0.0  0.0 245128  6748 ?        Ssl  сен22   0:00 /usr/libexec/gvfs-goa-volume-monitor
+slurm       2577  0.0  0.5 901440 85684 ?        SLl  сен22   0:10 /usr/libexec/goa-daemon
+slurm       2584  0.0  0.0 323388  8972 ?        Sl   сен22   0:00 /usr/libexec/goa-identity-service
+slurm       2590  0.0  0.0 244336  6008 ?        Ssl  сен22   0:00 /usr/libexec/gvfs-mtp-volume-monitor
+slurm       2594  0.0  0.0 325356  8944 ?        Ssl  сен22   0:01 /usr/libexec/gvfs-afc-volume-monitor
+slurm       2602  0.0  0.0 396392  7920 ?        Sl   сен22   0:01 /usr/bin/gnome-keyring-daemon --daemonize --login
+root        2608  0.0  0.0      0     0 ?        S<   сен22   0:00 [krfcommd]
+slurm       2622  0.0  0.0 172652  6452 tty2     Ssl+ сен22   0:00 /usr/lib/gdm3/gdm-x-session --run-script env GNOME_SHELL_SESSION_MODE=ubuntu /usr/bin/gnome-session --systemd --session=
+slurm       2625  6.6  0.6 1095152 111196 tty2   Rl+  сен22  48:37 /usr/lib/xorg/Xorg vt2 -displayfd 3 -auth /run/user/1000/gdm/Xauthority -background none -noreset -keeptty -verbose 3
+slurm       2645  0.0  0.0 248528  7544 ?        Sl   сен22   0:00 /usr/bin/gnome-keyring-daemon --start --foreground --components=secrets
+slurm       2673  0.0  0.0 197044 13988 tty2     Sl+  сен22   0:00 /usr/libexec/gnome-session-binary --systemd --systemd --session=ubuntu
+slurm       2826  0.0  0.0   6040   460 ?        Ss   сен22   0:00 /usr/bin/ssh-agent /usr/bin/im-launch env GNOME_SHELL_SESSION_MODE=ubuntu /usr/bin/gnome-session --systemd --session=ubu
+slurm       2848  0.0  0.0 305608  6724 ?        Ssl  сен22   0:00 /usr/libexec/at-spi-bus-launcher
+slurm       2853  0.0  0.0   7380  4036 ?        S    сен22   0:01 /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 3
+slurm       2863  0.0  0.0  98696  4332 ?        Ssl  сен22   0:00 /usr/libexec/gnome-session-ctl --monitor
+slurm       2868  0.0  0.0 493472 15820 ?        Ssl  сен22   0:01 /usr/libexec/gnome-session-binary --systemd-service --session=ubuntu
+slurm       2883  4.6  1.9 6178776 309508 ?      Ssl  сен22  33:54 /usr/bin/gnome-shell
+slurm       2915  0.0  0.0 319584  8316 ?        Sl   сен22   0:42 ibus-daemon --panel disable --xim
+slurm       2918  0.0  0.0 244228  5948 ?        Ssl  сен22   0:00 /usr/libexec/xdg-permission-store
+slurm       2923  0.0  0.1 1059828 25508 ?       Sl   сен22   0:00 /usr/libexec/gnome-shell-calendar-server
+slurm       2925  0.0  0.0 171336  7160 ?        Sl   сен22   0:00 /usr/libexec/ibus-memconf
+slurm       2926  0.0  0.1 281592 28672 ?        Sl   сен22   0:10 /usr/libexec/ibus-extension-gtk3
+slurm       2930  0.0  0.1 202208 24040 ?        Sl   сен22   0:00 /usr/libexec/ibus-x11 --kill-daemon
+slurm       2933  0.0  0.0 599600 12056 ?        Sl   сен22   0:40 /usr/libexec/ibus-portal
+slurm       2940  0.0  0.0 162836  7644 ?        Sl   сен22   0:10 /usr/libexec/at-spi2-registryd --use-gnome-session
+slurm       2949  0.0  0.0 156732  6148 ?        Sl   сен22   0:01 /usr/libexec/dconf-service
+slurm       2957  0.0  0.2 952048 35376 ?        Ssl  сен22   0:01 /usr/libexec/evolution-source-registry
+slurm       2967  0.0  0.1 2938920 26692 ?       Sl   сен22   0:00 /usr/bin/gjs /usr/share/gnome-shell/org.gnome.Shell.Notifications
+slurm       2981  0.0  0.0 318480  6468 ?        Ssl  сен22   0:00 /usr/libexec/gsd-a11y-settings
+slurm       2982  0.0  0.1 855112 26460 ?        Ssl  сен22   0:01 /usr/libexec/gsd-color
+slurm       2983  0.0  0.0 382444 16120 ?        Ssl  сен22   0:00 /usr/libexec/gsd-datetime
+slurm       2986  0.0  0.0 320672  7948 ?        Ssl  сен22   0:02 /usr/libexec/gsd-housekeeping
+slurm       2989  0.0  0.1 350316 24648 ?        Ssl  сен22   0:01 /usr/libexec/gsd-keyboard
+slurm       2991  0.0  0.1 1364688 29536 ?       Ssl  сен22   0:07 /usr/libexec/gsd-media-keys
+slurm       2994  0.0  0.1 691220 26756 ?        Ssl  сен22   0:02 /usr/libexec/gsd-power
+slurm       2996  0.0  0.0 256880 11368 ?        Ssl  сен22   0:00 /usr/libexec/gsd-print-notifications
+slurm       3000  0.0  0.0 465732  6212 ?        Ssl  сен22   0:00 /usr/libexec/gsd-rfkill
+slurm       3001  0.0  0.0 244140  6048 ?        Ssl  сен22   0:00 /usr/libexec/gsd-screensaver-proxy
+slurm       3002  0.0  0.0 473748 10516 ?        Ssl  сен22   0:03 /usr/libexec/gsd-sharing
+slurm       3003  0.0  0.0 323984  8124 ?        Ssl  сен22   0:00 /usr/libexec/gsd-smartcard
+slurm       3005  0.0  0.0 328176  9080 ?        Ssl  сен22   0:00 /usr/libexec/gsd-sound
+slurm       3010  0.0  0.0 393784  7008 ?        Ssl  сен22   0:00 /usr/libexec/gsd-usb-protection
+slurm       3011  0.0  0.1 275916 24016 ?        Ssl  сен22   0:01 /usr/libexec/gsd-wacom
+slurm       3015  0.0  0.0 322804  8120 ?        Ssl  сен22   0:00 /usr/libexec/gsd-wwan
+slurm       3017  0.0  0.1 351172 26152 ?        Ssl  сен22   0:02 /usr/libexec/gsd-xsettings
+slurm       3037  0.0  0.0 231800  5832 ?        Sl   сен22   0:00 /usr/libexec/gsd-disk-utility-notify
+slurm       3040  0.0  0.4 1075456 75868 ?       Sl   сен22   0:02 /usr/libexec/evolution-data-server/evolution-alarm-notify
+slurm       3043  0.0  0.0 321508  7896 ?        Sl   сен22   0:00 /usr/lib/x86_64-linux-gnu/indicator-messages/indicator-messages-service
+slurm       3073  0.0  0.0 171464  7036 ?        Sl   сен22   0:09 /usr/libexec/ibus-engine-simple
+slurm       3085  0.0  0.0 350824 15124 ?        Sl   сен22   0:00 /usr/libexec/gsd-printer
+slurm       3135  0.0  0.0 322736  8220 ?        Sl   сен22   0:00 /usr/libexec/gvfsd-trash --spawner :1.3 /org/gtk/gvfs/exec_spaw/0
+slurm       3141  0.0  0.0 171072  6528 ?        Ssl  сен22   0:00 /usr/libexec/gvfsd-metadata
+slurm       3143  0.0  1.4 1276264 230376 ?      Sl   сен22   0:12 /snap/snap-store/547/usr/bin/snap-store --gapplication-service
+slurm       3160  0.0  0.0 539896  6644 ?        Ssl  сен22   0:00 /usr/libexec/xdg-document-portal
+slurm       3190  0.0  0.3 1908076 63184 ?       Ssl  сен22   0:05 /usr/libexec/evolution-calendar-factory
+slurm       3278  0.0  0.1 755744 30092 ?        Ssl  сен22   0:00 /usr/libexec/evolution-addressbook-factory
+slurm       3420  0.0  0.0 619008 10948 ?        Ssl  сен22   0:02 /usr/libexec/xdg-desktop-portal
+slurm       3424  0.0  0.3 1252804 55508 ?       Ssl  сен22   0:15 /usr/libexec/xdg-desktop-portal-gtk
+slurm       3995  0.1  0.1 1220136 18888 ?       Sl   сен22   1:23 zeitgeist-datahub
+slurm       4167  0.0  0.0 395664  9604 ?        Ssl  сен22   0:01 /usr/bin/zeitgeist-daemon
+slurm       4283  0.0  0.1 272820 17744 ?        Ssl  сен22   0:01 /usr/lib/zeitgeist/zeitgeist-fts
+slurm       4718  0.7  0.5 859684 86920 ?        Ssl  сен22   5:50 /usr/libexec/gnome-terminal-server
+slurm       4720  5.3  2.3 1582940 379396 ?      SLl  сен22  39:33 /opt/meetsidekick.com/sidekick/chrome
+slurm       4728  0.0  0.0  16860   592 ?        S    сен22   0:00 cat
+slurm       4729  0.0  0.0  16860   520 ?        S    сен22   0:00 cat
+slurm       4732  1.2  2.4 2275464 396532 ?      Sl   сен22   9:33 /home/slurm/Downloads/Telegram/Telegram -workdir /home/slurm/.local/share/TelegramDesktop/ --
+slurm       4737  0.0  0.0  24792 10356 pts/0    Ss   сен22   0:01 bash
+slurm       4836  0.0  0.3 277992 53640 ?        S    сен22   0:00 /opt/meetsidekick.com/sidekick/chrome --type=zygote --no-zygote-sandbox
+slurm       4837  0.0  0.3 277992 53840 ?        S    сен22   0:00 /opt/meetsidekick.com/sidekick/chrome --type=zygote
+slurm       4846  0.0  0.0  10744  4268 ?        S    сен22   0:00 /opt/meetsidekick.com/sidekick/nacl_helper
+slurm       4849  0.0  0.0 277992 15116 ?        S    сен22   0:02 /opt/meetsidekick.com/sidekick/chrome --type=zygote
+slurm       4884  4.9  1.3 1014672 217216 ?      Sl   сен22  36:44 /opt/meetsidekick.com/sidekick/chrome --type=gpu-process --field-trial-handle=16743117266956029394,4441389752128876351,1
+slurm       4890  1.4  0.7 421692 120080 ?       SLl  сен22  10:31 /opt/meetsidekick.com/sidekick/chrome --type=utility --utility-sub-type=network.mojom.NetworkService --field-trial-handl
+slurm       4915  0.0  0.2 363664 46052 ?        Sl   сен22   0:43 /opt/meetsidekick.com/sidekick/chrome --type=utility --utility-sub-type=storage.mojom.StorageService --field-trial-handl
+slurm       4938  0.0  0.0   2616   604 ?        S    сен22   0:00 sh -c /usr/lib/x86_64-linux-gnu/libproxy/0.4.15/pxgsettings org.gnome.system.proxy org.gnome.system.proxy.http org.gnome
+slurm       4939  0.0  0.0 233652  6496 ?        Sl   сен22   0:00 /usr/lib/x86_64-linux-gnu/libproxy/0.4.15/pxgsettings org.gnome.system.proxy org.gnome.system.proxy.http org.gnome.syste
+slurm       4961  1.3  2.9 17703956 476248 ?     Sl   сен22   9:36 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=16743117266956029394,4441389752128876351,1310
+slurm       5148  0.0  0.1 425616 27688 ?        Sl   сен22   0:02 update-notifier
+slurm       5256  0.3  1.4 4893576 237464 ?      Sl   сен22   2:51 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=16743117266956029394,4441389752128876351,1310
+slurm       5314  0.0  0.8 4677996 132228 ?      Sl   сен22   0:28 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=16743117266956029394,4441389752128876351,1310
+slurm       5474  0.4  0.3 852740 63168 ?        Sl   сен22   3:10 /opt/meetsidekick.com/sidekick/chrome --type=utility --utility-sub-type=audio.mojom.AudioService --field-trial-handle=16
+slurm       5622  0.0  0.3 1258180 55816 ?       Sl   сен22   0:01 /usr/bin/gnome-calendar --gapplication-service
+slurm       5626  0.0  0.2 399632 41312 ?        SLl  сен22   0:01 /usr/bin/seahorse --gapplication-service
+slurm       5803  0.0  0.6 4649528 111508 ?      Sl   сен22   0:25 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=16743117266956029394,4441389752128876351,1310
+slurm       5893  0.0  0.0  92436  3372 ?        SLs  сен22   0:00 /usr/bin/gpg-agent --supervised
+slurm       8609  0.0  0.0   6040  2856 ?        S    сен22   0:00 /usr/bin/ssh-agent -D -a /run/user/1000/keyring/.ssh
+slurm      11160  0.0  0.0 396656  8908 ?        Sl   сен22   0:00 /usr/libexec/gvfsd-network --spawner :1.3 /org/gtk/gvfs/exec_spaw/1
+slurm      11169  0.0  0.1 497564 20728 ?        Sl   сен22   0:00 /usr/libexec/gvfsd-smb-browse --spawner :1.3 /org/gtk/gvfs/exec_spaw/2
+slurm      11184  0.0  0.0 323620  8324 ?        Sl   сен22   0:00 /usr/libexec/gvfsd-dnssd --spawner :1.3 /org/gtk/gvfs/exec_spaw/3
+uuidd      12790  0.0  0.0  19236  1080 ?        Ss   сен22   0:00 /usr/sbin/uuidd --socket-activation
+slurm      15353  0.0  0.0 288452 11240 ?        Sl   сен22   0:00 /usr/libexec/gvfsd-http --spawner :1.3 /org/gtk/gvfs/exec_spaw/4
+slurm      16998  0.3  1.0 5103880 170296 ?      Sl   сен22   2:12 /snap/rocketchat-desktop/416/rocketchat-desktop --no-sandbox
+slurm      17057  0.0  0.2 388156 43240 ?        S    сен22   0:00 /snap/rocketchat-desktop/416/rocketchat-desktop --type=zygote --no-zygote-sandbox --no-sandbox
+slurm      17058  0.0  0.2 388156 44032 ?        S    сен22   0:00 /snap/rocketchat-desktop/416/rocketchat-desktop --type=zygote --no-sandbox
+slurm      17083  0.0  0.1 618228 20928 ?        Sl   сен22   0:00 /usr/bin/snap userd
+slurm      17110  1.0  0.8 638620 141224 ?       Sl   сен22   7:01 /snap/rocketchat-desktop/416/rocketchat-desktop --type=gpu-process --field-trial-handle=16040393586296646328,12324727300
+slurm      17116  0.0  0.3 473048 64752 ?        Sl   сен22   0:04 /snap/rocketchat-desktop/416/rocketchat-desktop --type=utility --utility-sub-type=network.mojom.NetworkService --field-t
+slurm      17131  0.0  0.7 4744704 115348 ?      Sl   сен22   0:01 /snap/rocketchat-desktop/416/rocketchat-desktop --type=renderer --no-sandbox --autoplay-policy=no-user-gesture-required 
+slurm      17164  0.0  0.9 4770964 153584 ?      Sl   сен22   0:24 /snap/rocketchat-desktop/416/rocketchat-desktop --type=renderer --no-sandbox --autoplay-policy=no-user-gesture-required 
+slurm      17187  2.7  2.8 5118476 459644 ?      Sl   сен22  18:15 /snap/rocketchat-desktop/416/rocketchat-desktop --type=renderer --no-sandbox --autoplay-policy=no-user-gesture-required 
+slurm      17223  0.0  0.3 726068 51296 ?        Sl   сен22   0:03 /snap/rocketchat-desktop/416/rocketchat-desktop --type=utility --utility-sub-type=audio.mojom.AudioService --field-trial
+slurm      18923  0.1  0.7 4654828 121184 ?      Sl   сен22   0:43 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=16743117266956029394,4441389752128876351,1310
+slurm      19675  0.0  0.0  23100  8592 pts/1    Ss+  сен22   0:00 bash
+slurm      19761  0.0  0.0  23100  8576 pts/2    Ss   сен22   0:00 bash
+slurm      19847  0.0  0.0  23748  9492 pts/3    Ss+  сен22   0:00 bash
+slurm      19934  0.2  0.1  79424 29996 pts/2    S+   сен22   1:41 vi
+slurm      20294  0.5  1.6 4883844 264088 ?      Sl   сен22   3:27 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=16743117266956029394,4441389752128876351,1310
+slurm      20344  0.3  1.0 4811880 168216 ?      Sl   сен22   2:15 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=16743117266956029394,4441389752128876351,1310
+slurm      20423  0.0  0.5 4639028 97376 ?       Sl   сен22   0:06 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=16743117266956029394,4441389752128876351,1310
+slurm      20872  4.4  1.5 4991024 244648 ?      Sl   сен22  27:54 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=16743117266956029394,4441389752128876351,1310
+slurm      21087  0.3  1.1 2273960 192292 ?      SLl  сен22   2:14 /usr/bin/nautilus --gapplication-service
+slurm      21998  3.1  2.2 4760076 365000 ?      Sl   сен22  19:49 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=16743117266956029394,4441389752128876351,1310
+slurm      27301  1.7  1.7 4867768 289580 ?      Sl   сен22   9:36 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=16743117266956029394,4441389752128876351,1310
+slurm      28407  0.0  0.0  23744  9604 pts/4    Ss+  сен22   0:00 bash
+slurm      28582  0.0  0.0  23100  8760 pts/5    Ss+  сен22   0:00 bash
+slurm      28668  0.0  0.0  23100  8708 pts/6    Ss   сен22   0:00 bash
+slurm      28754  0.0  0.0  23880  9560 pts/7    Ss   сен22   0:00 bash
+slurm      28840  0.0  0.1  76324 26772 pts/6    S+   сен22   0:12 vi
+slurm      39177  0.4  0.7 4723760 126104 ?      Sl   сен22   1:42 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=16743117266956029394,4441389752128876351,1310
+slurm      39290  0.0  0.5 4623920 90356 ?       Sl   сен22   0:01 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=16743117266956029394,4441389752128876351,1310
+slurm      39935  0.0  0.9 13114292 147008 ?     Sl   сен22   0:14 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=16743117266956029394,4441389752128876351,1310
+slurm      42399  0.1  1.4 8966560 228220 ?      Sl   сен22   0:40 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=16743117266956029394,4441389752128876351,1310
+slurm      42577  0.1  1.0 4761504 177888 ?      Sl   сен22   0:39 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=16743117266956029394,4441389752128876351,1310
+slurm      42590  0.0  0.5 4624660 91756 ?       Sl   сен22   0:01 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=16743117266956029394,4441389752128876351,1310
+slurm      42606  0.0  0.4 4600932 68768 ?       Sl   сен22   0:00 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=16743117266956029394,4441389752128876351,1310
+slurm      43024  0.2  1.3 8987860 220124 ?      Sl   сен22   0:56 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=16743117266956029394,4441389752128876351,1310
+slurm      43099  0.0  0.4 4600932 68232 ?       Sl   сен22   0:00 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=16743117266956029394,4441389752128876351,1310
+slurm      43118  0.7  0.6 4660020 109592 ?      Sl   сен22   2:41 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=16743117266956029394,4441389752128876351,1310
+slurm      43139  0.4  1.1 4741344 180352 ?      Sl   сен22   1:41 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=16743117266956029394,4441389752128876351,1310
+slurm      43434  0.0  0.5 4623920 88972 ?       Sl   сен22   0:01 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=16743117266956029394,4441389752128876351,1310
+slurm      43479  0.0  0.5 4629040 89796 ?       Sl   сен22   0:01 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=16743117266956029394,4441389752128876351,1310
+slurm      43492  0.0  0.5 4625968 89164 ?       Sl   сен22   0:01 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=16743117266956029394,4441389752128876351,1310
+slurm      50653  0.6  1.4 8985520 240512 ?      Sl   сен22   1:52 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=16743117266956029394,4441389752128876351,1310
+slurm      52375  0.0  0.8 4671944 132120 ?      Sl   сен22   0:05 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=16743117266956029394,4441389752128876351,1310
+slurm      52460  0.0  0.2 101300 32684 pts/7    S+   сен22   0:00 /home/slurm/.rvm/rubies/ruby-2.7.4/bin/ruby bin/rails c
+slurm      52461  0.0  0.2 305600 36708 pts/7    Sl   сен22   0:00 spring server | tramway_pro | started 4 hours ago
+slurm      52463  0.0  1.4 990988 236904 ?       Ssl  сен22   0:07 ruby -I /home/slurm/.rvm/gems/ruby-2.7.4/gems/spring-2.1.1/lib -e require 'spring/application/boot'
+slurm      52485  0.0  1.1 924424 193220 ?       Ss   сен22   0:07 rails_console
+root       53343  0.0  0.0  37368  9196 ?        Ss   00:00   0:00 /usr/sbin/cupsd -l
+root       53345  0.0  0.0 178592 12276 ?        Ssl  00:00   0:00 /usr/sbin/cups-browsed
+slurm      58132  0.0  0.3 4593764 53420 ?       Sl   01:38   0:00 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=16743117266956029394,4441389752128876351,131072 
+root       60909  0.0  0.0      0     0 ?        I    02:05   0:00 [kworker/5:1-events]
+root       60910  0.0  0.0      0     0 ?        I    02:05   0:01 [kworker/0:1-events]
+root       62220  0.0  0.0      0     0 ?        I    02:19   0:00 [kworker/1:1-events]
+root       62562  0.0  0.0      0     0 ?        I    02:23   0:00 [kworker/2:2-events]
+root       62613  0.0  0.0      0     0 ?        I    02:24   0:00 [kworker/9:2-events]
+root       62747  0.0  0.0      0     0 ?        I    02:26   0:00 [kworker/10:2-mm_percpu_wq]
+root       64113  0.0  0.0      0     0 ?        I    02:55   0:00 [kworker/9:1-cgroup_destroy]
+root       64764  0.0  0.0      0     0 ?        I    03:11   0:02 [kworker/u24:1-events_unbound]
+root       65587  0.3  0.0      0     0 ?        I    03:26   0:09 [kworker/3:0-inet_frag_wq]
+root       65805  0.0  0.0      0     0 ?        I    03:29   0:00 [kworker/8:0-events]
+root       65892  0.0  0.0      0     0 ?        I    03:31   0:00 [kworker/6:2-events]
+slurm      66031 42.2  4.1 3477892 677840 ?      SLl  03:33  14:21 obs
+root       66162  0.0  0.0      0     0 ?        I    03:33   0:01 [kworker/u24:3-events_unbound]
+root       66527  0.0  0.0      0     0 ?        I    03:36   0:00 [kworker/8:1-cgroup_destroy]
+root       67071  0.0  0.0      0     0 ?        I    03:40   0:00 [kworker/1:0-events]
+root       67193  1.6  0.0      0     0 ?        I    03:41   0:25 [kworker/3:2-events]
+root       67428  0.0  0.0      0     0 ?        I    03:43   0:00 [kworker/11:0-inet_frag_wq]
+root       67429  0.0  0.0      0     0 ?        I    03:43   0:00 [kworker/5:0-events]
+root       67563  0.0  0.0      0     0 ?        I    03:46   0:00 [kworker/2:3-events]
+root       67629  0.0  0.0      0     0 ?        I    03:46   0:00 [kworker/0:0-inet_frag_wq]
+root       67630  0.0  0.0      0     0 ?        I<   03:47   0:00 [kworker/u25:0-rb_allocator]
+root       67830  0.0  0.0      0     0 ?        I    03:49   0:00 [kworker/11:2-events]
+slurm      68006  0.0  0.1 1291508 19208 ?       SNl  03:51   0:00 /usr/lib/x86_64-linux-gnu/tumbler-1/tumblerd
+root       68096  0.0  0.0      0     0 ?        I    03:52   0:00 [kworker/6:0-mm_percpu_wq]
+root       68097  0.0  0.0      0     0 ?        I    03:52   0:00 [kworker/4:0-mm_percpu_wq]
+root       68410  0.0  0.0      0     0 ?        I    03:56   0:00 [kworker/7:2-events]
+root       68675  0.0  0.0      0     0 ?        I    03:58   0:00 [kworker/4:2-cgroup_destroy]
+root       68676  0.0  0.0      0     0 ?        I    03:58   0:00 [kworker/10:0-events]
+root       68758  0.0  0.0      0     0 ?        I    03:59   0:00 [kworker/u24:2-i915]
+root       68760  0.0  0.0      0     0 ?        I<   03:59   0:00 [kworker/u25:3]
+root       69033  0.0  0.0      0     0 ?        I    04:01   0:00 [kworker/7:1-events]
+root       69161  0.0  0.0      0     0 ?        I    04:02   0:00 [kworker/8:2-events]
+root       69162  0.0  0.0      0     0 ?        I    04:02   0:00 [kworker/0:2-events]
+root       69323  0.0  0.0      0     0 ?        I    04:04   0:00 [kworker/9:0-events]
+root       69325  0.0  0.0      0     0 ?        I    04:04   0:00 [kworker/11:1-events]
+root       69411  0.0  0.0      0     0 ?        I    04:05   0:00 [kworker/4:1-events]
+root       69413  1.6  0.0      0     0 ?        I    04:05   0:01 [kworker/3:1-events]
+slurm      69468  0.7  0.4 4597092 79012 ?       Sl   04:06   0:00 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=16743117266956029394,4441389752128876351,131072 
+root       69485  0.0  0.0      0     0 ?        I    04:06   0:00 [kworker/7:0]
+slurm      69502  0.0  0.0  20136  3364 pts/0    R+   04:06   0:00 ps aux
+
+delay:
+3000
+
+input:
+%{delay 15000}ps aux %{delay 1000}| %{delay 2000}grep chrome
+
+output:
+slurm       4720  5.3  2.3 1580892 379104 ?      SLl  сен22  39:35 /opt/meetsidekick.com/sidekick/%{begin:31m;0m}chrome%{end:31m;0m}
+slurm       4836  0.0  0.3 277992 53640 ?        S    сен22   0:00 /opt/meetsidekick.com/sidekick/%{begin:31m;0m}chrome%{end:31m;0m} --type=zygote
+slurm       4837  0.0  0.3 277992 53840 ?        S    сен22   0:00 /opt/meetsidekick.com/sidekick/%{begin:31m;0m}chrome%{end:31m;0m} --type=zygote
+slurm       4849  0.0  0.0 277992 15116 ?        S    сен22   0:02 /opt/meetsidekick.com/sidekick/%{begin:31m;0m}chrome%{end:31m;0m} --type=zygote
