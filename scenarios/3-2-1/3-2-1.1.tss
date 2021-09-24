@@ -1,0 +1,33 @@
+audio:
+3-2-1/3-2-1.1.mp3
+
+input:
+%{delay 26000}cat test1 test2 test3
+
+output:
+best_ever_linux_course
+best_ever_linux_course
+best_ever_linux_course
+
+delay:
+200
+
+input:
+%{delay 8000}find . %{delay 300}-type f %{delay 500}-exec %{delay 3000}sed -i %{delay 2000}"s/$1/$2/g" %{delay 4000}{} \;%{delay 50000}
+
+input:
+find . -type f -exec sed -i "s/best_ever_linux_course/slurm_linux/g" {} \;
+
+input:
+%{delay 1000}cat test1 test2 test3
+
+output:
+best_ever_linux_course
+best_ever_linux_course
+best_ever_linux_course
+
+delay:
+200
+
+input:
+%{delay 100000}

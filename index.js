@@ -1,5 +1,5 @@
 let bashPrompt = '~:'
-let term = new Terminal({ cols: 120, rows: 40, fontSize: '20' });
+let term = new Terminal({ cols: 120, rows: 27, fontSize: '30' });
 const typingTimeout = 100
 const directives = ['input:', 'output:', 'audio:', 'delay:']
 const newLine = '\n\r'
@@ -15,6 +15,7 @@ const typing = (command, typingTimeout) => {
       if (ch === '\\') {
         switch(command[i + 1]) {
           case 'b': {
+            console.log('hui')
             term.write("\b \b")
           }
           case ';': {
