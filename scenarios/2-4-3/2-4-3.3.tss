@@ -1,0 +1,11 @@
+audio:
+2-4-3/2-4-3.3.mp3
+
+prompt:
+/home/pavel(as ilya):
+
+input:
+%{delay 7000}mv test-2.sh new-test-2.sh
+
+output:
+mv: cannot move 'test-2.sh' to 'new-test-2.sh': Permission denied
