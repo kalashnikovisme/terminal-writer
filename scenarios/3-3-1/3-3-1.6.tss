@@ -1,0 +1,1004 @@
+audio:
+3-3-1/3-3-1.6.mp3
+
+input:
+%{delay 5000}wget -r slurm.io
+
+output:
+--2021-09-25 05:14:19--  http://slurm.io/
+Resolving slurm.io (slurm.io)... 185.129.100.112
+Connecting to slurm.io (slurm.io)|185.129.100.112|:80... connected.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: https://slurm.io/ [following]
+--2021-09-25 05:14:20--  https://slurm.io/
+Connecting to slurm.io (slurm.io)|185.129.100.112|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 151129 (148K) [text/html]
+Saving to: ‘slurm.io/index.html’
+
+slurm.io/index.html                             100%[=====================================================================================================>] 147,59K  --.-KB/s    in 0,04s   
+
+2021-09-25 05:14:20 (3,60 MB/s) - ‘slurm.io/index.html’ saved [151129/151129]
+
+Loading robots.txt; please ignore errors.
+--2021-09-25 05:14:20--  https://slurm.io/robots.txt
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 2264 (2,2K) [text/plain]
+Saving to: ‘slurm.io/robots.txt’
+
+slurm.io/robots.txt                             100%[=====================================================================================================>]   2,21K  --.-KB/s    in 0s      
+
+2021-09-25 05:14:20 (4,63 MB/s) - ‘slurm.io/robots.txt’ saved [2264/2264]
+
+--2021-09-25 05:14:20--  https://slurm.io/catalog
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘slurm.io/catalog’
+
+slurm.io/catalog                                    [ <=>                                                                                                  ] 187,45K  --.-KB/s    in 0,03s   
+
+2021-09-25 05:14:20 (6,92 MB/s) - ‘slurm.io/catalog’ saved [191950]
+
+--2021-09-25 05:14:20--  https://slurm.io/corporate
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 193766 (189K) [text/html]
+Saving to: ‘slurm.io/corporate’
+
+slurm.io/corporate                              100%[=====================================================================================================>] 189,22K  --.-KB/s    in 0,03s   
+
+2021-09-25 05:14:20 (6,43 MB/s) - ‘slurm.io/corporate’ saved [193766/193766]
+
+--2021-09-25 05:14:20--  https://slurm.io/faq-for-oformitel
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘slurm.io/faq-for-oformitel’
+
+slurm.io/faq-for-oformitel                          [ <=>                                                                                                  ]  70,44K  --.-KB/s    in 0,01s   
+
+2021-09-25 05:14:21 (7,12 MB/s) - ‘slurm.io/faq-for-oformitel’ saved [72133]
+
+--2021-09-25 05:14:21--  https://slurm.io/calendar
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 51040 (50K) [text/html]
+Saving to: ‘slurm.io/calendar’
+
+slurm.io/calendar                               100%[=====================================================================================================>]  49,84K  --.-KB/s    in 0,003s  
+
+2021-09-25 05:14:21 (17,3 MB/s) - ‘slurm.io/calendar’ saved [51040/51040]
+
+--2021-09-25 05:14:21--  https://slurm.io/blog
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 41295 (40K) [text/html]
+Saving to: ‘slurm.io/blog’
+
+slurm.io/blog                                   100%[=====================================================================================================>]  40,33K  --.-KB/s    in 0,004s  
+
+2021-09-25 05:14:21 (9,83 MB/s) - ‘slurm.io/blog’ saved [41295/41295]
+
+--2021-09-25 05:14:21--  https://slurm.io/webinars
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘slurm.io/webinars’
+
+slurm.io/webinars                                   [ <=>                                                                                                  ] 103,16K  --.-KB/s    in 0,02s   
+
+2021-09-25 05:14:21 (5,72 MB/s) - ‘slurm.io/webinars’ saved [105632]
+
+--2021-09-25 05:14:21--  https://slurm.io/feedback
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘slurm.io/feedback’
+
+slurm.io/feedback                                   [ <=>                                                                                                  ] 123,30K  --.-KB/s    in 0,02s   
+
+2021-09-25 05:14:21 (5,75 MB/s) - ‘slurm.io/feedback’ saved [126262]
+
+--2021-09-25 05:14:21--  https://slurm.io/kubernetes-for-developers-school
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 176309 (172K) [text/html]
+Saving to: ‘slurm.io/kubernetes-for-developers-school’
+
+slurm.io/kubernetes-for-developers-school       100%[=====================================================================================================>] 172,18K  --.-KB/s    in 0,02s   
+
+2021-09-25 05:14:21 (9,10 MB/s) - ‘slurm.io/kubernetes-for-developers-school’ saved [176309/176309]
+
+--2021-09-25 05:14:21--  https://slurm.io/tarantool_meetup
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 128449 (125K) [text/html]
+Saving to: ‘slurm.io/tarantool_meetup’
+
+slurm.io/tarantool_meetup                       100%[=====================================================================================================>] 125,44K  --.-KB/s    in 0,01s   
+
+2021-09-25 05:14:21 (9,01 MB/s) - ‘slurm.io/tarantool_meetup’ saved [128449/128449]
+
+--2021-09-25 05:14:21--  https://slurm.io/kafka
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 213291 (208K) [text/html]
+Saving to: ‘slurm.io/kafka’
+
+slurm.io/kafka                                  100%[=====================================================================================================>] 208,29K  --.-KB/s    in 0,02s   
+
+2021-09-25 05:14:21 (9,34 MB/s) - ‘slurm.io/kafka’ saved [213291/213291]
+
+--2021-09-25 05:14:21--  https://slurm.io/videocourse-kit
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 318111 (311K) [text/html]
+Saving to: ‘slurm.io/videocourse-kit’
+
+slurm.io/videocourse-kit                        100%[=====================================================================================================>] 310,66K  --.-KB/s    in 0,03s   
+
+2021-09-25 05:14:21 (9,94 MB/s) - ‘slurm.io/videocourse-kit’ saved [318111/318111]
+
+--2021-09-25 05:14:21--  https://slurm.io/course-python-for-ops
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 310914 (304K) [text/html]
+Saving to: ‘slurm.io/course-python-for-ops’
+
+slurm.io/course-python-for-ops                  100%[=====================================================================================================>] 303,63K  --.-KB/s    in 0,03s   
+
+2021-09-25 05:14:21 (9,42 MB/s) - ‘slurm.io/course-python-for-ops’ saved [310914/310914]
+
+--2021-09-25 05:14:21--  https://slurm.io/kubernetes-mega
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘slurm.io/kubernetes-mega’
+
+slurm.io/kubernetes-mega                            [ <=>                                                                                                  ] 230,12K  --.-KB/s    in 0,03s   
+
+2021-09-25 05:14:21 (6,77 MB/s) - ‘slurm.io/kubernetes-mega’ saved [235647]
+
+--2021-09-25 05:14:21--  https://slurm.io/ansible
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘slurm.io/ansible’
+
+slurm.io/ansible                                    [ <=>                                                                                                  ] 234,65K  --.-KB/s    in 0,03s   
+
+2021-09-25 05:14:21 (6,73 MB/s) - ‘slurm.io/ansible’ saved [240286]
+
+--2021-09-25 05:14:21--  https://slurm.io/kubernetes-baza
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 240858 (235K) [text/html]
+Saving to: ‘slurm.io/kubernetes-baza’
+
+slurm.io/kubernetes-baza                        100%[=====================================================================================================>] 235,21K  --.-KB/s    in 0,04s   
+
+2021-09-25 05:14:21 (5,30 MB/s) - ‘slurm.io/kubernetes-baza’ saved [240858/240858]
+
+--2021-09-25 05:14:21--  https://slurm.io/monitoring
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 154628 (151K) [text/html]
+Saving to: ‘slurm.io/monitoring’
+
+slurm.io/monitoring                             100%[=====================================================================================================>] 151,00K  --.-KB/s    in 0,02s   
+
+2021-09-25 05:14:21 (8,24 MB/s) - ‘slurm.io/monitoring’ saved [154628/154628]
+
+--2021-09-25 05:14:21--  https://slurm.io/ceph
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 223140 (218K) [text/html]
+Saving to: ‘slurm.io/ceph’
+
+slurm.io/ceph                                   100%[=====================================================================================================>] 217,91K  --.-KB/s    in 0,02s   
+
+2021-09-25 05:14:21 (9,01 MB/s) - ‘slurm.io/ceph’ saved [223140/223140]
+
+--2021-09-25 05:14:21--  https://slurm.io/docker-intensive
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘slurm.io/docker-intensive’
+
+slurm.io/docker-intensive                           [ <=>                                                                                                  ] 213,73K  --.-KB/s    in 0,03s   
+
+2021-09-25 05:14:21 (7,43 MB/s) - ‘slurm.io/docker-intensive’ saved [218857]
+
+--2021-09-25 05:14:21--  https://slurm.io/videocourse-ci-cd
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 199158 (194K) [text/html]
+Saving to: ‘slurm.io/videocourse-ci-cd’
+
+slurm.io/videocourse-ci-cd                      100%[=====================================================================================================>] 194,49K  --.-KB/s    in 0,02s   
+
+2021-09-25 05:14:21 (10,3 MB/s) - ‘slurm.io/videocourse-ci-cd’ saved [199158/199158]
+
+--2021-09-25 05:14:21--  https://slurm.io/aws
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 181659 (177K) [text/html]
+Saving to: ‘slurm.io/aws’
+
+slurm.io/aws                                    100%[=====================================================================================================>] 177,40K  --.-KB/s    in 0,02s   
+
+2021-09-25 05:14:22 (8,08 MB/s) - ‘slurm.io/aws’ saved [181659/181659]
+
+--2021-09-25 05:14:22--  https://slurm.io/git
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 109464 (107K) [text/html]
+Saving to: ‘slurm.io/git’
+
+slurm.io/git                                    100%[=====================================================================================================>] 106,90K  --.-KB/s    in 0,008s  
+
+2021-09-25 05:14:22 (13,7 MB/s) - ‘slurm.io/git’ saved [109464/109464]
+
+--2021-09-25 05:14:22--  https://slurm.io/'%20+%20item%20+%20'
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 404 Not Found
+2021-09-25 05:14:22 ERROR 404: Not Found.
+
+--2021-09-25 05:14:22--  https://slurm.io/mega_online
+Connecting to slurm.io (slurm.io)|185.129.100.112|:443... connected.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: https://slurm.io/kubernetes-mega [following]
+--2021-09-25 05:14:22--  https://slurm.io/kubernetes-mega
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 235840 (230K) [text/html]
+Saving to: ‘slurm.io/mega_online’
+
+slurm.io/mega_online                            100%[=====================================================================================================>] 230,31K  --.-KB/s    in 0,05s   
+
+2021-09-25 05:14:22 (4,46 MB/s) - ‘slurm.io/mega_online’ saved [235840/235840]
+
+--2021-09-25 05:14:22--  https://slurm.io/online
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: https://slurm.io/videocourse-kit [following]
+--2021-09-25 05:14:22--  https://slurm.io/videocourse-kit
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 318111 (311K) [text/html]
+Saving to: ‘slurm.io/online’
+
+slurm.io/online                                 100%[=====================================================================================================>] 310,66K  --.-KB/s    in 0,04s   
+
+2021-09-25 05:14:22 (7,72 MB/s) - ‘slurm.io/online’ saved [318111/318111]
+
+--2021-09-25 05:14:22--  https://slurm.io/kubernetes-security
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘slurm.io/kubernetes-security’
+
+slurm.io/kubernetes-security                        [ <=>                                                                                                  ] 138,63K  --.-KB/s    in 0,02s   
+
+2021-09-25 05:14:22 (6,32 MB/s) - ‘slurm.io/kubernetes-security’ saved [141955]
+
+--2021-09-25 05:14:22--  https://slurm.io/kubernetes-for-developers
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 159899 (156K) [text/html]
+Saving to: ‘slurm.io/kubernetes-for-developers’
+
+slurm.io/kubernetes-for-developers              100%[=====================================================================================================>] 156,15K  --.-KB/s    in 0,02s   
+
+2021-09-25 05:14:22 (8,90 MB/s) - ‘slurm.io/kubernetes-for-developers’ saved [159899/159899]
+
+--2021-09-25 05:14:22--  https://slurm.io/managed-kubernetes-selectel
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘slurm.io/managed-kubernetes-selectel’
+
+slurm.io/managed-kubernetes-selectel                [ <=>                                                                                                  ] 129,92K  --.-KB/s    in 0,02s   
+
+2021-09-25 05:14:22 (5,73 MB/s) - ‘slurm.io/managed-kubernetes-selectel’ saved [133037]
+
+--2021-09-25 05:14:22--  https://slurm.io/course-postgresql
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 143141 (140K) [text/html]
+Saving to: ‘slurm.io/course-postgresql’
+
+slurm.io/course-postgresql                      100%[=====================================================================================================>] 139,79K  --.-KB/s    in 0,02s   
+
+2021-09-25 05:14:22 (8,45 MB/s) - ‘slurm.io/course-postgresql’ saved [143141/143141]
+
+--2021-09-25 05:14:22--  https://slurm.io/prometheus
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 138642 (135K) [text/html]
+Saving to: ‘slurm.io/prometheus’
+
+slurm.io/prometheus                             100%[=====================================================================================================>] 135,39K  --.-KB/s    in 0,01s   
+
+2021-09-25 05:14:22 (9,05 MB/s) - ‘slurm.io/prometheus’ saved [138642/138642]
+
+--2021-09-25 05:14:22--  https://slurm.io/intensive-service-mesh
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 268040 (262K) [text/html]
+Saving to: ‘slurm.io/intensive-service-mesh’
+
+slurm.io/intensive-service-mesh                 100%[=====================================================================================================>] 261,76K  --.-KB/s    in 0,03s   
+
+2021-09-25 05:14:22 (8,05 MB/s) - ‘slurm.io/intensive-service-mesh’ saved [268040/268040]
+
+--2021-09-25 05:14:22--  https://slurm.io/sre
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 360191 (352K) [text/html]
+Saving to: ‘slurm.io/sre’
+
+slurm.io/sre                                    100%[=====================================================================================================>] 351,75K  --.-KB/s    in 0,04s   
+
+2021-09-25 05:14:22 (8,97 MB/s) - ‘slurm.io/sre’ saved [360191/360191]
+
+--2021-09-25 05:14:22--  https://slurm.io/intensive-terraform
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 159787 (156K) [text/html]
+Saving to: ‘slurm.io/intensive-terraform’
+
+slurm.io/intensive-terraform                    100%[=====================================================================================================>] 156,04K  --.-KB/s    in 0,02s   
+
+2021-09-25 05:14:22 (7,66 MB/s) - ‘slurm.io/intensive-terraform’ saved [159787/159787]
+
+--2021-09-25 05:14:22--  https://slurm.io/unlim-for-corporate
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘slurm.io/unlim-for-corporate’
+
+slurm.io/unlim-for-corporate                        [ <=>                                                                                                  ] 148,74K  --.-KB/s    in 0,02s   
+
+2021-09-25 05:14:23 (6,30 MB/s) - ‘slurm.io/unlim-for-corporate’ saved [152307]
+
+--2021-09-25 05:14:23--  https://slurm.io/privacy
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 103503 (101K) [text/html]
+Saving to: ‘slurm.io/privacy’
+
+slurm.io/privacy                                100%[=====================================================================================================>] 101,08K  --.-KB/s    in 0,01s   
+
+2021-09-25 05:14:23 (6,97 MB/s) - ‘slurm.io/privacy’ saved [103503/103503]
+
+--2021-09-25 05:14:23--  https://slurm.io/oferta-slurm
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 54046 (53K) [text/html]
+Saving to: ‘slurm.io/oferta-slurm’
+
+slurm.io/oferta-slurm                           100%[=====================================================================================================>]  52,78K  --.-KB/s    in 0,003s  
+
+2021-09-25 05:14:23 (17,8 MB/s) - ‘slurm.io/oferta-slurm’ saved [54046/54046]
+
+--2021-09-25 05:14:23--  https://slurm.io/slurm_online
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: https://slurm.io/kubernetes-baza [following]
+--2021-09-25 05:14:23--  https://slurm.io/kubernetes-baza
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘slurm.io/slurm_online’
+
+slurm.io/slurm_online                               [ <=>                                                                                                  ] 235,03K  --.-KB/s    in 0,03s   
+
+2021-09-25 05:14:23 (6,81 MB/s) - ‘slurm.io/slurm_online’ saved [240666]
+
+--2021-09-25 05:14:23--  https://slurm.io/ci-cd
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: https://slurm.io/videocourse-ci-cd [following]
+--2021-09-25 05:14:23--  https://slurm.io/videocourse-ci-cd
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 199158 (194K) [text/html]
+Saving to: ‘slurm.io/ci-cd’
+
+slurm.io/ci-cd                                  100%[=====================================================================================================>] 194,49K  --.-KB/s    in 0,02s   
+
+2021-09-25 05:14:23 (9,18 MB/s) - ‘slurm.io/ci-cd’ saved [199158/199158]
+
+--2021-09-25 05:14:23--  https://slurm.io/.well-known/ddos-guard/check
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 Ok
+Length: 92814 (91K) [application/javascript]
+Saving to: ‘slurm.io/.well-known/ddos-guard/check’
+
+slurm.io/.well-known/ddos-guard/check           100%[=====================================================================================================>]  90,64K  --.-KB/s    in 0,006s  
+
+2021-09-25 05:14:23 (14,6 MB/s) - ‘slurm.io/.well-known/ddos-guard/check’ saved [92814/92814]
+
+--2021-09-25 05:14:23--  https://slurm.io/slurm
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: https://slurm.io/kubernetes-baza [following]
+--2021-09-25 05:14:23--  https://slurm.io/kubernetes-baza
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 240858 (235K) [text/html]
+Saving to: ‘slurm.io/slurm’
+
+slurm.io/slurm                                  100%[=====================================================================================================>] 235,21K  --.-KB/s    in 0,02s   
+
+2021-09-25 05:14:23 (9,33 MB/s) - ‘slurm.io/slurm’ saved [240858/240858]
+
+--2021-09-25 05:14:23--  https://slurm.io/tpost/iy81a5znk1-intervyu-s-vipusknitsei-intensiva-po-sre
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘slurm.io/tpost/iy81a5znk1-intervyu-s-vipusknitsei-intensiva-po-sre’
+
+slurm.io/tpost/iy81a5znk1-intervyu-s-vipusknits     [ <=>                                                                                                  ]  76,17K  --.-KB/s    in 0,007s  
+
+2021-09-25 05:14:23 (11,4 MB/s) - ‘slurm.io/tpost/iy81a5znk1-intervyu-s-vipusknitsei-intensiva-po-sre’ saved [78003]
+
+--2021-09-25 05:14:23--  https://slurm.io/%5C%22https://slurm.io/privacy%5C%22
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 404 Not Found
+2021-09-25 05:14:23 ERROR 404: Not Found.
+
+--2021-09-25 05:14:23--  https://slurm.io/tpost/sjfdm0r0m1-kafka-lamoda-i-nepreodolimoe-zhelanie-uc
+Connecting to slurm.io (slurm.io)|185.129.100.112|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘slurm.io/tpost/sjfdm0r0m1-kafka-lamoda-i-nepreodolimoe-zhelanie-uc’
+
+slurm.io/tpost/sjfdm0r0m1-kafka-lamoda-i-nepreo     [ <=>                                                                                                  ]  95,19K  --.-KB/s    in 0,03s   
+
+2021-09-25 05:14:23 (2,96 MB/s) - ‘slurm.io/tpost/sjfdm0r0m1-kafka-lamoda-i-nepreodolimoe-zhelanie-uc’ saved [97475]
+
+--2021-09-25 05:14:23--  https://slurm.io/videocourse-base
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: https://slurm.io/kubernetes-baza [following]
+--2021-09-25 05:14:24--  https://slurm.io/kubernetes-baza
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 240858 (235K) [text/html]
+Saving to: ‘slurm.io/videocourse-base’
+
+slurm.io/videocourse-base                       100%[=====================================================================================================>] 235,21K  --.-KB/s    in 0,03s   
+
+2021-09-25 05:14:24 (8,11 MB/s) - ‘slurm.io/videocourse-base’ saved [240858/240858]
+
+--2021-09-25 05:14:24--  https://slurm.io/videocourse-mega
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: https://slurm.io/kubernetes-mega [following]
+--2021-09-25 05:14:24--  https://slurm.io/kubernetes-mega
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 235840 (230K) [text/html]
+Saving to: ‘slurm.io/videocourse-mega’
+
+slurm.io/videocourse-mega                       100%[=====================================================================================================>] 230,31K  --.-KB/s    in 0,04s   
+
+2021-09-25 05:14:24 (5,37 MB/s) - ‘slurm.io/videocourse-mega’ saved [235840/235840]
+
+--2021-09-25 05:14:24--  https://slurm.io/certification
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 80350 (78K) [text/html]
+Saving to: ‘slurm.io/certification’
+
+slurm.io/certification                          100%[=====================================================================================================>]  78,47K  --.-KB/s    in 0,007s  
+
+2021-09-25 05:14:24 (10,5 MB/s) - ‘slurm.io/certification’ saved [80350/80350]
+
+--2021-09-25 05:14:24--  https://slurm.io/python-for-devops-cases
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 128525 (126K) [text/html]
+Saving to: ‘slurm.io/python-for-devops-cases’
+
+slurm.io/python-for-devops-cases                100%[=====================================================================================================>] 125,51K  --.-KB/s    in 0,04s   
+
+2021-09-25 05:14:24 (3,43 MB/s) - ‘slurm.io/python-for-devops-cases’ saved [128525/128525]
+
+--2021-09-25 05:14:24--  https://slurm.io/mega
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: https://slurm.io/kubernetes-mega [following]
+--2021-09-25 05:14:24--  https://slurm.io/kubernetes-mega
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 235840 (230K) [text/html]
+Saving to: ‘slurm.io/mega’
+
+slurm.io/mega                                   100%[=====================================================================================================>] 230,31K  --.-KB/s    in 0,02s   
+
+2021-09-25 05:14:24 (9,65 MB/s) - ‘slurm.io/mega’ saved [235840/235840]
+
+--2021-09-25 05:14:24--  https://slurm.io/tpost/p3ohc996ti-pyat-voprosov-o-ceph-s-poyasneniyami
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘slurm.io/tpost/p3ohc996ti-pyat-voprosov-o-ceph-s-poyasneniyami’
+
+slurm.io/tpost/p3ohc996ti-pyat-voprosov-o-ceph-     [ <=>                                                                                                  ]  79,28K  --.-KB/s    in 0,005s  
+
+2021-09-25 05:14:24 (15,2 MB/s) - ‘slurm.io/tpost/p3ohc996ti-pyat-voprosov-o-ceph-s-poyasneniyami’ saved [81184]
+
+--2021-09-25 05:14:24--  https://slurm.io/tpost/avll1l5k81-ekspluatatsiya-ceph-flagi-dlya-upravleni
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘slurm.io/tpost/avll1l5k81-ekspluatatsiya-ceph-flagi-dlya-upravleni’
+
+slurm.io/tpost/avll1l5k81-ekspluatatsiya-ceph-f     [ <=>                                                                                                  ]  93,08K  --.-KB/s    in 0,009s  
+
+2021-09-25 05:14:24 (10,6 MB/s) - ‘slurm.io/tpost/avll1l5k81-ekspluatatsiya-ceph-flagi-dlya-upravleni’ saved [95314]
+
+--2021-09-25 05:14:24--  https://slurm.io/tpost/aefuluvzo1-ekspluatatsiya-ceph-flagi-dlya-upravleni
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘slurm.io/tpost/aefuluvzo1-ekspluatatsiya-ceph-flagi-dlya-upravleni’
+
+slurm.io/tpost/aefuluvzo1-ekspluatatsiya-ceph-f     [ <=>                                                                                                  ]  84,96K  --.-KB/s    in 0,007s  
+
+2021-09-25 05:14:24 (11,3 MB/s) - ‘slurm.io/tpost/aefuluvzo1-ekspluatatsiya-ceph-flagi-dlya-upravleni’ saved [86995]
+
+--2021-09-25 05:14:24--  https://slurm.io/tpost/dyxfsuxjd1-ekspluatatsiya-ceph-chto-takoe-scrub-i-k
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘slurm.io/tpost/dyxfsuxjd1-ekspluatatsiya-ceph-chto-takoe-scrub-i-k’
+
+slurm.io/tpost/dyxfsuxjd1-ekspluatatsiya-ceph-c     [ <=>                                                                                                  ]  90,42K  --.-KB/s    in 0,03s   
+
+2021-09-25 05:14:24 (2,83 MB/s) - ‘slurm.io/tpost/dyxfsuxjd1-ekspluatatsiya-ceph-chto-takoe-scrub-i-k’ saved [92588]
+
+--2021-09-25 05:14:24--  https://slurm.io/feedback-sre
+Reusing existing connection to slurm.io:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘slurm.io/feedback-sre’
+
+slurm.io/feedback-sre                               [ <=>                                                                                                  ]  58,02K  --.-KB/s    in 0,007s  
+
+2021-09-25 05:14:24 (7,61 MB/s) - ‘slurm.io/feedback-sre’ saved [59413]
+
+FINISHED --2021-09-25 05:14:26--
+Total wall clock time: 7,1s
+Downloaded: 70 files, 12M in 1,6s (7,21 MB/s)
+
+delay:
+5000
+
+input:
+ls
+
+output:
+%{begin:36m;0m}slurm.io%{end:36m;0m}
+
+delay:
+100
+
+input:
+%{delay 6000}cd slurm.io
+
+prompt:
+~/slurm.io:
+
+input:
+%{delay 500}ls
+
+output:
+ ansible
+ aws
+ blog
+ calendar
+ catalog
+ ceph
+'ceph?utm_source=blog'
+'ceph?utm_source=blog&utm_medium=post&utm_campaign=ceph&utm_content=post_10-12-2020&utm_term=fedosenko'
+ certification
+'certification?utm_source=blog&utm_medium=post&utm_campaign=certification&utm_content=post_01-12-2020&utm_term=fedosenko'
+ ci-cd
+ corporate
+ course-postgresql
+ course-python-for-ops
+'course-python-for-ops?utm_source=longrid'
+'course-python-for-ops?utm_source=sre-recommend'
+ docker-intensive
+ faq-for-oformitel
+ feedback
+ feedback-sre
+ git
+ index.html
+ intensive-service-mesh
+ intensive-terraform
+ kafka
+'kafka?utm_source=blog'
+ kubernetes-baza
+ kubernetes-for-developers
+ kubernetes-for-developers-school
+ kubernetes-mega
+ kubernetes-security
+ managed-kubernetes-selectel
+ mega
+ mega_online
+'mega_online?utm_source=blog&utm_medium=post&utm_campaign=certification&utm_content=post_01-12-2020&utm_term=fedosenko'
+ monitoring
+ oferta-slurm
+ online
+ privacy
+ prometheus
+ python-for-devops-cases
+ robots.txt
+ rss-feed-784947206928.xml
+ slurm
+ slurm_online
+'slurm_online?utm_source=blog&utm_medium=post&utm_campaign=certification&utm_content=post_01-12-2020&utm_term=fedosenko'
+ sre
+'sre?utm_source=blog&utm_medium=post&utm_campaign=yulia-kharchenko&utm_content=post_17-02-2021&utm_term=averina'
+ tarantool_meetup
+ tpost
+ unlim-for-corporate
+ videocourse-base
+ videocourse-ci-cd
+ videocourse-kit
+ videocourse-mega
+ webinars
+
+delay:
+44000
+
+clear:
+
+prompt:
+~:
+
+delay:
+200
+
+input:
+%{delay 12000}wget -r -A .jpg XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX%{delay 17000}
+
+output:
+Length: 131169 (128K) [image/jpeg]
+Saving to: ‘XXXXXXXXXXXXXXXXX/foto_cats/tua/tua011.jpg’
+
+XXXXXXXXXXXXXXXXX/foto_cats/tua/tua011.jpg             100%[=====================================================================================================>] 128,09K  --.-KB/s    in 0,04s   
+
+2021-09-25 05:32:23 (2,84 MB/s) - ‘XXXXXXXXXXXXXXXXX/foto_cats/tua/tua011.jpg’ saved [131169/131169]
+
+--2021-09-25 05:32:23--  http://XXXXXXXXXXXXXXXXX/foto_cats/?p=tua&id=12
+Reusing existing connection to XXXXXXXXXXXXXXXXX:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘XXXXXXXXXXXXXXXXX/foto_cats/index.html?p=tua&id=12.tmp’
+
+XXXXXXXXXXXXXXXXX/foto_cats/index.html?p=tua&id=12.tmp     [ <=>                                                                                                  ]   8,25K  --.-KB/s    in 0s      
+
+2021-09-25 05:32:23 (35,9 MB/s) - ‘XXXXXXXXXXXXXXXXX/foto_cats/index.html?p=tua&id=12.tmp’ saved [8452]
+
+Removing XXXXXXXXXXXXXXXXX/foto_cats/index.html?p=tua&id=12.tmp since it should be rejected.
+
+--2021-09-25 05:32:23--  http://XXXXXXXXXXXXXXXXX/foto_cats/tua/tua012.jpg
+Reusing existing connection to XXXXXXXXXXXXXXXXX:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 365196 (357K) [image/jpeg]
+Saving to: ‘XXXXXXXXXXXXXXXXX/foto_cats/tua/tua012.jpg’
+
+XXXXXXXXXXXXXXXXX/foto_cats/tua/tua012.jpg             100%[=====================================================================================================>] 356,64K  --.-KB/s    in 0,1s    
+
+2021-09-25 05:32:23 (3,18 MB/s) - ‘XXXXXXXXXXXXXXXXX/foto_cats/tua/tua012.jpg’ saved [365196/365196]
+
+--2021-09-25 05:32:23--  http://XXXXXXXXXXXXXXXXX/foto_cats/?p=tua&s=12
+Reusing existing connection to XXXXXXXXXXXXXXXXX:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘XXXXXXXXXXXXXXXXX/foto_cats/index.html?p=tua&s=12.tmp’
+
+XXXXXXXXXXXXXXXXX/foto_cats/index.html?p=tua&s=12.tmp      [ <=>                                                                                                  ]  19,16K  --.-KB/s    in 0,001s  
+
+2021-09-25 05:32:23 (18,0 MB/s) - ‘XXXXXXXXXXXXXXXXX/foto_cats/index.html?p=tua&s=12.tmp’ saved [19623]
+
+Removing XXXXXXXXXXXXXXXXX/foto_cats/index.html?p=tua&s=12.tmp since it should be rejected.
+
+--2021-09-25 05:32:23--  http://XXXXXXXXXXXXXXXXX/foto_wild/?p=tigers&id=1
+Reusing existing connection to XXXXXXXXXXXXXXXXX:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘XXXXXXXXXXXXXXXXX/foto_wild/index.html?p=tigers&id=1.tmp’
+
+XXXXXXXXXXXXXXXXX/foto_wild/index.html?p=tigers&id=1.t     [ <=>                                                                                                  ]   8,05K  --.-KB/s    in 0s      
+
+2021-09-25 05:32:24 (38,6 MB/s) - ‘XXXXXXXXXXXXXXXXX/foto_wild/index.html?p=tigers&id=1.tmp’ saved [8242]
+
+Removing XXXXXXXXXXXXXXXXX/foto_wild/index.html?p=tigers&id=1.tmp since it should be rejected.
+
+--2021-09-25 05:32:24--  http://XXXXXXXXXXXXXXXXX/foto_wild/tigers/001.jpg
+Reusing existing connection to XXXXXXXXXXXXXXXXX:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 219440 (214K) [image/jpeg]
+Saving to: ‘XXXXXXXXXXXXXXXXX/foto_wild/tigers/001.jpg’
+
+XXXXXXXXXXXXXXXXX/foto_wild/tigers/001.jpg             100%[=====================================================================================================>] 214,30K  --.-KB/s    in 0,05s   
+
+2021-09-25 05:32:24 (3,89 MB/s) - ‘XXXXXXXXXXXXXXXXX/foto_wild/tigers/001.jpg’ saved [219440/219440]
+
+--2021-09-25 05:32:24--  http://XXXXXXXXXXXXXXXXX/foto_wild/?p=tigers&id=2
+Reusing existing connection to XXXXXXXXXXXXXXXXX:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘XXXXXXXXXXXXXXXXX/foto_wild/index.html?p=tigers&id=2.tmp’
+
+XXXXXXXXXXXXXXXXX/foto_wild/index.html?p=tigers&id=2.t     [ <=>                                                                                                  ]   8,08K  --.-KB/s    in 0s      
+
+2021-09-25 05:32:24 (40,3 MB/s) - ‘XXXXXXXXXXXXXXXXX/foto_wild/index.html?p=tigers&id=2.tmp’ saved [8277]
+
+Removing XXXXXXXXXXXXXXXXX/foto_wild/index.html?p=tigers&id=2.tmp since it should be rejected.
+
+--2021-09-25 05:32:24--  http://XXXXXXXXXXXXXXXXX/foto_wild/tigers/002.jpg
+Reusing existing connection to XXXXXXXXXXXXXXXXX:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 266182 (260K) [image/jpeg]
+Saving to: ‘XXXXXXXXXXXXXXXXX/foto_wild/tigers/002.jpg’
+
+XXXXXXXXXXXXXXXXX/foto_wild/tigers/002.jpg             100%[=====================================================================================================>] 259,94K  --.-KB/s    in 0,07s   
+
+2021-09-25 05:32:24 (3,69 MB/s) - ‘XXXXXXXXXXXXXXXXX/foto_wild/tigers/002.jpg’ saved [266182/266182]
+
+--2021-09-25 05:32:24--  http://XXXXXXXXXXXXXXXXX/foto_wild/?p=tigers&id=3
+Reusing existing connection to XXXXXXXXXXXXXXXXX:80.
+Length: unspecified [text/html]
+Saving to: ‘XXXXXXXXXXXXXXXXX/foto_cats/index.html?p=tua&id=7.tmp’
+
+XXXXXXXXXXXXXXXXX/foto_cats/index.html?p=tua&id=7.tmp      [ <=>                                                                                                  ]   8,45K  --.-KB/s    in 0s      
+
+2021-09-25 05:32:23 (27,6 MB/s) - ‘XXXXXXXXXXXXXXXXX/foto_cats/index.html?p=tua&id=7.tmp’ saved [8657]
+
+Removing XXXXXXXXXXXXXXXXX/foto_cats/index.html?p=tua&id=7.tmp since it should be rejected.
+
+--2021-09-25 05:32:23--  http://XXXXXXXXXXXXXXXXX/foto_cats/tua/tua013.jpg
+Reusing existing connection to XXXXXXXXXXXXXXXXX:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 258782 (253K) [image/jpeg]
+Saving to: ‘XXXXXXXXXXXXXXXXX/foto_cats/tua/tua013.jpg’
+
+XXXXXXXXXXXXXXXXX/foto_cats/tua/tua013.jpg             100%[=====================================================================================================>] 252,72K  --.-KB/s    in 0,05s   
+
+2021-09-25 05:32:23 (4,60 MB/s) - ‘XXXXXXXXXXXXXXXXX/foto_cats/tua/tua013.jpg’ saved [258782/258782]
+
+--2021-09-25 05:32:23--  http://XXXXXXXXXXXXXXXXX/foto_cats/?p=tua&id=8
+Reusing existing connection to XXXXXXXXXXXXXXXXX:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘XXXXXXXXXXXXXXXXX/foto_cats/index.html?p=tua&id=8.tmp’
+
+XXXXXXXXXXXXXXXXX/foto_cats/index.html?p=tua&id=8.tmp      [ <=>                                                                                                  ]   8,23K  --.-KB/s    in 0s      
+
+2021-09-25 05:32:23 (38,4 MB/s) - ‘XXXXXXXXXXXXXXXXX/foto_cats/index.html?p=tua&id=8.tmp’ saved [8427]
+
+Removing XXXXXXXXXXXXXXXXX/foto_cats/index.html?p=tua&id=8.tmp since it should be rejected.
+
+--2021-09-25 05:32:23--  http://XXXXXXXXXXXXXXXXX/foto_cats/tua/tua014.jpg
+Reusing existing connection to XXXXXXXXXXXXXXXXX:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 361195 (353K) [image/jpeg]
+Saving to: ‘XXXXXXXXXXXXXXXXX/foto_cats/tua/tua014.jpg’
+
+XXXXXXXXXXXXXXXXX/foto_cats/tua/tua014.jpg             100%[=====================================================================================================>] 352,73K  --.-KB/s    in 0,08s   
+
+2021-09-25 05:32:23 (4,49 MB/s) - ‘XXXXXXXXXXXXXXXXX/foto_cats/tua/tua014.jpg’ saved [361195/361195]
+
+--2021-09-25 05:32:23--  http://XXXXXXXXXXXXXXXXX/foto_cats/?p=tua&id=9
+Reusing existing connection to XXXXXXXXXXXXXXXXX:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘XXXXXXXXXXXXXXXXX/foto_cats/index.html?p=tua&id=9.tmp’
+
+XXXXXXXXXXXXXXXXX/foto_cats/index.html?p=tua&id=9.tmp      [ <=>                                                                                                  ]   8,26K  --.-KB/s    in 0s      
+
+2021-09-25 05:32:23 (39,6 MB/s) - ‘XXXXXXXXXXXXXXXXX/foto_cats/index.html?p=tua&id=9.tmp’ saved [8463]
+
+Removing XXXXXXXXXXXXXXXXX/foto_cats/index.html?p=tua&id=9.tmp since it should be rejected.
+
+--2021-09-25 05:32:23--  http://XXXXXXXXXXXXXXXXX/foto_cats/tua/tua015.jpg
+Reusing existing connection to XXXXXXXXXXXXXXXXX:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 139630 (136K) [image/jpeg]
+Saving to: ‘XXXXXXXXXXXXXXXXX/foto_cats/tua/tua015.jpg’
+
+XXXXXXXXXXXXXXXXX/foto_cats/tua/tua015.jpg             100%[=====================================================================================================>] 136,36K  --.-KB/s    in 0,04s   
+
+2021-09-25 05:32:23 (3,16 MB/s) - ‘XXXXXXXXXXXXXXXXX/foto_cats/tua/tua015.jpg’ saved [139630/139630]
+
+--2021-09-25 05:32:23--  http://XXXXXXXXXXXXXXXXX/foto_cats/?p=tua&id=10
+Reusing existing connection to XXXXXXXXXXXXXXXXX:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘XXXXXXXXXXXXXXXXX/foto_cats/index.html?p=tua&id=10.tmp’
+
+XXXXXXXXXXXXXXXXX/foto_cats/index.html?p=tua&id=10.tmp     [ <=>                                                                                                  ]   8,22K  --.-KB/s    in 0s      
+
+2021-09-25 05:32:23 (47,8 MB/s) - ‘XXXXXXXXXXXXXXXXX/foto_cats/index.html?p=tua&id=10.tmp’ saved [8418]
+
+Removing XXXXXXXXXXXXXXXXX/foto_cats/index.html?p=tua&id=10.tmp since it should be rejected.
+
+--2021-09-25 05:32:23--  http://XXXXXXXXXXXXXXXXX/foto_cats/tua/tua010.jpg
+Reusing existing connection to XXXXXXXXXXXXXXXXX:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 156868 (153K) [image/jpeg]
+Saving to: ‘XXXXXXXXXXXXXXXXX/foto_cats/tua/tua010.jpg’
+
+XXXXXXXXXXXXXXXXX/foto_cats/tua/tua010.jpg             100%[=====================================================================================================>] 153,19K  --.-KB/s    in 0,06s   
+
+2021-09-25 05:32:23 (2,59 MB/s) - ‘XXXXXXXXXXXXXXXXX/foto_cats/tua/tua010.jpg’ saved [156868/156868]
+
+--2021-09-25 05:32:23--  http://XXXXXXXXXXXXXXXXX/foto_cats/?p=tua&id=11
+Reusing existing connection to XXXXXXXXXXXXXXXXX:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘XXXXXXXXXXXXXXXXX/foto_cats/index.html?p=tua&id=11.tmp’
+
+XXXXXXXXXXXXXXXXX/foto_cats/index.html?p=tua&id=11.tmp     [ <=>                                                                                                  ]   8,21K  --.-KB/s    in 0s      
+
+2021-09-25 05:32:23 (23,7 MB/s) - ‘XXXXXXXXXXXXXXXXX/foto_cats/index.html?p=tua&id=11.tmp’ saved [8407]
+
+Removing XXXXXXXXXXXXXXXXX/foto_cats/index.html?p=tua&id=11.tmp since it should be rejected.
+
+--2021-09-25 05:32:23--  http://XXXXXXXXXXXXXXXXX/foto_cats/tua/tua011.jpg
+Reusing existing connection to XXXXXXXXXXXXXXXXX:80.
+HTTP request sent, awaiting response... 200 OK
+
+FINISHED --2021-09-25 05:15:26--
+Total wall clock time: 8s
+Downloaded: 140 files, 21M in 1,6s (8,00 MB/s)
+
+delay:
+4000
+
+input:
+%{delay 10000}cd XXXXXXXXXXXXXXXX
+
+prompt:
+~/XXXXXXXXXXXXXXXX:
+
+input:
+ls -R
+
+output:
+./XXXXXXXXXXXXXXXXX/foto_kittens/eyes:
+001.jpg  004.jpg  kitty601.jpg  kitty604.jpg  kitty607.jpg  kitty610.jpg  kitty613.jpg  kitty616.jpg  kitty619.jpg  kitty622.jpg
+002.jpg  005.jpg  kitty602.jpg  kitty605.jpg  kitty608.jpg  kitty611.jpg  kitty614.jpg  kitty617.jpg  kitty620.jpg  kitty623.jpg
+003.jpg  006.jpg  kitty603.jpg  kitty606.jpg  kitty609.jpg  kitty612.jpg  kitty615.jpg  kitty618.jpg  kitty621.jpg  kitty624.jpg
+
+./XXXXXXXXXXXXXXXXX/foto_kittens/flower:
+kitty121.jpg  kitty122.jpg  kitty123.jpg  kitty124.jpg  kitty125.jpg  kitty126.jpg  kitty127.jpg  kitty128.jpg  kitty129.jpg  kitty130.jpg  kitty131.jpg  kitty132.jpg
+
+./XXXXXXXXXXXXXXXXX/foto_kittens/funny:
+001.jpg  002.jpg  003.jpg  004.jpg  005.jpg  006.jpg  007.jpg  008.jpg  009.jpg  010.jpg  011.jpg  012.jpg
+
+./XXXXXXXXXXXXXXXXX/foto_kittens/kitty:
+007.jpg  008.jpg  009.jpg  010.jpg  011.jpg  012.jpg  013.jpg  014.jpg  015.jpg  016.jpg  017.jpg  018.jpg
+
+./XXXXXXXXXXXXXXXXX/foto_kittens/mammy:
+kitty901.jpg  kitty902.jpg  kitty903.jpg  kitty904.jpg  kitty905.jpg  kitty906.jpg  kitty907.jpg  kitty908.jpg  kitty909.jpg  kitty910.jpg  kitty911.jpg  kitty912.jpg
+
+./XXXXXXXXXXXXXXXXX/foto_kittens/nature:
+kitty001.jpg  kitty002.jpg  kitty003.jpg  kitty004.jpg  kitty005.jpg  kitty006.jpg  kitty007.jpg  kitty008.jpg  kitty009.jpg  kitty010.jpg  kitty011.jpg  kitty012.jpg
+
+./XXXXXXXXXXXXXXXXX/foto_kittens/twins2:
+001.jpg  002.jpg  003.jpg  004.jpg  005.jpg  006.jpg  kitty201.jpg  kitty202.jpg  kitty203.jpg  kitty204.jpg  kitty205.jpg  kitty206.jpg
+
+./XXXXXXXXXXXXXXXXX/foto_kittens/twins3:
+kitty301.jpg  kitty302.jpg  kitty303.jpg  kitty304.jpg  kitty305.jpg  kitty306.jpg  kitty307.jpg  kitty308.jpg  kitty309.jpg  kitty310.jpg  kitty311.jpg  kitty312.jpg
+
+./XXXXXXXXXXXXXXXXX/foto_kittens/twins4:
+kitty401.jpg  kitty402.jpg  kitty403.jpg  kitty404.jpg  kitty405.jpg  kitty406.jpg  kitty407.jpg  kitty408.jpg  kitty409.jpg  kitty410.jpg  kitty411.jpg  kitty412.jpg
+
+./XXXXXXXXXXXXXXXXX/foto_kittens/xmas:
+001.jpg  002.jpg  003.jpg  004.jpg  005.jpg  006.jpg  007.jpg  008.jpg  009.jpg  010.jpg  011.jpg  012.jpg
+
+./XXXXXXXXXXXXXXXXX/foto_one:
+one01.jpg  one03.jpg  one05.jpg  one07.jpg  one09.jpg  one11.jpg  one13.jpg  one15.jpg  one17.jpg
+one02.jpg  one04.jpg  one06.jpg  one08.jpg  one10.jpg  one12.jpg  one14.jpg  one16.jpg  one18.jpg
+
+./XXXXXXXXXXXXXXXXX/foto_wild:
+caracal  cheetah  jaguars  leopard  lions  pumas  snow  tigers
+
+./XXXXXXXXXXXXXXXXX/foto_wild/caracal:
+caracal001.jpg  caracal002.jpg  caracal003.jpg  caracal004.jpg  caracal005.jpg
+
+./XXXXXXXXXXXXXXXXX/foto_wild/cheetah:
+cheetah001.jpg  cheetah002.jpg  cheetah003.jpg  cheetah004.jpg  cheetah005.jpg  cheetah006.jpg
+
+./XXXXXXXXXXXXXXXXX/foto_wild/jaguars:
+jaguar001.jpg  jaguar002.jpg  jaguar003.jpg  jaguar004.jpg  jaguar005.jpg  jaguar006.jpg
+
+./XXXXXXXXXXXXXXXXX/foto_wild/leopard:
+leopard001.jpg  leopard003.jpg  leopard005.jpg  leopard007.jpg  leopard009.jpg  leopard011.jpg
+leopard002.jpg  leopard004.jpg  leopard006.jpg  leopard008.jpg  leopard010.jpg  leopard012.jpg
+
+./XXXXXXXXXXXXXXXXX/foto_wild/lions:
+001.jpg  004.jpg  007.jpg  010.jpg  013.jpg  016.jpg  019.jpg  022.jpg  025.jpg  028.jpg  031.jpg  034.jpg  037.jpg  040.jpg  043.jpg  046.jpg  049.jpg  052.jpg  055.jpg
+002.jpg  005.jpg  008.jpg  011.jpg  014.jpg  017.jpg  020.jpg  023.jpg  026.jpg  029.jpg  032.jpg  035.jpg  038.jpg  041.jpg  044.jpg  047.jpg  050.jpg  053.jpg  056.jpg
+003.jpg  006.jpg  009.jpg  012.jpg  015.jpg  018.jpg  021.jpg  024.jpg  027.jpg  030.jpg  033.jpg  036.jpg  039.jpg  042.jpg  045.jpg  048.jpg  051.jpg  054.jpg  057.jpg
+
+./XXXXXXXXXXXXXXXXX/foto_wild/pumas:
+puma001.jpg  puma002.jpg  puma003.jpg  puma004.jpg  puma005.jpg  puma006.jpg  puma007.jpg  puma008.jpg  puma009.jpg  puma010.jpg  puma011.jpg  puma012.jpg
+
+./XXXXXXXXXXXXXXXXX/foto_wild/snow:
+snow001.jpg  snow002.jpg  snow003.jpg  snow004.jpg  snow005.jpg  snow006.jpg
+
+./XXXXXXXXXXXXXXXXX/foto_wild/tigers:
+001.jpg  002.jpg  003.jpg  004.jpg  005.jpg  006.jpg  007.jpg  008.jpg  009.jpg  010.jpg  011.jpg  012.jpg
+
+./XXXXXXXXXXXXXXXXX/fun:
+782.jpg  786.jpg
+
+./XXXXXXXXXXXXXXXXX/info:
+
+./XXXXXXXXXXXXXXXXX/wall:
+1024768  1280800  16001200
+
+./XXXXXXXXXXXXXXXXX/wall/1024768:
+wallcat001.jpg  wallcat003.jpg  wallcat005.jpg  wallcat007.jpg  wallcat009.jpg  wallcat011.jpg
+wallcat002.jpg  wallcat004.jpg  wallcat006.jpg  wallcat008.jpg  wallcat010.jpg  wallcat012.jpg
+
+./XXXXXXXXXXXXXXXXX/wall/1280800:
+wallcat001.jpg  wallcat002.jpg  wallcat003.jpg  wallcat006.jpg  wallcat007.jpg  wallcat008.jpg
+
+./XXXXXXXXXXXXXXXXX/wall/16001200:
+wallcat001.jpg  wallcat002.jpg  wallcat003.jpg
+
+./foto:
+catlogic  cats_like_girls  color  dream  mice  milk  snow  window  xmastree  xmastree_star
+
+./foto/catlogic:
+001.jpg
+
+./foto/cats_like_girls:
+001.jpg
+
+./foto/color:
+001.jpg  003.jpg  005.jpg  007.jpg  009.jpg  011.jpg  013.jpg  015.jpg  017.jpg  019.jpg  021.jpg  023.jpg  025.jpg  027.jpg  029.jpg
+002.jpg  004.jpg  006.jpg  008.jpg  010.jpg  012.jpg  014.jpg  016.jpg  018.jpg  020.jpg  022.jpg  024.jpg  026.jpg  028.jpg  030.jpg
+
+./foto/dream:
+001.jpg
+
+./foto/mice:
+001.jpg
+
+./foto/milk:
+001.jpg
+
+./foto/snow:
+001.jpg
+
+./foto/window:
+001.jpg
+
+./foto/xmastree:
+001.jpg
+
+./foto/xmastree_star:
+001.jpg
+
+delay:
+1000
+
+input:
+%{delay 2000}xdg-open foto/color/002.jpg%{delay 15000}
+
+input:
+%{delay 1000000}
