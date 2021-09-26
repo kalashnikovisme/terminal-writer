@@ -1,0 +1,11 @@
+audio:
+3-4-1/3-4-1.1.mp3
+
+input:
+%{delay 2000}touch program.sh
+
+input:
+%{delay 2000}chmod +x program.sh
+
+input:
+%{delay 3000}vim program.sh
