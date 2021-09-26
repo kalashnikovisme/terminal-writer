@@ -5,7 +5,7 @@ input:
 %{delay 4000}.%{delay 500}/%{delay 500}program.sh
 
 output:
-%{begin:36m;0m}directory1  directory2%{end:36m;0m} HardLinkToMakefile  index.html  index.js  main.css  Makefile  node_modules  package.json  README.md  scenarios  yarn.lock
+%{begin:36m;0m}directory1  directory2%{end:36m;0m} HardLinkToMakefile  index.html  index.js  main.css  Makefile  node_modules  package.json program.sh README.md  scenarios  yarn.lock
 
 delay:
 300

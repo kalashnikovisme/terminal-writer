@@ -1,9 +1,9 @@
 audio:
-3-4-1/3-4-1.5.mp3
+3-4-1/3-4-1.6.mp3
 
 output:
 %{begin:107m;30m}  GNU nano 4.8                                               New Buffer                            %{end:107m;30m}
-%{delay 2000}d%{delay 200}i%{delay 200}r%{delay 200}e%{delay 200}c%{delay 200}t%{delay 200}o%{delay 200}r%{delay 200}y%{delay 200}=%{delay 200}`%{delay 200}p%{delay 200}w%{delay 200}d%{delay 200}`%{delay 33000}
+d%{delay 200}i%{delay 200}r%{delay 200}e%{delay 200}c%{delay 200}t%{delay 200}o%{delay 200}r%{delay 200}y%{delay 200}=%{delay 200}$%{delay 200}(%{delay 200}p%{delay 200}w%{delay 200}d%{delay 200})%{delay 300}
 e%{delay 200}c%{delay 200}h%{delay 200}o%{delay 200} %{delay 200}$%{delay 200}d%{delay 200}i%{delay 200}r%{delay 200}e%{delay 200}c%{delay 200}t%{delay 200}o%{delay 200}r%{delay 200}y%{delay 200}
 
 delay:
@@ -12,7 +12,7 @@ delay:
 clear:
 
 input:
-./program-3.sh
+./program-4.sh
 
 output:
 /home/pavel
@@ -21,4 +21,4 @@ delay:
 100
 
 input:
-%{delay 3000}nano program-4.sh
+%{delay 23000}nano program-5.sh
