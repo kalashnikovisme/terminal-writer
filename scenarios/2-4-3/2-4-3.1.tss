@@ -1,20 +1,22 @@
 audio:
 2-4-3/2-4-3.1.mp3
 
+prompt:
+~(as pavel):
+
 input:
 %{delay 500}ls -l
 
 output:
--r--r--r--  1 slurm slurm   13 авг 28 00:59 test-1.sh
--rwxrwxrwx  1 slurm slurm   15 авг 30 00:34 test-1.sh
--rwxr--r--  1 slurm slurm   17 авг 31 15:38 test-1.sh
+drwxrwxrwx  2 ilya marketing 4096 авг 30 00:34 dir1
+drwxr--r--  2 ilya marketing 4096 авг 31 15:40 dir2
+-rwxr--r--  1 ilya marketing   17 авг 31 15:38 start.sh
+-rwxrwxrwx  1 ilya marketing   15 авг 30 00:34 test-1.sh
+-rwxrw-r--  1 ilya marketing   17 авг 31 15:38 test-2.sh
+-r--r--r--  1 ilya marketing   13 авг 28 00:59 test-3.sh
 
 delay:
-100
+200
 
 input:
-%{delay 10000}
-
-output:
-rwxr--r--%{delay 2000}
-744
+%{delay 1000000}

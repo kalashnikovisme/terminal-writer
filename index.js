@@ -1,5 +1,5 @@
 let bashPrompt = '~:'
-let term = new Terminal({ cols: 120, rows: 40, fontSize: '20' });
+let term = new Terminal({ cols: 120, rows: 27, fontSize: '30' });
 const typingTimeout = 100
 const directives = ['input:', 'output:', 'audio:', 'delay:']
 const newLine = '\n\r'
@@ -244,9 +244,11 @@ const runAction = (actions, index) => {
       }
       case 'prompt': {
         changePrompt(action.data, actions, index)
+        break
       }
       case 'scroll_lines': {
         scrollLines(action.data, actions, index)
+        break
       }
     }
   }

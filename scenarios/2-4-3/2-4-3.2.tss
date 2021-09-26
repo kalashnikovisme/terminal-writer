@@ -1,0 +1,51 @@
+audio:
+2-4-3/2-4-3.2.mp3
+
+prompt:
+~(as pavel):
+
+input:
+%{delay 500}ls -la
+
+output:
+drwxrwxrwx  2 ilya marketing 4096 авг 30 00:34 dir1
+drwxr--r--  2 ilya marketing 4096 авг 31 15:40 dir2
+-rwxr--r--  1 ilya marketing   17 авг 31 15:38 start.sh
+-rwxrwxrwx  1 ilya marketing   15 авг 30 00:34 test-1.sh
+-rwxrw-r--  1 ilya marketing   17 авг 31 15:38 test-2.sh
+-r--r--r--  1 ilya marketing   13 авг 28 00:59 test-3.sh
+
+delay:
+200
+
+input:
+%{delay 30000}getent group
+
+output:
+root:x:0
+kirill:x:1
+nastya:x:2
+ilya:x:3
+sasha:x:4
+pavel:x:5
+maria:x:6
+lawyers:x:7
+marketing:8
+principals:9
+
+delay:
+200
+
+input:
+%{delay 35000}sudo chown pavel test-2.sh
+
+input:
+%{delay 4000}ls -l
+
+output:
+drwxrwxrwx  2  ilya  marketing 4096 авг 30 00:34 dir1
+drwxr--r--  2  ilya  marketing 4096 авг 31 15:40 dir2
+-rwxr--r--  1  ilya  marketing   17 авг 31 15:38 start.sh
+-rwxrwxrwx  1  ilya  marketing 15 авг 30 00:34 test-1.sh
+-rwxrw-r--  1 pavel principals   17 авг 31 15:38 test-2.sh
+-r--r--r--  1  ilya  marketing   13 авг 28 00:59 test-3.sh
