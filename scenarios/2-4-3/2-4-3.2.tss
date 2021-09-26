@@ -46,6 +46,6 @@ output:
 drwxrwxrwx  2  ilya  marketing 4096 авг 30 00:34 dir1
 drwxr--r--  2  ilya  marketing 4096 авг 31 15:40 dir2
 -rwxr--r--  1  ilya  marketing   17 авг 31 15:38 start.sh
--rwxrwxrwx  1  ilya  marketing 15 авг 30 00:34 test-1.sh
+-rwxrwxrwx  1  ilya  marketing   15 авг 30 00:34 test-1.sh
 -rwxrw-r--  1 pavel principals   17 авг 31 15:38 test-2.sh
 -r--r--r--  1  ilya  marketing   13 авг 28 00:59 test-3.sh
