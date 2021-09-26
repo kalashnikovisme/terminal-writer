@@ -1,0 +1,50 @@
+audio:
+3-4-1/3-4-1.4.mp3
+
+output:
+%{begin:107m;30m}  GNU nano 4.8                                               New Buffer                            %{end:107m;30m}
+%{delay 2000}e%{delay 200}c%{delay 200}h%{delay 200}o%{delay 200} %{delay 200}"%{delay 200}I%{delay 200} %{delay 200}a%{delay 200}m%{delay 200} %{delay 200}%{delay 200}$%{delay 200}U%{delay 200}S%{delay 200}E%{delay 200}R%{delay 200}%{delay 200}"
+
+delay:
+2000
+
+clear:
+
+input:
+./program.sh
+
+output:
+I am slurm
+
+delay:
+100
+
+input:
+%{delay 5000}nano program-2.sh
+
+delay:
+1000
+
+clear:
+
+output:
+%{begin:107m;30m}  GNU nano 4.8                                               New Buffer                            %{end:107m;30m}
+%{delay 2000}m%{delay 200}y%{delay 200}_%{delay 200}n%{delay 200}a%{delay 200}m%{delay 200}e%{delay 200}_%{delay 200}i%{delay 200}s%{delay 200}=%{delay 200}p%{delay 200}a%{delay 200}v%{delay 200}e%{delay 200}l%{delay 200}
+e%{delay 200}c%{delay 200}h%{delay 200}o%{delay 200} %{delay 200}$%{delay 200}m%{delay 200}y%{delay 200}_%{delay 200}n%{delay 200}a%{delay 200}m%{delay 200}e%{delay 200}_%{delay 200}i%{delay 200}s%{delay 200}
+
+delay:
+4000
+
+clear:
+
+input:
+./program-2.sh
+
+output:
+pavel
+
+delay:
+100
+
+input:
+%{delay 2000}nano program-3.sh
