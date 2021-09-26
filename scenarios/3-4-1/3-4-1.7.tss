@@ -10,18 +10,4 @@ output:
 %{delay 8000}f%{delay 200}i
 
 delay:
-5000
-
-clear:
-
-input:
-./program-4.sh
-
-output:
-/home/pavel
-
-delay:
-100
-
-input:
-%{delay 23000}nano program-5.sh
+50000
