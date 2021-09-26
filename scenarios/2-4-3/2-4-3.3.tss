@@ -5,7 +5,61 @@ prompt:
 /home/pavel(as ilya):
 
 input:
-%{delay 7000}mv test-2.sh new-test-2.sh
+%{delay 5000}mv test-2.sh new-test-2.sh
 
 output:
 mv: cannot move 'test-2.sh' to 'new-test-2.sh': Permission denied
+
+delay:
+100
+
+input:
+%{delay 3000}ls -la
+
+output:
+drwxrwxrwx  2  ilya  marketing 4096 авг 30 00:34 dir1
+drwxr--r--  2  ilya  marketing 4096 авг 31 15:40 dir2
+-rwxr--r--  1  ilya  marketing   17 авг 31 15:38 start.sh
+-rwxrwxrwx  1  ilya  marketing   15 авг 30 00:34 test-1.sh
+-rwxrw-r--  1 pavel principals   17 авг 31 15:38 test-2.sh
+-r--r--r--  1  ilya  marketing   13 авг 28 00:59 test-3.sh
+
+delay:
+300
+
+input:
+%{delay 9000}cat test-2.sh
+
+output:
+echo 'This program should be run'
+
+delay:
+100
+
+input:
+%{delay 3000}
+
+prompt:
+/home/pavel(as maria):
+
+clear:
+
+input:
+%{delay 10000}mv test-2.sh new-test-2.sh
+
+input:
+%{delay 2000}ls -la
+
+output:
+drwxrwxrwx  2  ilya  marketing 4096 авг 30 00:34 dir1
+drwxr--r--  2  ilya  marketing 4096 авг 31 15:40 dir2
+-rwxr--r--  1  ilya  marketing   17 авг 31 15:38 start.sh
+-rwxrwxrwx  1  ilya  marketing   15 авг 30 00:34 test-1.sh
+-rwxrw-r--  1 pavel principals   17 авг 31 15:38 new-test-2.sh
+-r--r--r--  1  ilya  marketing   13 авг 28 00:59 test-3.sh
+
+delay:
+300
+
+input:
+%{delay 12000}

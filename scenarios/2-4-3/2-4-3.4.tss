@@ -1,0 +1,90 @@
+audio:
+2-4-3/2-4-3.4.mp3
+
+prompt:
+~(as pavel):
+
+input:
+ls -la
+
+output:
+drwxrwxrwx  2  ilya  marketing 4096 авг 30 00:34 dir1
+drwxr--r--  2  ilya  marketing 4096 авг 31 15:40 dir2
+-rwxr--r--  1  ilya  marketing   17 авг 31 15:38 start.sh
+-rwxrwxrwx  1  ilya  marketing   15 авг 30 00:34 test-1.sh
+-rwxrw-r--  1 pavel principals   17 авг 31 15:41 new-test-2.sh
+-r--r--r--  1  ilya  marketing   13 авг 28 00:59 test-3.sh
+
+delay:
+300
+
+input:
+%{delay 66000}sudo chmod o+w new-test-2.sh
+
+input:
+ls -la
+
+output:
+drwxrwxrwx  2  ilya  marketing 4096 авг 30 00:34 dir1
+drwxr--r--  2  ilya  marketing 4096 авг 31 15:40 dir2
+-rwxr--r--  1  ilya  marketing   17 авг 31 15:38 start.sh
+-rwxrwxrwx  1  ilya  marketing   15 авг 30 00:34 test-1.sh
+-rwxrw-rw-  1 pavel principals   17 авг 31 15:41 new-test-2.sh
+-r--r--r--  1  ilya  marketing   13 авг 28 00:59 test-3.sh
+
+delay:
+300
+
+input:
+%{delay 15000}sudo chmod o-w new-test-2.sh
+
+input:
+ls -la
+
+output:
+drwxrwxrwx  2  ilya  marketing 4096 авг 30 00:34 dir1
+drwxr--r--  2  ilya  marketing 4096 авг 31 15:40 dir2
+-rwxr--r--  1  ilya  marketing   17 авг 31 15:38 start.sh
+-rwxrwxrwx  1  ilya  marketing   15 авг 30 00:34 test-1.sh
+-rwxrw-r--  1 pavel principals   17 авг 31 15:42 new-test-2.sh
+-r--r--r--  1  ilya  marketing   13 авг 28 00:59 test-3.sh
+
+delay:
+300
+
+input:
+%{delay 13000}sudo chmod o=rwx test-3.sh
+
+input:
+ls -la
+
+output:
+drwxrwxrwx  2  ilya  marketing 4096 авг 30 00:34 dir1
+drwxr--r--  2  ilya  marketing 4096 авг 31 15:40 dir2
+-rwxr--r--  1  ilya  marketing   17 авг 31 15:38 start.sh
+-rwxrwxrwx  1  ilya  marketing   15 авг 30 00:34 test-1.sh
+-rwxrw-r--  1 pavel principals   17 авг 31 15:42 new-test-2.sh
+-r--r--rwx  1  ilya  marketing   13 авг 31 15:42 test-3.sh
+
+delay:
+300
+
+input:
+%{delay 12000}sudo chmod 777 test-3.sh
+
+input:
+ls -la
+
+output:
+drwxrwxrwx  2  ilya  marketing 4096 авг 30 00:34 dir1
+drwxr--r--  2  ilya  marketing 4096 авг 31 15:40 dir2
+-rwxr--r--  1  ilya  marketing   17 авг 31 15:38 start.sh
+-rwxrwxrwx  1  ilya  marketing   15 авг 30 00:34 test-1.sh
+-rwxrw-r--  1 pavel principals   17 авг 31 15:38 new-test-2.sh
+-rwxrwxrwx  1  ilya  marketing   13 авг 31 15:42 test-3.sh
+
+delay:
+300
+
+input:
+%{delay 100000}
