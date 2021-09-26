@@ -244,9 +244,11 @@ const runAction = (actions, index) => {
       }
       case 'prompt': {
         changePrompt(action.data, actions, index)
+        break
       }
       case 'scroll_lines': {
         scrollLines(action.data, actions, index)
+        break
       }
     }
   }
