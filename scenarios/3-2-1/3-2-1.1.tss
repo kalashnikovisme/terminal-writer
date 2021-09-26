@@ -22,9 +22,9 @@ input:
 %{delay 1000}cat test1 test2 test3
 
 output:
-best_ever_linux_course
-best_ever_linux_course
-best_ever_linux_course
+slurm_linux
+slurm_linux
+slurm_linux
 
 delay:
 200
