@@ -1,0 +1,22 @@
+audio:
+4-1-1/4-1-1.7.mp3
+
+input:
+%{delay 14000}sleep 1000 &
+
+output:
+[1] 229442
+
+delay:
+100
+
+input:
+%{delay 8000}kill 229442
+
+input:
+%{delay 6000}ps aux | grep 229442
+
+input:
+%{delay 20000}kill -9
+
+

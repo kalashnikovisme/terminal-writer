@@ -1,0 +1,238 @@
+audio:
+4-1-1/4-1-1.8.mp3
+
+input:
+%{delay 3000}pkill%{delay 18000}
+
+input:
+killall chrome
+
+input:
+%{delay 18000}pgrep chrome
+
+output:
+5572
+5590
+5591
+5595
+5616
+5622
+5649
+5669
+5900
+6124
+65443
+69716
+158523
+167837
+167851
+209520
+209548
+210405
+211016
+230054
+
+delay:
+300
+
+input:
+%{delay 16000}pgrep -a chrome
+
+output:
+5572 /opt/meetsidekick.com/sidekick/chrome
+5590 /opt/meetsidekick.com/sidekick/chrome --type=zygote --no-zygote-sandbox
+5591 /opt/meetsidekick.com/sidekick/chrome --type=zygote
+5595 /opt/meetsidekick.com/sidekick/chrome --type=zygote
+5616 /opt/meetsidekick.com/sidekick/chrome --type=gpu-process --field-trial-handle=11745438658883568207,292377450276589392,131072 --gpu-preferences=QAAAAAAAAAAgAAAQAAAAAAAAAAAAAAAAAABgAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA --shared-files
+5622 /opt/meetsidekick.com/sidekick/chrome --type=utility --utility-sub-type=network.mojom.NetworkService --field-trial-handle=11745438658883568207,292377450276589392,131072 --lang=en-US --service-sandbox-type=network --shared-files=v8_context_snapshot_data:100
+5649 /opt/meetsidekick.com/sidekick/chrome --type=utility --utility-sub-type=storage.mojom.StorageService --field-trial-handle=11745438658883568207,292377450276589392,131072 --lang=en-US --service-sandbox-type=utility --shared-files=v8_context_snapshot_data:100
+5669 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=11745438658883568207,292377450276589392,131072 --lang=en-US --extension-process --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=5 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+5900 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=11745438658883568207,292377450276589392,131072 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=13 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+6124 /opt/meetsidekick.com/sidekick/chrome --type=utility --utility-sub-type=audio.mojom.AudioService --field-trial-handle=11745438658883568207,292377450276589392,131072 --lang=en-US --service-sandbox-type=none --shared-files=v8_context_snapshot_data:100
+65443 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=11745438658883568207,292377450276589392,131072 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=1043 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+69716 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=11745438658883568207,292377450276589392,131072 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=1119 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+158523 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=11745438658883568207,292377450276589392,131072 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=1787 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+167837 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=11745438658883568207,292377450276589392,131072 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=1970 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+167851 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=11745438658883568207,292377450276589392,131072 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=1971 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+209520 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=11745438658883568207,292377450276589392,131072 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=2539 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+209548 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=11745438658883568207,292377450276589392,131072 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=2541 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+210405 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=11745438658883568207,292377450276589392,131072 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=2552 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+211016 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=11745438658883568207,292377450276589392,131072 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=2581 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+230054 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=11745438658883568207,292377450276589392,131072 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=2742 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+
+delay:
+800
+
+input:
+%{delay 8000}pgrep -u slurm
+
+output:
+2576
+2577
+2582
+2584
+2588
+2603
+2608
+2616
+2621
+2625
+2629
+2636
+2642
+2646
+2654
+2689
+2690
+2693
+2723
+2881
+2903
+2908
+2918
+2923
+2938
+2967
+2971
+2972
+2976
+2979
+2989
+2992
+2997
+3002
+3010
+3018
+3033
+3034
+3035
+3037
+3040
+3043
+3045
+3049
+3052
+3053
+3055
+3056
+3058
+3060
+3063
+3065
+3068
+3078
+3091
+3093
+3113
+3169
+3186
+3195
+3212
+3220
+3235
+3282
+3495
+3503
+3507
+3564
+3586
+3665
+3673
+3715
+3770
+5190
+5572
+5579
+5580
+5590
+5591
+5592
+5595
+5616
+5622
+5649
+5669
+5900
+6124
+11365
+11372
+11382
+11724
+11786
+11787
+11801
+11828
+11834
+11857
+11880
+11916
+11954
+11986
+11994
+13207
+30718
+30899
+30970
+30971
+31952
+32038
+32119
+32210
+39701
+40879
+41049
+41135
+41221
+41307
+41467
+41469
+65443
+69716
+158523
+167837
+167851
+180121
+180123
+209520
+209548
+210405
+211016
+212264
+230054
+230609
+[1]+  Done                    sleep 1000
+
+delay:
+1000
+
+input:
+%{delay 17000}pgrep -l chro
+
+output:
+5572 chrome
+5590 chrome
+5591 chrome
+5595 chrome
+5616 chrome
+5622 chrome
+5649 chrome
+5669 chrome
+5900 chrome
+6124 chrome
+65443 chrome
+69716 chrome
+158523 chrome
+167837 chrome
+167851 chrome
+209520 chrome
+209548 chrome
+210405 chrome
+211016 chrome
+230054 chrome
+231251 chrome
+
+delay:
+700
+
+input:
+%{delay 10000}

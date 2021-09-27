@@ -1,0 +1,25 @@
+audio:
+4-1-1/4-1-1.9.mp3
+
+input:
+%{delay 3000}uptime
+
+output:
+ 06:46:21 up 2 days, 16:47,  1 user,  load average: 1,64, 1,91, 1,79
+
+delay:
+100
+
+input:
+%{delay 6000}free
+
+output:
+              total        used        free      shared  buff/cache   available
+Mem:       16245272     6264712      763968     1828836     9216592     7817580
+Swap:       2097148       27072     2070076
+
+delay:
+200
+
+input:
+%{delay 100000}

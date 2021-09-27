@@ -1,0 +1,378 @@
+audio:
+4-1-1/4-1-1.4.mp3
+
+input:
+%{delay 3000}ps aux%{delay 20000}
+
+output:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.0 169284 13008 ?        Ss   сен24   0:12 /sbin/init splash
+root           2  0.0  0.0      0     0 ?        S    сен24   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        I<   сен24   0:00 [rcu_gp]
+root           4  0.0  0.0      0     0 ?        I<   сен24   0:00 [rcu_par_gp]
+root           6  0.0  0.0      0     0 ?        I<   сен24   0:00 [kworker/0:0H-events_highpri]
+root           9  0.0  0.0      0     0 ?        I<   сен24   0:00 [mm_percpu_wq]
+root          10  0.0  0.0      0     0 ?        S    сен24   0:00 [rcu_tasks_rude_]
+root          11  0.0  0.0      0     0 ?        S    сен24   0:00 [rcu_tasks_trace]
+root          12  0.0  0.0      0     0 ?        S    сен24   0:02 [ksoftirqd/0]
+root          13  0.1  0.0      0     0 ?        I    сен24   4:52 [rcu_sched]
+root          14  0.0  0.0      0     0 ?        S    сен24   0:00 [migration/0]
+root          15  0.0  0.0      0     0 ?        S    сен24   0:00 [idle_inject/0]
+root          16  0.0  0.0      0     0 ?        S    сен24   0:00 [cpuhp/0]
+root          17  0.0  0.0      0     0 ?        S    сен24   0:00 [cpuhp/1]
+root          18  0.0  0.0      0     0 ?        S    сен24   0:00 [idle_inject/1]
+root          19  0.0  0.0      0     0 ?        S    сен24   0:00 [migration/1]
+root          20  0.0  0.0      0     0 ?        S    сен24   0:01 [ksoftirqd/1]
+root          22  0.0  0.0      0     0 ?        I<   сен24   0:00 [kworker/1:0H-kblockd]
+root          23  0.0  0.0      0     0 ?        S    сен24   0:00 [cpuhp/2]
+root          24  0.0  0.0      0     0 ?        S    сен24   0:00 [idle_inject/2]
+root          25  0.0  0.0      0     0 ?        S    сен24   0:00 [migration/2]
+root          26  0.0  0.0      0     0 ?        S    сен24   0:00 [ksoftirqd/2]
+root          28  0.0  0.0      0     0 ?        I<   сен24   0:00 [kworker/2:0H-events_highpri]
+root          29  0.0  0.0      0     0 ?        S    сен24   0:00 [cpuhp/3]
+root          30  0.0  0.0      0     0 ?        S    сен24   0:00 [idle_inject/3]
+root          31  0.0  0.0      0     0 ?        S    сен24   0:00 [migration/3]
+root          32  0.0  0.0      0     0 ?        S    сен24   0:02 [ksoftirqd/3]
+root          34  0.0  0.0      0     0 ?        I<   сен24   0:00 [kworker/3:0H-events_highpri]
+root          35  0.0  0.0      0     0 ?        S    сен24   0:00 [cpuhp/4]
+root          36  0.0  0.0      0     0 ?        S    сен24   0:00 [idle_inject/4]
+root          37  0.0  0.0      0     0 ?        S    сен24   0:00 [migration/4]
+root          38  0.0  0.0      0     0 ?        S    сен24   0:00 [ksoftirqd/4]
+root          40  0.0  0.0      0     0 ?        I<   сен24   0:00 [kworker/4:0H-kblockd]
+root          41  0.0  0.0      0     0 ?        S    сен24   0:00 [cpuhp/5]
+root          42  0.0  0.0      0     0 ?        S    сен24   0:00 [idle_inject/5]
+root          43  0.0  0.0      0     0 ?        S    сен24   0:00 [migration/5]
+root          44  0.0  0.0      0     0 ?        S    сен24   0:03 [ksoftirqd/5]
+root          46  0.0  0.0      0     0 ?        I<   сен24   0:00 [kworker/5:0H-events_highpri]
+root          47  0.0  0.0      0     0 ?        S    сен24   0:00 [cpuhp/6]
+root          48  0.0  0.0      0     0 ?        S    сен24   0:00 [idle_inject/6]
+root          49  0.0  0.0      0     0 ?        S    сен24   0:00 [migration/6]
+root          50  0.0  0.0      0     0 ?        S    сен24   0:01 [ksoftirqd/6]
+root          52  0.0  0.0      0     0 ?        I<   сен24   0:00 [kworker/6:0H-kblockd]
+root          53  0.0  0.0      0     0 ?        S    сен24   0:00 [cpuhp/7]
+root          54  0.0  0.0      0     0 ?        S    сен24   0:00 [idle_inject/7]
+root          55  0.0  0.0      0     0 ?        S    сен24   0:00 [migration/7]
+root          56  0.0  0.0      0     0 ?        S    сен24   0:00 [ksoftirqd/7]
+root          58  0.0  0.0      0     0 ?        I<   сен24   0:00 [kworker/7:0H-kblockd]
+root          59  0.0  0.0      0     0 ?        S    сен24   0:00 [cpuhp/8]
+root          60  0.0  0.0      0     0 ?        S    сен24   0:00 [idle_inject/8]
+root          61  0.0  0.0      0     0 ?        S    сен24   0:00 [migration/8]
+root          62  0.0  0.0      0     0 ?        S    сен24   0:01 [ksoftirqd/8]
+root          64  0.0  0.0      0     0 ?        I<   сен24   0:00 [kworker/8:0H-events_highpri]
+root          65  0.0  0.0      0     0 ?        S    сен24   0:00 [cpuhp/9]
+root          66  0.0  0.0      0     0 ?        S    сен24   0:00 [idle_inject/9]
+root          67  0.0  0.0      0     0 ?        S    сен24   0:00 [migration/9]
+root          68  0.0  0.0      0     0 ?        S    сен24   0:00 [ksoftirqd/9]
+root          70  0.0  0.0      0     0 ?        I<   сен24   0:00 [kworker/9:0H-kblockd]
+root          71  0.0  0.0      0     0 ?        S    сен24   0:00 [cpuhp/10]
+root          72  0.0  0.0      0     0 ?        S    сен24   0:00 [idle_inject/10]
+root          73  0.0  0.0      0     0 ?        S    сен24   0:00 [migration/10]
+root          74  0.0  0.0      0     0 ?        S    сен24   0:00 [ksoftirqd/10]
+root          76  0.0  0.0      0     0 ?        I<   сен24   0:00 [kworker/10:0H-events_highpri]
+root          77  0.0  0.0      0     0 ?        S    сен24   0:00 [cpuhp/11]
+root          78  0.0  0.0      0     0 ?        S    сен24   0:00 [idle_inject/11]
+root          79  0.0  0.0      0     0 ?        S    сен24   0:00 [migration/11]
+root          80  0.0  0.0      0     0 ?        S    сен24   0:04 [ksoftirqd/11]
+root          82  0.0  0.0      0     0 ?        I<   сен24   0:00 [kworker/11:0H-events_highpri]
+root          83  0.0  0.0      0     0 ?        S    сен24   0:00 [kdevtmpfs]
+root          84  0.0  0.0      0     0 ?        I<   сен24   0:00 [netns]
+root          85  0.0  0.0      0     0 ?        I<   сен24   0:00 [inet_frag_wq]
+root          86  0.0  0.0      0     0 ?        S    сен24   0:00 [kauditd]
+root          87  0.0  0.0      0     0 ?        S    сен24   0:00 [khungtaskd]
+root          88  0.0  0.0      0     0 ?        S    сен24   0:00 [oom_reaper]
+root          89  0.0  0.0      0     0 ?        I<   сен24   0:00 [writeback]
+root          90  0.0  0.0      0     0 ?        S    сен24   0:59 [kcompactd0]
+root          91  0.0  0.0      0     0 ?        SN   сен24   0:00 [ksmd]
+root          92  0.0  0.0      0     0 ?        SN   сен24   0:03 [khugepaged]
+root         139  0.0  0.0      0     0 ?        I<   сен24   0:00 [kintegrityd]
+root         140  0.0  0.0      0     0 ?        I<   сен24   0:00 [kblockd]
+root         141  0.0  0.0      0     0 ?        I<   сен24   0:00 [blkcg_punt_bio]
+root         144  0.0  0.0      0     0 ?        I<   сен24   0:00 [tpm_dev_wq]
+root         145  0.0  0.0      0     0 ?        I<   сен24   0:00 [ata_sff]
+root         146  0.0  0.0      0     0 ?        I<   сен24   0:00 [md]
+root         147  0.0  0.0      0     0 ?        I<   сен24   0:00 [edac-poller]
+root         148  0.0  0.0      0     0 ?        I<   сен24   0:00 [devfreq_wq]
+root         150  0.0  0.0      0     0 ?        S    сен24   0:00 [watchdogd]
+root         151  0.0  0.0      0     0 ?        I<   сен24   0:04 [kworker/2:1H-events_highpri]
+root         153  0.0  0.0      0     0 ?        S    сен24   0:02 [kswapd0]
+root         154  0.0  0.0      0     0 ?        S    сен24   0:00 [ecryptfs-kthrea]
+root         156  0.0  0.0      0     0 ?        I<   сен24   0:00 [kthrotld]
+root         157  0.0  0.0      0     0 ?        S    сен24   0:00 [irq/123-aerdrv]
+root         158  0.0  0.0      0     0 ?        S    сен24   0:00 [irq/123-pcie-dp]
+root         159  0.0  0.0      0     0 ?        S    сен24   0:00 [irq/124-aerdrv]
+root         160  0.0  0.0      0     0 ?        S    сен24   0:00 [irq/124-pcie-dp]
+root         169  0.0  0.0      0     0 ?        I<   сен24   0:00 [acpi_thermal_pm]
+root         170  0.0  0.0      0     0 ?        I<   сен24   0:00 [vfio-irqfd-clea]
+root         172  0.0  0.0      0     0 ?        I<   сен24   0:00 [ipv6_addrconf]
+root         174  0.0  0.0      0     0 ?        I<   сен24   0:03 [kworker/8:1H-kblockd]
+root         182  0.0  0.0      0     0 ?        I<   сен24   0:00 [kstrp]
+root         185  0.0  0.0      0     0 ?        I<   сен24   0:00 [zswap-shrink]
+root         193  0.0  0.0      0     0 ?        I<   сен24   0:00 [charger_manager]
+root         215  0.0  0.0      0     0 ?        I<   сен24   0:05 [kworker/3:1H-events_highpri]
+root         254  0.0  0.0      0     0 ?        I<   сен24   0:06 [kworker/11:1H-kblockd]
+root         257  0.0  0.0      0     0 ?        I<   сен24   0:00 [nvme-wq]
+root         258  0.0  0.0      0     0 ?        I<   сен24   0:00 [nvme-reset-wq]
+root         259  0.0  0.0      0     0 ?        I<   сен24   0:00 [nvme-delete-wq]
+root         263  0.0  0.0      0     0 ?        I<   сен24   0:05 [kworker/0:1H-events_highpri]
+root         264  0.0  0.0      0     0 ?        S    сен24   0:00 [scsi_eh_0]
+root         265  0.0  0.0      0     0 ?        I<   сен24   0:00 [scsi_tmf_0]
+root         266  0.0  0.0      0     0 ?        S    сен24   0:00 [scsi_eh_1]
+root         267  0.0  0.0      0     0 ?        I<   сен24   0:00 [scsi_tmf_1]
+root         268  0.0  0.0      0     0 ?        S    сен24   0:00 [scsi_eh_2]
+root         269  0.0  0.0      0     0 ?        I<   сен24   0:00 [scsi_tmf_2]
+root         270  0.0  0.0      0     0 ?        S    сен24   0:00 [scsi_eh_3]
+root         271  0.0  0.0      0     0 ?        I<   сен24   0:00 [scsi_tmf_3]
+root         272  0.0  0.0      0     0 ?        S    сен24   0:00 [scsi_eh_4]
+root         273  0.0  0.0      0     0 ?        I<   сен24   0:00 [scsi_tmf_4]
+root         282  0.2  0.0      0     0 ?        S    сен24   8:59 [irq/137-ELAN120]
+root         283  0.0  0.0      0     0 ?        I<   сен24   0:04 [kworker/5:1H-events_highpri]
+root         288  0.0  0.0      0     0 ?        I<   сен24   0:02 [kworker/10:1H-events_highpri]
+root         307  0.0  0.0      0     0 ?        I<   сен24   0:11 [kworker/6:1H-kblockd]
+root         309  0.0  0.0      0     0 ?        I<   сен24   0:04 [kworker/1:1H-events_highpri]
+root         310  0.0  0.0      0     0 ?        I<   сен24   0:02 [kworker/9:1H-kblockd]
+root         311  0.0  0.0      0     0 ?        D    сен24   0:32 [jbd2/sda2-8]
+root         312  0.0  0.0      0     0 ?        I<   сен24   0:00 [ext4-rsv-conver]
+root         324  0.0  0.0      0     0 ?        I<   сен24   0:04 [kworker/4:1H-events_highpri]
+root         350  0.0  0.0      0     0 ?        I<   сен24   0:04 [kworker/7:1H-events_highpri]
+root         359  0.0  0.4 160356 75848 ?        S<s  сен24   0:13 /lib/systemd/systemd-journald
+root         393  0.0  0.0      0     0 ?        S<   сен24   0:00 [loop0]
+root         394  0.0  0.0      0     0 ?        S<   сен24   0:00 [loop1]
+root         396  0.0  0.0      0     0 ?        S<   сен24   0:00 [loop3]
+root         397  0.0  0.0      0     0 ?        S<   сен24   0:00 [loop4]
+root         399  0.0  0.0      0     0 ?        S<   сен24   0:00 [loop5]
+root         402  0.0  0.0      0     0 ?        S<   сен24   0:00 [loop6]
+root         403  0.0  0.0      0     0 ?        S<   сен24   0:00 [loop7]
+root         417  0.0  0.0      0     0 ?        S<   сен24   0:00 [loop8]
+root         422  0.0  0.0  25392  8436 ?        Ss   сен24   0:03 /lib/systemd/systemd-udevd
+root         423  0.0  0.0      0     0 ?        S<   сен24   0:00 [loop9]
+root         424  0.0  0.0      0     0 ?        S<   сен24   0:00 [loop10]
+root         425  0.0  0.0      0     0 ?        S<   сен24   0:00 [loop11]
+root         426  0.0  0.0      0     0 ?        S<   сен24   0:00 [loop12]
+root         427  0.0  0.0      0     0 ?        S<   сен24   0:00 [loop13]
+root         428  0.0  0.0      0     0 ?        S<   сен24   0:00 [loop14]
+root         429  0.0  0.0      0     0 ?        S<   сен24   0:00 [loop15]
+root         430  0.0  0.0      0     0 ?        S<   сен24   0:00 [loop16]
+root         431  0.0  0.0      0     0 ?        S<   сен24   0:00 [loop17]
+root         432  0.0  0.0      0     0 ?        S<   сен24   0:00 [loop18]
+root         433  0.0  0.0      0     0 ?        S<   сен24   0:00 [loop19]
+root         434  0.0  0.0      0     0 ?        S<   сен24   0:00 [loop20]
+root         435  0.0  0.0      0     0 ?        S<   сен24   0:00 [loop21]
+root         436  0.0  0.0      0     0 ?        S<   сен24   0:00 [loop22]
+root         437  0.0  0.0      0     0 ?        S<   сен24   0:00 [loop23]
+root         438  0.0  0.0      0     0 ?        S<   сен24   0:00 [loop24]
+root         483  0.0  0.0      0     0 ?        I<   сен24   0:00 [asus_wireless_w]
+root         490  0.0  0.0      0     0 ?        I<   сен24   0:00 [led_workqueue]
+root         501  0.0  0.0      0     0 ?        I<   сен24   0:00 [cfg80211]
+root         505  0.0  0.0      0     0 ?        S    сен24   0:00 [irq/138-mei_me]
+root         513  0.0  0.0      0     0 ?        I<   сен24   0:00 [cryptd]
+root         540  0.0  0.0      0     0 ?        S    сен24   0:12 [irq/139-iwlwifi]
+root         541  0.0  0.0      0     0 ?        S    сен24   0:00 [irq/140-iwlwifi]
+root         542  0.0  0.0      0     0 ?        S    сен24   0:00 [irq/141-iwlwifi]
+root         543  0.0  0.0      0     0 ?        S    сен24   0:02 [irq/142-iwlwifi]
+root         544  0.0  0.0      0     0 ?        S    сен24   0:01 [irq/143-iwlwifi]
+root         545  0.0  0.0      0     0 ?        S    сен24   0:00 [irq/144-iwlwifi]
+root         570  0.0  0.0      0     0 ?        S    сен24   0:00 [card0-crtc0]
+root         571  0.0  0.0      0     0 ?        S    сен24   0:00 [card0-crtc1]
+root         572  0.0  0.0      0     0 ?        S    сен24   0:00 [card0-crtc2]
+systemd+     884  0.0  0.0  24564 13820 ?        Ss   сен24   0:20 /lib/systemd/systemd-resolved
+systemd+     885  0.0  0.0  90260  6044 ?        Ssl  сен24   0:00 /lib/systemd/systemd-timesyncd
+root         890  0.0  0.0 247228  7688 ?        Ssl  сен24   0:05 /usr/lib/accountsservice/accounts-daemon
+root         891  0.0  0.0   2548   776 ?        Ss   сен24   0:18 /usr/sbin/acpid
+avahi        894  0.0  0.0   8536  3256 ?        Ss   сен24   0:06 avahi-daemon: running [FemaleKidKiller.local]
+root         895  0.0  0.0   8428  4552 ?        Ss   сен24   0:00 /usr/lib/bluetooth/bluetoothd
+root         896  0.0  0.0  18052  3016 ?        Ss   сен24   0:00 /usr/sbin/cron -f
+message+     898  0.0  0.0  10408  7060 ?        Ss   сен24   0:54 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root         899  0.1  0.1 492820 20036 ?        Ssl  сен24   6:50 /usr/sbin/NetworkManager --no-daemon
+root         904  0.0  0.0  81944  3556 ?        Ssl  сен24   0:22 /usr/sbin/irqbalance --foreground
+root         907  0.0  0.1  47960 19752 ?        Ss   сен24   0:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+root         909  0.0  0.0 249884 12196 ?        Ssl  сен24   0:06 /usr/lib/policykit-1/polkitd --no-debug
+syslog       911  0.0  0.0 224356  4872 ?        Ssl  сен24   0:04 /usr/sbin/rsyslogd -n -iNONE
+root         912  0.0  0.1 2410868 29048 ?       Ssl  сен24   0:47 /usr/lib/snapd/snapd
+root         913  0.0  0.0 244344  6548 ?        Ssl  сен24   0:00 /usr/libexec/switcheroo-control
+root         915  0.0  0.0  16768  7900 ?        Ss   сен24   0:04 /lib/systemd/systemd-logind
+root         916  0.0  0.0 282388  9504 ?        Ssl  сен24   2:41 /usr/sbin/thermald --systemd --dbus-enable --adaptive
+root         917  0.0  0.0 393364 13372 ?        Ssl  сен24   0:20 /usr/lib/udisks2/udisksd
+root         918  0.0  0.0  14072  7652 ?        Ss   сен24   0:07 /sbin/wpa_supplicant -u -s -O /run/wpa_supplicant
+avahi        967  0.0  0.0   8352   328 ?        S    сен24   0:00 avahi-daemon: chroot helper
+colord      1017  0.0  0.0 255000 14496 ?        Ssl  сен24   0:00 /usr/libexec/colord
+root        1024  0.0  0.1 126660 22552 ?        Ssl  сен24   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root        1034  0.0  0.2 2157936 45176 ?       Ssl  сен24   2:38 /usr/bin/containerd
+root        1038  0.0  0.0 260984  9676 ?        Ssl  сен24   0:06 /usr/lib/upower/upowerd
+root        1040  0.0  0.0 240016 10216 ?        Ssl  сен24   0:00 /usr/sbin/ModemManager --filter-policy=strict
+root        1076  0.0  0.0 248248  8564 ?        Ssl  сен24   0:00 /usr/sbin/gdm3
+redis       1119  0.1  0.0  61432  5180 ?        Ssl  сен24   7:01 /usr/bin/redis-server 127.0.0.1:6379
+postgres    1138  0.0  0.1 227000 28096 ?        Ss   сен24   0:04 /usr/lib/postgresql/13/bin/postgres -D /var/lib/postgresql/13/main -c config_file=/etc/postgresql/13/main/postgresql.co
+postgres    1139  0.0  0.1 226932 27704 ?        Ss   сен24   0:14 /usr/lib/postgresql/12/bin/postgres -D /var/lib/postgresql/12/main -c config_file=/etc/postgresql/12/main/postgresql.co
+whoopsie    1189  0.0  0.0 253320 15308 ?        Ssl  сен24   0:01 /usr/bin/whoopsie -f
+kernoops    1209  0.0  0.0  11264   448 ?        Ss   сен24   0:10 /usr/sbin/kerneloops --test
+kernoops    1211  0.0  0.0  11264   452 ?        Ss   сен24   0:10 /usr/sbin/kerneloops
+postgres    1452  0.0  0.0 227100  6028 ?        Ss   сен24   0:00 postgres: 13/main: checkpointer 
+postgres    1453  0.0  0.0 227000  5492 ?        Ss   сен24   0:03 postgres: 13/main: background writer 
+postgres    1454  0.0  0.0 227000  9776 ?        Ss   сен24   0:03 postgres: 13/main: walwriter 
+postgres    1455  0.0  0.0 227544  8460 ?        Ss   сен24   0:02 postgres: 13/main: autovacuum launcher 
+postgres    1456  0.0  0.0  81356  4636 ?        Ss   сен24   0:03 postgres: 13/main: stats collector 
+postgres    1457  0.0  0.0 227556  6420 ?        Ss   сен24   0:00 postgres: 13/main: logical replication launcher 
+root        1465  0.0  0.0 1667308 11280 ?       Sl   сен24   2:16 /opt/teamviewer/tv_bin/teamviewerd -d
+rtkit       1501  0.0  0.0 152940  2916 ?        SNsl сен24   0:03 /usr/libexec/rtkit-daemon
+postgres    1550  0.0  0.3 227284 59164 ?        Ss   сен24   0:00 postgres: 12/main: checkpointer   
+postgres    1551  0.0  0.0 226932  5160 ?        Ss   сен24   0:03 postgres: 12/main: background writer   
+postgres    1552  0.0  0.0 226932  9708 ?        Ss   сен24   0:03 postgres: 12/main: walwriter   
+postgres    1553  0.0  0.0 227600  7920 ?        Ss   сен24   0:07 postgres: 12/main: autovacuum launcher   
+postgres    1554  0.0  0.0  81568  5112 ?        Ss   сен24   0:10 postgres: 12/main: stats collector   
+postgres    1555  0.0  0.0 227472  6476 ?        Ss   сен24   0:00 postgres: 12/main: logical replication launcher   
+root        1584  0.0  0.4 2128656 77316 ?       Ssl  сен24   1:52 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+root        1950  0.0  0.0   2496   576 ?        S    сен24   0:00 bpfilter_umh
+root        2565  0.0  0.0 324620 12204 ?        Sl   сен24   0:00 gdm-session-worker [pam/gdm-password]
+slurm       2576  0.0  0.0  19376 10460 ?        Ss   сен24   0:02 /lib/systemd/systemd --user
+slurm       2577  0.0  0.0 169240  3132 ?        S    сен24   0:00 (sd-pam)
+slurm       2582  2.2  0.1 4638236 23864 ?       S<sl сен24  87:35 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+slurm       2584  0.0  0.1 595352 27328 ?        SNsl сен24   0:23 /usr/libexec/tracker-miner-fs
+slurm       2588  0.0  0.0   9048  6044 ?        Ss   сен24   0:41 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+slurm       2603  0.0  0.0 248452  7636 ?        Ssl  сен24   0:01 /usr/libexec/gvfsd
+slurm       2608  0.0  0.0 378344  5468 ?        Sl   сен24   0:00 /usr/libexec/gvfsd-fuse /run/user/1000/gvfs -f -o big_writes
+slurm       2616  0.0  0.0 322884  9396 ?        Ssl  сен24   0:09 /usr/libexec/gvfs-udisks2-volume-monitor
+slurm       2621  0.0  0.0 246740  6588 ?        Ssl  сен24   0:00 /usr/libexec/gvfs-gphoto2-volume-monitor
+slurm       2625  0.0  0.0 245128  6764 ?        Ssl  сен24   0:00 /usr/libexec/gvfs-goa-volume-monitor
+slurm       2629  0.0  0.5 901468 96656 ?        SLl  сен24   0:43 /usr/libexec/goa-daemon
+slurm       2636  0.0  0.0 323388  8256 ?        Sl   сен24   0:01 /usr/libexec/goa-identity-service
+slurm       2642  0.0  0.0 244460  6044 ?        Ssl  сен24   0:00 /usr/libexec/gvfs-mtp-volume-monitor
+slurm       2646  0.0  0.0 325356  8756 ?        Ssl  сен24   0:08 /usr/libexec/gvfs-afc-volume-monitor
+slurm       2654  0.0  0.0 396412  7584 ?        Sl   сен24   0:07 /usr/bin/gnome-keyring-daemon --daemonize --login
+root        2661  0.0  0.0      0     0 ?        S<   сен24   0:00 [krfcommd]
+slurm       2689  0.0  0.0 248528  7452 ?        Sl   сен24   0:00 /usr/bin/gnome-keyring-daemon --start --foreground --components=secrets
+slurm       2690  0.0  0.0 172652  6584 tty2     Ssl+ сен24   0:00 /usr/lib/gdm3/gdm-x-session --run-script env GNOME_SHELL_SESSION_MODE=ubuntu /usr/bin/gnome-session --systemd --session
+slurm       2693  3.4  0.7 1045696 125328 tty2   Sl+  сен24 131:17 /usr/lib/xorg/Xorg vt2 -displayfd 3 -auth /run/user/1000/gdm/Xauthority -background none -noreset -keeptty -verbose 3
+slurm       2723  0.0  0.0 197044 14000 tty2     Sl+  сен24   0:00 /usr/libexec/gnome-session-binary --systemd --systemd --session=ubuntu
+slurm       2881  0.0  0.0   6040   400 ?        Ss   сен24   0:00 /usr/bin/ssh-agent /usr/bin/im-launch env GNOME_SHELL_SESSION_MODE=ubuntu /usr/bin/gnome-session --systemd --session=ub
+slurm       2903  0.0  0.0 305748  6696 ?        Ssl  сен24   0:00 /usr/libexec/at-spi-bus-launcher
+slurm       2908  0.0  0.0   7512  4244 ?        S    сен24   0:05 /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 3
+slurm       2918  0.0  0.0  98696  4340 ?        Ssl  сен24   0:00 /usr/libexec/gnome-session-ctl --monitor
+slurm       2923  0.0  0.0 419728 15796 ?        Ssl  сен24   0:06 /usr/libexec/gnome-session-binary --systemd-service --session=ubuntu
+slurm       2938  3.4  2.4 6178000 400016 ?      Ssl  сен24 130:25 /usr/bin/gnome-shell
+slurm       2967  0.0  0.0 393440  8152 ?        Sl   сен24   1:02 ibus-daemon --panel disable --xim
+slurm       2971  0.0  0.0 171336  6968 ?        Sl   сен24   0:00 /usr/libexec/ibus-memconf
+slurm       2972  0.0  0.1 281620 28392 ?        Sl   сен24   0:16 /usr/libexec/ibus-extension-gtk3
+slurm       2976  0.0  0.1 202168 23848 ?        Sl   сен24   0:01 /usr/libexec/ibus-x11 --kill-daemon
+slurm       2979  0.0  0.0 600764 13972 ?        Sl   сен24   0:58 /usr/libexec/ibus-portal
+slurm       2989  0.0  0.0 162840  7668 ?        Sl   сен24   0:24 /usr/libexec/at-spi2-registryd --use-gnome-session
+slurm       2992  0.0  0.0 244228  5944 ?        Ssl  сен24   0:00 /usr/libexec/xdg-permission-store
+slurm       2997  0.0  0.1 1059880 24628 ?       Sl   сен24   0:01 /usr/libexec/gnome-shell-calendar-server
+slurm       3002  0.0  0.0 156940  6928 ?        Sl   сен24   0:02 /usr/libexec/dconf-service
+slurm       3010  0.0  0.2 1017520 34156 ?       Ssl  сен24   0:03 /usr/libexec/evolution-source-registry
+slurm       3018  0.0  0.1 2938924 26896 ?       Sl   сен24   0:00 /usr/bin/gjs /usr/share/gnome-shell/org.gnome.Shell.Notifications
+slurm       3033  0.0  0.0 318484  6556 ?        Ssl  сен24   0:01 /usr/libexec/gsd-a11y-settings
+slurm       3034  0.0  0.1 592996 26136 ?        Ssl  сен24   0:05 /usr/libexec/gsd-color
+slurm       3035  0.0  0.0 382444 15532 ?        Ssl  сен24   0:01 /usr/libexec/gsd-datetime
+slurm       3037  0.0  0.0 320816  7864 ?        Ssl  сен24   0:14 /usr/libexec/gsd-housekeeping
+slurm       3040  0.0  0.1 350296 24396 ?        Ssl  сен24   0:03 /usr/libexec/gsd-keyboard
+slurm       3043  0.0  0.1 1291512 29068 ?       Ssl  сен24   0:19 /usr/libexec/gsd-media-keys
+slurm       3045  0.0  0.1 691224 26368 ?        Ssl  сен24   0:07 /usr/libexec/gsd-power
+slurm       3049  0.0  0.0 256880 10492 ?        Ssl  сен24   0:01 /usr/libexec/gsd-print-notifications
+slurm       3052  0.0  0.0 465732  6004 ?        Ssl  сен24   0:02 /usr/libexec/gsd-rfkill
+slurm       3053  0.0  0.0 244268  5864 ?        Ssl  сен24   0:01 /usr/libexec/gsd-screensaver-proxy
+slurm       3055  0.0  0.0 473744 10476 ?        Ssl  сен24   0:26 /usr/libexec/gsd-sharing
+slurm       3056  0.0  0.0 324120  8448 ?        Ssl  сен24   0:01 /usr/libexec/gsd-smartcard
+slurm       3058  0.0  0.0 328176  9072 ?        Ssl  сен24   0:01 /usr/libexec/gsd-sound
+slurm       3060  0.0  0.0 393800  7352 ?        Ssl  сен24   0:01 /usr/libexec/gsd-usb-protection
+slurm       3063  0.0  0.1 349656 23996 ?        Ssl  сен24   0:03 /usr/libexec/gsd-wacom
+slurm       3065  0.0  0.0 322804  7924 ?        Ssl  сен24   0:01 /usr/libexec/gsd-wwan
+slurm       3068  0.0  0.1 351184 25796 ?        Ssl  сен24   0:08 /usr/libexec/gsd-xsettings
+slurm       3078  0.0  0.0 231800  6048 ?        Sl   сен24   0:00 /usr/libexec/gsd-disk-utility-notify
+slurm       3091  0.0  0.4 1075740 73532 ?       Sl   сен24   0:10 /usr/libexec/evolution-data-server/evolution-alarm-notify
+slurm       3093  0.0  0.0 321404  8340 ?        Sl   сен24   0:00 /usr/lib/x86_64-linux-gnu/indicator-messages/indicator-messages-service
+slurm       3113  0.0  0.0 171600  7284 ?        Sl   сен24   0:13 /usr/libexec/ibus-engine-simple
+slurm       3169  0.0  0.0 350824 14540 ?        Sl   сен24   0:00 /usr/libexec/gsd-printer
+slurm       3186  0.0  0.0 322740  8048 ?        Sl   сен24   0:02 /usr/libexec/gvfsd-trash --spawner :1.3 /org/gtk/gvfs/exec_spaw/0
+slurm       3195  0.0  3.3 1568688 543812 ?      Sl   сен24   0:31 /snap/snap-store/547/usr/bin/snap-store --gapplication-service
+slurm       3212  0.0  0.0 613620  6404 ?        Ssl  сен24   0:03 /usr/libexec/xdg-document-portal
+slurm       3220  0.0  0.0 171132  6780 ?        Ssl  сен24   0:00 /usr/libexec/gvfsd-metadata
+slurm       3235  0.0  0.4 1908092 67984 ?       Ssl  сен24   0:21 /usr/libexec/evolution-calendar-factory
+slurm       3282  0.0  0.1 755744 28600 ?        Ssl  сен24   0:01 /usr/libexec/evolution-addressbook-factory
+slurm       3495  0.0  0.0 684808 11672 ?        Ssl  сен24   0:10 /usr/libexec/xdg-desktop-portal
+slurm       3503  0.0  0.3 1258240 53164 ?       Sl   сен24   0:05 /usr/bin/gnome-calendar --gapplication-service
+slurm       3507  0.0  0.2 399684 39376 ?        SLl  сен24   0:02 /usr/bin/seahorse --gapplication-service
+slurm       3564  0.0  0.3 990988 54784 ?        Ssl  сен24   0:36 /usr/libexec/xdg-desktop-portal-gtk
+slurm       3586  0.0  0.0  92436  3568 ?        SLs  сен24   0:00 /usr/bin/gpg-agent --supervised
+slurm       3665  0.1  0.1 1220568 18492 ?       Sl   сен24   4:50 zeitgeist-datahub
+slurm       3673  0.0  0.0 395700  9760 ?        Ssl  сен24   0:04 /usr/bin/zeitgeist-daemon
+slurm       3715  0.0  0.1 272940 16516 ?        Ssl  сен24   0:03 /usr/lib/zeitgeist/zeitgeist-fts
+slurm       3770  0.0  0.0 233664  6528 ?        Sl   сен24   0:00 /usr/lib/x86_64-linux-gnu/libproxy/0.4.15/pxgsettings org.gnome.system.proxy org.gnome.system.proxy.http org.gnome.syst
+slurm       5190  0.0  0.1 426516 30512 ?        Sl   сен24   0:07 update-notifier
+slurm       5572  2.9  2.2 1707296 370216 ?      SLl  сен24 112:58 /opt/meetsidekick.com/sidekick/chrome
+slurm       5579  0.0  0.0  16860   592 ?        S    сен24   0:00 cat
+slurm       5580  0.0  0.0  16860   588 ?        S    сен24   0:00 cat
+root      145283  0.0  0.0 175096  8456 ?        Sl   сен26   0:00 gdm-session-worker [pam/gdm-password]
+root      145724  0.0  0.0 175096  8528 ?        Sl   сен26   0:00 gdm-session-worker [pam/gdm-password]
+root      145957  0.0  0.0 175096  8620 ?        Sl   сен26   0:00 gdm-session-worker [pam/gdm-password]
+root      146655  0.0  0.0 175096  8332 ?        Sl   сен26   0:00 gdm-session-worker [pam/gdm-password]
+root      147638  0.0  0.0 175092  8468 ?        Sl   сен26   0:00 gdm-session-worker [pam/gdm-password]
+root      147854  0.0  0.0 175096  8520 ?        Sl   сен26   0:00 gdm-session-worker [pam/gdm-password]
+root      148696  0.0  0.0 175100  8804 ?        Sl   сен26   0:00 gdm-session-worker [pam/gdm-password]
+root      148900  0.0  0.0 175096  8648 ?        Sl   сен26   0:00 gdm-session-worker [pam/gdm-password]
+root      149264  0.0  0.0 175096  8752 ?        Sl   сен26   0:00 gdm-session-worker [pam/gdm-password]
+root      149528  0.0  0.0 175096  8752 ?        Sl   сен26   0:00 gdm-session-worker [pam/gdm-password]
+root      149859  0.0  0.0 175104  8504 ?        Sl   сен26   0:00 gdm-session-worker [pam/gdm-password]
+root      151311  0.0  0.0 174976  8388 ?        Sl   сен26   0:00 gdm-session-worker [pam/gdm-password]
+root      151588  0.0  0.0 175096  8836 ?        Sl   сен26   0:00 gdm-session-worker [pam/gdm-password]
+root      151811  0.0  0.0 175096  8552 ?        Sl   сен26   0:00 gdm-session-worker [pam/gdm-password]
+slurm     158523  0.9  0.9 4723940 148068 ?      Sl   сен26   6:31 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=11745438658883568207,292377450276589392,1310
+slurm     167837  2.3  2.0 9134768 333544 ?      Sl   сен26  14:06 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=11745438658883568207,292377450276589392,1310
+slurm     167851  0.5  0.8 8945932 135176 ?      Sl   сен26   3:22 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=11745438658883568207,292377450276589392,1310
+slurm     180121  0.0  0.2 101292 32820 pts/7    S+   сен26   0:01 /home/slurm/.rvm/rubies/ruby-2.7.4/bin/ruby bin/rails c
+slurm     180123  0.0  1.3 1000436 224352 ?      Ss   сен26   0:03 rails_console
+root      187583  0.2  0.0      0     0 ?        I<   сен26   0:53 [kworker/u25:3-i915_flip]
+root      188019  0.0  0.0  37368  8672 ?        Ss   00:00   0:00 /usr/sbin/cupsd -l
+root      188021  0.0  0.0 178596 11836 ?        Ssl  00:00   0:00 /usr/sbin/cups-browsed
+root      204692  0.2  0.0      0     0 ?        D<   02:32   0:23 [kworker/u25:1+i915_flip]
+slurm     209520  0.1  0.6 4643012 113328 ?      Sl   03:23   0:08 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=11745438658883568207,292377450276589392,131072 
+slurm     209548  0.0  0.5 4625920 90988 ?       Sl   03:23   0:01 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=11745438658883568207,292377450276589392,131072 
+slurm     210405 10.5  4.1 9519484 681624 ?      Sl   03:36  13:53 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=11745438658883568207,292377450276589392,131072 
+slurm     210420  0.4  1.3 4769360 214916 ?      Sl   03:36   0:38 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=11745438658883568207,292377450276589392,131072 
+slurm     211016  0.0  0.7 4652416 117164 ?      Sl   03:41   0:04 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=11745438658883568207,292377450276589392,131072 
+slurm     212264 28.8  4.0 3625992 662208 ?      SLl  03:54  32:55 obs
+root      214813  0.0  0.0      0     0 ?        I    04:22   0:00 [kworker/10:1-cgroup_destroy]
+slurm     215032  0.0  0.3 4593764 51416 ?       Sl   04:24   0:00 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=11745438658883568207,292377450276589392,131072 
+root      216315  0.0  0.0      0     0 ?        I    04:40   0:00 [kworker/1:1-events]
+root      216566  0.0  0.0      0     0 ?        I    04:42   0:00 [kworker/5:3-events]
+root      216568  0.0  0.0      0     0 ?        I    04:42   0:00 [kworker/6:1-events]
+root      217552  0.0  0.0      0     0 ?        I    04:50   0:00 [kworker/4:1-events]
+root      217604  0.0  0.0      0     0 ?        I    04:50   0:00 [kworker/0:3-events]
+root      217606  0.0  0.0      0     0 ?        I    04:50   0:00 [kworker/10:0-cgroup_destroy]
+root      217655  0.0  0.0      0     0 ?        I    04:51   0:00 [kworker/7:1-events]
+root      217684  0.0  0.0      0     0 ?        I    04:52   0:00 [kworker/2:1-events]
+root      217811  0.0  0.0      0     0 ?        I    04:53   0:01 [kworker/u24:1-events_power_efficient]
+root      218291  0.0  0.0      0     0 ?        I    04:59   0:00 [kworker/8:0-events]
+root      218292  0.0  0.0      0     0 ?        I    04:59   0:00 [kworker/2:0]
+root      218392  0.0  0.0      0     0 ?        I    05:00   0:00 [kworker/7:0-events]
+root      218784  1.4  0.0      0     0 ?        I    05:12   0:30 [kworker/11:0-events]
+root      219441  0.0  0.0      0     0 ?        I    05:32   0:00 [kworker/9:2-events]
+root      219570  0.0  0.0      0     0 ?        I    05:34   0:00 [kworker/3:1-events]
+root      219627  0.0  0.0      0     0 ?        I<   05:35   0:00 [kworker/u25:2-rb_allocator]
+root      219744  0.0  0.0      0     0 ?        I    05:36   0:00 [kworker/u24:2-events_unbound]
+root      219850  0.0  0.0      0     0 ?        I    05:37   0:00 [kworker/6:0-events]
+root      219969  0.7  0.0      0     0 ?        I    05:38   0:04 [kworker/11:1-events]
+root      220078  0.0  0.0      0     0 ?        I    05:40   0:00 [kworker/3:2-events]
+root      220079  0.0  0.0      0     0 ?        I    05:40   0:00 [kworker/4:0-events]
+root      220155  0.0  0.0      0     0 ?        I    05:41   0:00 [kworker/0:0-events]
+root      220156  0.0  0.0      0     0 ?        I    05:41   0:00 [kworker/8:2-events]
+root      220219  0.0  0.0      0     0 ?        I    05:41   0:00 [kworker/u24:0-i915]
+root      220272  0.0  0.0      0     0 ?        I    05:42   0:00 [kworker/1:0-events]
+root      220273  0.0  0.0      0     0 ?        I    05:42   0:00 [kworker/5:1-events]
+root      220332  0.0  0.0      0     0 ?        I    05:43   0:00 [kworker/9:1-cgroup_destroy]
+root      220467  0.0  0.0      0     0 ?        I    05:44   0:00 [kworker/11:2-events]
+slurm     220504  0.0  0.1 1291512 19340 ?       SNl  05:44   0:00 /usr/lib/x86_64-linux-gnu/tumbler-1/tumblerd
+root      220961  0.0  0.0      0     0 ?        I<   05:47   0:00 [kworker/u25:0-rb_allocator]
+root      220977  0.2  0.0      0     0 ?        I    05:47   0:00 [kworker/u24:3-events_unbound]
+slurm     221040  0.8  0.5 4595044 81656 ?       Sl   05:48   0:00 /opt/meetsidekick.com/sidekick/chrome --type=renderer --field-trial-handle=11745438658883568207,292377450276589392,131072 
+root      221061  0.0  0.0      0     0 ?        I    05:48   0:00 [kworker/10:2-mm_percpu_wq]
+slurm     221068  0.0  0.0   2620   540 ?        Ss   05:48   0:00 sh -c '/usr/bin/python3' '-W' 'ignore' '/home/slurm/.vim/bundle/vim-wakatime/packages/wakatime/cli.py' '--entity' '/home/p
+slurm     221069 11.3  0.2  59604 41900 ?        D    05:48   0:00 /usr/bin/python3 -W ignore /home/slurm/.vim/bundle/vim-wakatime/packages/wakatime/cli.py --entity /home/slurm/projects/ter
+slurm     221072  0.0  0.0  20136  3368 pts/0    R+   05:48   0:00 ps aux
+
+delay:
+4000
+
+scroll_lines:
+-389
+
+
