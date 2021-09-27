@@ -1,0 +1,24 @@
+audio:
+4-1-1/4-1-1.2.mp3
+
+input:
+%{delay 17000}sleep 100%{delay 20000} &
+
+output:
+[1] 213022
+
+delay:
+100
+
+input:
+%{delay 63000}nohup sleep 1000 &
+
+output:
+[2] 213088
+nohup: ignoring input and appending output to 'nohup.out'
+
+delay:
+200
+
+input:
+%{delay 100000}

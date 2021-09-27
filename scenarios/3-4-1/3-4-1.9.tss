@@ -3,7 +3,7 @@ audio:
 
 output:
 %{begin:107m;30m}  GNU nano 4.8                                               New Buffer                            %{end:107m;30m}
-%{delay 13000}f%{delay 100}o%{delay 100}r %{delay 100}i%{delay 100}t%{delay 100}e%{delay 100}m%{delay 100} %{delay 100}i%{delay 100}n%{delay 100} %{delay 100}F%{delay 100}i%{delay 100}r%{delay 100}s%{delay 100}t%{delay 100},%{delay 100} %{delay 100}S%{delay 100}e%{delay 100}c%{delay 100}o%{delay 100}n%{delay 100}d%{delay 100},%{delay 100} %{delay 100}T%{delay 100}h%{delay 100}i%{delay 100}r%{delay 100}d%{delay 100} %{delay 100}d%{delay 100}o
+%{delay 13000}f%{delay 100}o%{delay 100}r %{delay 100}i%{delay 100}t%{delay 100}e%{delay 100}m%{delay 100} %{delay 100}i%{delay 100}n%{delay 100} %{delay 100}F%{delay 100}i%{delay 100}r%{delay 100}s%{delay 100}t%{delay 100},%{delay 100} %{delay 100}S%{delay 100}e%{delay 100}c%{delay 100}o%{delay 100}n%{delay 100}d%{delay 100},%{delay 100} %{delay 100}T%{delay 100}h%{delay 100}i%{delay 100}r%{delay 100}d%{delay 100}; %{delay 100}d%{delay 100}o
   %{delay 200}e%{delay 200}c%{delay 200}h%{delay 200}o%{delay 200} %{delay 200}"%{delay 200}$%{delay 200}i%{delay 200}t%{delay 200}e%{delay 200}m%{delay 200} %{delay 200}c%{delay 200}h%{delay 200}i%{delay 200}l%{delay 200}d%{delay 200}"%{delay 200}
 %{delay 2000}do%{delay 200}n%{delay 200}e%{delay 200}
 

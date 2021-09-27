@@ -8,4 +8,4 @@ input:
 %{delay 2000}chmod +x program.sh
 
 input:
-%{delay 3000}vim program.sh
+%{delay 3000}nano program.sh
