@@ -1,0 +1,21 @@
+audio:
+5-1-1/5-1-1.2.mp3
+
+prompt:
+~(server):
+
+input:
+%{delay 14000}nano ~/.ssh/authorized_keys%{delay 7000}
+
+delay:
+300
+
+clear:
+
+output:
+%{begin:107m;30m}  GNU nano 4.8                                               New Buffer                            %{end:107m;30m}
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC1R1HTZXxQjY0y+hdTtLow36PrYBsifk61U4A+oe33kS5CJ+WT6rjK6soKzW6pqsiSmpbiFtRpo/i/n2gubXwS3L0buLqnE3saqO7G2GkXuwIkv0/pPkBF5jqo05gLNoOu4yVLANJ6NyTIor7DzMNln0PPob5jb6rVSSnr8hptqyBLKtKh07XoUHv8wuHtkxfw7uF1e7W/sxDaW8fA1bZ2z72ud0wUeZ1t2DbDQ53fUpa5eRajfPoulq3+WYuGRKxA5lFVA0S/tLOQWgZVsWjiyFo37wWO7GVzUBaUbX9MoOR6Zj8t8DCXxZV4PZpg6UND1dgW6GduULIkyNnf+4KH kalashnikovisme@gmail.com
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDbP14bL1htgSDxszRZbBBwRctxoK5glOxhU2vhFIhQGfG5QA1lpYJkzdI3TS5ZgkI0EJex7i/7whiPrsXb5Cpr5QXFoanQXaGUbjJQs6w2oRPLx0xOEZAuYvieCL/IHEUgcGmzyN6rq7ouEPN7kYzRsQlm2kjoTGmBJc+7ZWY4FdMxIoC7KH13MkXoOvEqJIDznYe8L9YDceJK0TKXBeNxgnF7J+IRzDpD8LA1OBo32HOa31vIR01XTcjjWV02dQjHzAO/Hpsweb3clw9zR9LuaZ7jiUMlRVtd2X/dj8k5gFt/QxTe1V3FFf3hVxuMlUzTaghNH7rLEK3i+mDeuFyEkudCHPty+jkZhGL+9xO1GZbZTlvHJ0PZF+LzVyYPGOPOVu0lS2/plqbXXap1d4KS9sAF4YAf6ZMb3ZvfajZVkMxpvQqHMy5QS8blSauh9oqv8iR1VBSWROtaxBGscTg7cxHZ5b3s8R1v8eSLasbIR0dshmJfeB/+vrguZJkWkOaIf5NBFFS45AYvvSPGMuirb+HQ+lNItUPuEdP/wndhr2Rb19yNmA9ql+njsuAlwceJAhuQAbthUsNg9N3NA4Lhj2IT6ZGYgfxNbPmoMTaUj7g/kK6ejPy88VJJAKZjEbdAEVoWhj8PW7CkjN1km/dZN4Y5LNGsDDwS8PVbwVKZdw== moshinaan@gmail.com
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDMK9+5tIv7Uv4coRstDBBBasJexy2m+6Ti87RuLYHICATTd/GZ5WkjuQG5kZzO/1zoJ3kqd31WTGgcpWIuNKVqJuo/CRZDuyktgnBxL9YyGUN31f9i3QFpw3idUJex9C0gRxkG/4i65HHw6sodBTeYsrpQiBWrGQMvVrohyWEakL9WTz+swAqpc41piktGUE3E9at/hkaZstU8zVbF4qRswcg/kcuMS8mfGf88mMwSvMYPHsS/apm1X7Z2Ty1H9PBTaO7otTIB9985gga/qoLade4QaHsRBAD89AivvWnYbYawhBiktGmsEdGpCH/+Z7NkV4jyXmHCKMq9HOFEpom2QMaxP3W7Q3SCtgsU0XqJyrJvhm+sQYtS+uemMuTKIR/bjFqODLesIzJ75689WbS8vFqFHcDbSaaZoe+RqH2gDwcn1qZcE+xKYKfeELurnA7gMa29Q9pzCDL7gzzEzKyfNpeeliktUHGgKrZ3Rrb1IygbC/iA8hdYRt3FKTM4Y/8= redmagic@DESKTOP-JVLT0TG%{delay 5000}
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB8Ht8Z3j6yDWPBHQtOp/R9rjWvfMYo3MSA/K6q8D86r student@slurm.io
+

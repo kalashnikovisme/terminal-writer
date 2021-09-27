@@ -1,0 +1,73 @@
+audio:
+5-1-1/5-1-1.3.mp3
+
+input:
+ssh user@red-magic.ru
+
+output:
+Welcome to Ubuntu 20.04.2 LTS
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+27 packages can be updated.
+2 updates are security updates.
+
+
+Last login: Fri Sep 24 13:38:13 2021 from xxx.xxx.xxx.xxx
+
+delay:
+300
+
+prompt:
+user@red-magic.ru:~$
+
+input:
+%{delay 28000}exit
+
+prompt:
+~:
+
+input:
+%{delay 2000}ssh -t user@red-magic.ru '%{delay 7000}touch ~/slurm'%{delay 3000}
+
+input:
+ssh user@red-magic.ru
+
+output:
+Welcome to Ubuntu 20.04.2 LTS
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+27 packages can be updated.
+2 updates are security updates.
+
+
+Last login: Fri Sep 27 15:16:13 2021 from xxx.xxx.xxx.xxx
+
+delay:
+300
+
+prompt:
+user@red-magic.ru:~$
+
+input:
+ls | grep slurm
+
+output:
+slurm
+
+delay:
+100
+
+input:
+%{delay 100000}

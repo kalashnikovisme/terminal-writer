@@ -1,0 +1,98 @@
+audio:
+5-1-1/5-1-1.4.mp3
+
+input:
+%{delay 4000}scp %{delay 11000}text.txt user@red-magic.ru:/home/user/
+
+output:
+text.txt                                                                    100%   97     1.3KB/s   00:00
+
+delay:
+200
+
+input:
+ssh user@red-magic.ru
+
+output:
+Welcome to Ubuntu 20.04.2 LTS
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+27 packages can be updated.
+2 updates are security updates.
+
+
+Last login: Fri Sep 24 13:38:13 2021 from xxx.xxx.xxx.xxx
+
+delay:
+300
+
+prompt:
+user@red-magic.ru:~$
+
+input:
+ls | grep text
+
+output:
+text.txt
+
+delay:
+100
+
+input:
+%{delay 1000}exit
+
+prompt:
+~:
+
+input:
+scp text.txt user@red-magic.ru:/home/user/text-2.txt
+
+output:
+text-2.txt                                                                  100%   97     1.3KB/s   00:00
+
+delay:
+200
+
+input:
+ssh user@red-magic.ru
+
+output:
+Welcome to Ubuntu 20.04.2 LTS
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+27 packages can be updated.
+2 updates are security updates.
+
+
+Last login: Fri Sep 24 13:38:13 2021 from xxx.xxx.xxx.xxx
+
+delay:
+300
+
+prompt:
+user@red-magic.ru:~$
+
+input:
+ls | grep text
+
+output:
+text.txt
+text-2.txt
+
+delay:
+200
+
+input:
+%{delay 100000}
