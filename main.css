@@ -1,8 +1,11 @@
+html,
 body {
   margin: 0
   background-color: #000
+  min-height: 100%
 }
 #terminal {
+  background-color: #000
 }
 #terminal .terminal.xterm {
   /*width: 1920px;
