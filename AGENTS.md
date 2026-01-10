@@ -7,6 +7,9 @@ This repository uses a simple `.tss` scenario language to replay actions in a te
 - Directives are case-sensitive and must be lowercase.
 - Blank lines are allowed and often used to separate blocks.
 
+## Instructions
+- Figure out what programming language to be showen and imitate code color highlighting
+
 ## Directives
 
 ### `audio:`
