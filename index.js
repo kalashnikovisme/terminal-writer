@@ -1,15 +1,60 @@
 let bashPrompt = '~:'
 let term = new Terminal({ cols: 120, rows: 26, fontSize: '30' });
 const typingTimeout = 100
-const directives = ['input:', 'output:', 'audio:', 'delay:']
+const directives = [
+  'input',
+  'output',
+  'audio',
+  'delay',
+  'clear',
+  'paste',
+  'prompt',
+  'scroll_lines',
+  'margin-x',
+  'margin-y',
+]
 const newLine = '\n\r'
 const delayRegex = /\%\{delay \d+\}/g;
+const directivePattern = /^([a-z_-]+):(?:\s*(.*))?$/
+let marginX = 0
+let marginY = 0
+
+const parseDirectiveLine = (line) => {
+  const match = line.match(directivePattern)
+  if (!match) {
+    return null
+  }
+  const directive = match[1]
+  if (!directives.includes(directive)) {
+    return null
+  }
+  return { directive, data: match[2] }
+}
+
+const isDirectiveLine = (line) => Boolean(parseDirectiveLine(line))
+
+const getDirectiveValue = (parsed, lines, index) => {
+  if (parsed.data !== undefined && parsed.data !== '') {
+    return parsed.data
+  }
+  return lines[index + 1]
+}
+
+const usesNextLine = (parsed) => parsed.data === undefined || parsed.data === ''
 
 const buildPrompt = () => {
   if (bashPrompt === null) {
     return ''
   }
   return `\x1B[36m${bashPrompt}\x1B[0m `
+}
+
+const applyMargins = () => {
+  const terminalElement = document.getElementById('terminal')
+  if (!terminalElement) {
+    return
+  }
+  terminalElement.style.margin = `${marginY}px ${marginX}px`
 }
 
 const typing = (command, typingTimeout) => {
@@ -288,6 +333,18 @@ const runAction = (actions, index) => {
         scrollLines(action.data, actions, index)
         break
       }
+      case 'margin': {
+        if (action.data.axis === 'x') {
+          marginX = action.data.value
+        } else {
+          marginY = action.data.value
+        }
+        applyMargins()
+        setTimeout(() => {
+          runAction(actions, index + 1)
+        }, 100)
+        break
+      }
     }
   } else {
     finishScenario()
@@ -375,7 +432,7 @@ const parseOutput = (lines, index) => {
   var data = []
   for (var j = index + 1; j < lines.length; j++) {
     const line = lines[j]
-    if (!directives.includes(line)) {
+    if (!isDirectiveLine(line)) {
       const beginRegex = /\%\{begin:\d+m;\d+m}/
       const endRegex = /\%\{end:\d+m;\d+m}/
       const colorRegex = /\%\{begin:\d+m;\d+m\}.*\%\{end:\d+m;\d+m\}/
@@ -420,39 +477,87 @@ const readSingleFile = (e) => {
     var lines = contents.split("\n")
     let actions = []
     for (var i = 0; i < lines.length; i++) {
-      if (lines[i] == 'input:') {
-        actions.push(parseInput(lines[i + 1]))
-        i++
+      const parsed = parseDirectiveLine(lines[i])
+      if (!parsed) {
+        continue
       }
-      if (lines[i] == 'output:') {
-        actions.push(parseOutput(lines, i))
-      }
-      if (lines[i] == 'audio:') {
-        const audio = document.createElement('audio')
-        audio.autoplay = true
-        const source = document.createElement('source')
-        source.src = `./scenarios/${lines[i + 1]}`
-        audio.appendChild(source)
-        const body = document.getElementById('body')
-        body.appendChild(audio)
-      }
-      if (lines[i] == 'delay:') {
-        actions.push({ action: 'delay', data: parseInt(lines[i + 1]) })
-      }
-      if (lines[i] == 'clear:') {
-        actions.push({ action: 'clear' })
-      }
-      if (lines[i] == 'paste:') {
-        actions.push(parsePaste(lines[i + 1]))
-        i++ 
-      }
-      if (lines[i] == 'prompt:') {
-        actions.push({ action: 'prompt', data: lines[i + 1] })
-        i++
-      }
-      if (lines[i] == 'scroll_lines:') {
-        actions.push({ action: 'scroll_lines', data: lines[i + 1] })
-        i++
+      switch (parsed.directive) {
+        case 'input': {
+          actions.push(parseInput(getDirectiveValue(parsed, lines, i)))
+          if (usesNextLine(parsed)) {
+            i++
+          }
+          break
+        }
+        case 'output': {
+          actions.push(parseOutput(lines, i))
+          break
+        }
+        case 'audio': {
+          const audio = document.createElement('audio')
+          audio.autoplay = true
+          const source = document.createElement('source')
+          source.src = `./scenarios/${getDirectiveValue(parsed, lines, i)}`
+          audio.appendChild(source)
+          const body = document.getElementById('body')
+          body.appendChild(audio)
+          if (usesNextLine(parsed)) {
+            i++
+          }
+          break
+        }
+        case 'delay': {
+          actions.push({ action: 'delay', data: parseInt(getDirectiveValue(parsed, lines, i), 10) })
+          if (usesNextLine(parsed)) {
+            i++
+          }
+          break
+        }
+        case 'clear': {
+          actions.push({ action: 'clear' })
+          break
+        }
+        case 'paste': {
+          actions.push(parsePaste(getDirectiveValue(parsed, lines, i)))
+          if (usesNextLine(parsed)) {
+            i++
+          }
+          break
+        }
+        case 'prompt': {
+          actions.push({ action: 'prompt', data: getDirectiveValue(parsed, lines, i) })
+          if (usesNextLine(parsed)) {
+            i++
+          }
+          break
+        }
+        case 'scroll_lines': {
+          actions.push({ action: 'scroll_lines', data: getDirectiveValue(parsed, lines, i) })
+          if (usesNextLine(parsed)) {
+            i++
+          }
+          break
+        }
+        case 'margin-x': {
+          actions.push({
+            action: 'margin',
+            data: { axis: 'x', value: parseInt(getDirectiveValue(parsed, lines, i), 10) },
+          })
+          if (usesNextLine(parsed)) {
+            i++
+          }
+          break
+        }
+        case 'margin-y': {
+          actions.push({
+            action: 'margin',
+            data: { axis: 'y', value: parseInt(getDirectiveValue(parsed, lines, i), 10) },
+          })
+          if (usesNextLine(parsed)) {
+            i++
+          }
+          break
+        }
       }
     }
     console.log(actions)

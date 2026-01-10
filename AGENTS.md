@@ -80,6 +80,22 @@ This repository uses a simple `.tss` scenario language to replay actions in a te
   -37
   ```
 
+### `margin-x:`
+- Sets the horizontal margin in pixels around the terminal output.
+- The value is written on the same line as the directive.
+- Example:
+  ```
+  margin-x: 200
+  ```
+
+### `margin-y:`
+- Sets the vertical margin in pixels around the terminal output.
+- The value is written on the same line as the directive.
+- Example:
+  ```
+  margin-y: 100
+  ```
+
 ## Delay details
 - `%{delay N}` can be inserted into `input:`, `paste:`, and `output:` lines to pause within a line.
 - In `output:`, the text is split into parts and displayed with pauses.
