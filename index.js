@@ -251,10 +251,15 @@ const runAction = (actions, index) => {
         break
       }
     }
+  } else {
+    finishScenario()
   }
 }
 
 let time;
+const finishScenario = () => {
+  window.dispatchEvent(new CustomEvent('scenario:complete'))
+}
 
 const runTimer = () => {
   const timer = document.getElementById('timer')
