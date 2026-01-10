@@ -1,6 +1,7 @@
 let bashPrompt = '~:'
 let term = new Terminal({ cols: 120, rows: 26, fontSize: '30' });
-const typingTimeout = 100
+const baseTypingTimeout = 100
+let typingSpeed = 1
 const directives = [
   'input',
   'output',
@@ -13,6 +14,7 @@ const directives = [
   'scroll_lines',
   'margin-x',
   'margin-y',
+  'typing_speed',
 ]
 const newLine = '\n\r'
 const delayRegex = /\%\{delay \d+\}/g;
@@ -20,6 +22,8 @@ const directivePattern = /^([a-z_-]+):(?:\s*(.*))?$/
 let marginX = 0
 let marginY = 0
 let cursorVisible = true
+
+const getTypingTimeout = () => baseTypingTimeout / typingSpeed
 
 const parseDirectiveLine = (line) => {
   const match = line.match(directivePattern)
@@ -167,6 +171,7 @@ const runInputPart = (data, index) => {
   if (part) {
     switch(part.type) {
       case 'typing': {
+        const typingTimeout = getTypingTimeout()
         typing(part.data, typingTimeout)
         timeoutBeforeTheNext = part.data.length * typingTimeout
         break
@@ -196,7 +201,7 @@ const runInput = (data, actions, index) => {
   _.each(data, (part) => {
     switch(part.type) {
       case 'typing': {
-        overallTimeout += (part.data.length + 1) * typingTimeout
+        overallTimeout += (part.data.length + 1) * getTypingTimeout()
         break
       }
       case 'delay': {
@@ -321,6 +326,15 @@ const scrollLines = (data, actions, index) => {
   }, 100)
 }
 
+const changeTypingSpeed = (speedSetting, actions, index) => {
+  const parsedSpeed = parseFloat(speedSetting)
+  typingSpeed = Number.isFinite(parsedSpeed) && parsedSpeed > 0 ? parsedSpeed : 1
+  setTimeout(() => {
+    runAction(actions, index + 1)
+    console.log(`Change Typing Speed ends at ${time}`)
+  }, 100)
+}
+
 const runAction = (actions, index) => {
   const action = actions[index]
   if (action) {
@@ -367,6 +381,10 @@ const runAction = (actions, index) => {
         setTimeout(() => {
           runAction(actions, index + 1)
         }, 100)
+        break
+      }
+      case 'typing_speed': {
+        changeTypingSpeed(action.data, actions, index)
         break
       }
     }
@@ -584,6 +602,13 @@ const readSingleFile = (e) => {
             action: 'margin',
             data: { axis: 'y', value: parseInt(getDirectiveValue(parsed, lines, i), 10) },
           })
+          if (usesNextLine(parsed)) {
+            i++
+          }
+          break
+        }
+        case 'typing_speed': {
+          actions.push({ action: 'typing_speed', data: getDirectiveValue(parsed, lines, i) })
           if (usesNextLine(parsed)) {
             i++
           }
