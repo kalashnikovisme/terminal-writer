@@ -1,6 +1,8 @@
 # terminal-writer
 Terminal-writer will help courses writers to render video with a practice easy
 
+https://github.com/user-attachments/assets/d8499734-6298-4c10-907f-5e3e5b05cdfd
+
 ## Install
 
 ```
