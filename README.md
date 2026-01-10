@@ -12,10 +12,6 @@ https://github.com/user-attachments/assets/d8499734-6298-4c10-907f-5e3e5b05cdfd
 make install
 ```
 
-## How to use
-
-Open index.html in your browser
-
 ## Render a scenario to mp4
 
 ```
