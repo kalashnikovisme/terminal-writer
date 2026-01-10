@@ -20,6 +20,7 @@ This repository uses a simple `.tss` scenario language to replay actions in a te
 ### `prompt:`
 - The line after the directive sets the terminal prompt text.
 - Used when you need to show a different prompt format.
+- Use an empty line or the literal `false` to hide the prompt.
 - Example:
   ```
   prompt:

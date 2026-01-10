@@ -6,6 +6,9 @@ const newLine = '\n\r'
 const delayRegex = /\%\{delay \d+\}/g;
 
 const buildPrompt = () => {
+  if (bashPrompt === null) {
+    return ''
+  }
   return `\x1B[36m${bashPrompt}\x1B[0m `
 }
 
@@ -99,7 +102,7 @@ const runPaste = (data, actions, index) => {
     runAction(actions, index + 1)
   }, overallTimeout)
 
-  term.write(bashPrompt())
+  term.write(buildPrompt())
   runPastePart(data, 0)
 }
 
@@ -228,7 +231,8 @@ const clear = (actions, index) => {
 }
 
 const changePrompt = (prompt, actions, index) => {
-  bashPrompt = prompt
+  const normalizedPrompt = prompt === 'false' || prompt === '' ? null : prompt
+  bashPrompt = normalizedPrompt
   setTimeout(() => {
     runAction(actions, index + 1)
     console.log(`Change Prompt ends at ${time}`)
