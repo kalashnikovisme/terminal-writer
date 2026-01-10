@@ -27,6 +27,15 @@ This repository uses a simple `.tss` scenario language to replay actions in a te
   ~(as pavel):
   ```
 
+### `cursor:`
+- The line after the directive sets cursor visibility.
+- Use `false` or an empty line to hide the cursor; any other value shows it.
+- Example:
+  ```
+  cursor:
+  false
+  ```
+
 ### `input:`
 - The line after the directive is user input typed “manually”.
 - Supports inline delays with the `%{delay N}` marker (N in milliseconds).

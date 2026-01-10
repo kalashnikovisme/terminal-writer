@@ -9,6 +9,7 @@ const directives = [
   'clear',
   'paste',
   'prompt',
+  'cursor',
   'scroll_lines',
   'margin-x',
   'margin-y',
@@ -18,6 +19,7 @@ const delayRegex = /\%\{delay \d+\}/g;
 const directivePattern = /^([a-z_-]+):(?:\s*(.*))?$/
 let marginX = 0
 let marginY = 0
+let cursorVisible = true
 
 const parseDirectiveLine = (line) => {
   const match = line.match(directivePattern)
@@ -55,6 +57,14 @@ const applyMargins = () => {
     return
   }
   terminalElement.style.margin = `${marginY}px ${marginX}px`
+}
+
+const applyCursorVisibility = () => {
+  const terminalElement = document.getElementById('terminal')
+  if (!terminalElement) {
+    return
+  }
+  terminalElement.classList.toggle('cursor-hidden', !cursorVisible)
 }
 
 const typing = (command, typingTimeout) => {
@@ -284,6 +294,16 @@ const changePrompt = (prompt, actions, index) => {
   }, 100)
 }
 
+const changeCursor = (cursorSetting, actions, index) => {
+  const normalizedSetting = (cursorSetting || '').trim().toLowerCase()
+  cursorVisible = normalizedSetting !== 'false' && normalizedSetting !== '' && normalizedSetting !== '0'
+  applyCursorVisibility()
+  setTimeout(() => {
+    runAction(actions, index + 1)
+    console.log(`Change Cursor ends at ${time}`)
+  }, 100)
+}
+
 const scrollLines = (data, actions, index) => {
   const count = parseInt(data)
   _.times(Math.abs(data), (i) => {
@@ -327,6 +347,10 @@ const runAction = (actions, index) => {
       }
       case 'prompt': {
         changePrompt(action.data, actions, index)
+        break
+      }
+      case 'cursor': {
+        changeCursor(action.data, actions, index)
         break
       }
       case 'scroll_lines': {
@@ -526,6 +550,13 @@ const readSingleFile = (e) => {
         }
         case 'prompt': {
           actions.push({ action: 'prompt', data: getDirectiveValue(parsed, lines, i) })
+          if (usesNextLine(parsed)) {
+            i++
+          }
+          break
+        }
+        case 'cursor': {
+          actions.push({ action: 'cursor', data: getDirectiveValue(parsed, lines, i) })
           if (usesNextLine(parsed)) {
             i++
           }
