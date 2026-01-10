@@ -1,0 +1,11 @@
+prompt:
+false
+
+margin-x:
+200
+
+margin-y:
+100
+
+input:
+%{begin:35m}@user%{end:35m} = tramway_form %{begin:34m}User%{end:34m}.find(1)
