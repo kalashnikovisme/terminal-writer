@@ -105,6 +105,16 @@ This repository uses a simple `.tss` scenario language to replay actions in a te
   margin-y: 100
   ```
 
+### `typing_speed:`
+- Sets the typing speed multiplier for `input:` typing.
+- The value is written on the next line or on the same line.
+- Default is `1`.
+- Example:
+  ```
+  typing_speed:
+  2
+  ```
+
 ## Delay details
 - `%{delay N}` can be inserted into `input:`, `paste:`, and `output:` lines to pause within a line.
 - In `output:`, the text is split into parts and displayed with pauses.
