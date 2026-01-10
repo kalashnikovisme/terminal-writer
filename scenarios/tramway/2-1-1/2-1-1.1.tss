@@ -1,0 +1,8 @@
+output:
+%{begin:35m}@user%{end:35m} = tramway_form %{begin:34m}User%{end:34m}.find(1)
+puts %{begin:35m}@user%{end:35m}.name %{begin:90m}# => Pasha%{end:90m}
+params = { user: { name: %{begin:32m}"Igor"%{end:32m} } }
+
+%{begin:35m}@user%{end:35m}.submit params[:user]
+puts %{begin:35m}@user%{end:35m}.name %{begin:90m}# => Igor%{end:90m}
+%{begin:35m}@user%{end:35m}.initial_object.name %{begin:90m}# => Pasha%{end:90m}
