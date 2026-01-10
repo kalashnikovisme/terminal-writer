@@ -15,7 +15,7 @@ Open index.html in your browser
 
 ```
 npm install
-npm run render -- --scenario scenarios/linux_course/2-2-2/2-2-2.1.tss --output output.mp4
+npm run render -- --scenario scenarios/tramway/2-1-1/2-1-1.1.tss --output tramway-2.1.1.mp4
 ```
 
 Notes:
