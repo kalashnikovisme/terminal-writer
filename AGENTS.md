@@ -1,55 +1,55 @@
-# TSS сценарий: инструкции для AI
+# TSS scenario: instructions for AI
 
-Эта репозитория использует простой текстовый язык сценариев `.tss` для воспроизведения действий в терминале. Ниже — краткие правила и соглашения, выведенные из всех существующих `.tss` файлов и их парсера.
+This repository uses a simple `.tss` scenario language to replay actions in a terminal. Below are brief rules and conventions derived from all existing `.tss` files and their parser.
 
-## Общий формат
-- Файл — последовательность директив (строки, оканчивающиеся двоеточием) и их данных.
-- Директивы чувствительны к написанию и должны быть в нижнем регистре.
-- Пустые строки допускаются и часто используются для разделения блоков.
+## General format
+- A file is a sequence of directives (lines ending with a colon) and their data.
+- Directives are case-sensitive and must be lowercase.
+- Blank lines are allowed and often used to separate blocks.
 
-## Директивы
+## Directives
 
 ### `audio:`
-- Следующая строка после директивы содержит путь к аудио-файлу (обычно `.mp3`) относительно каталога `scenarios/`.
-- Пример:
+- The line after the directive contains the path to an audio file (usually `.mp3`) relative to the `scenarios/` directory.
+- Example:
   ```
   audio:
   2-4-3/2-4-3.1.mp3
   ```
 
 ### `prompt:`
-- Следующая строка задаёт текст приглашения терминала.
-- Используется при необходимости показать другой формат приглашения.
-- Пример:
+- The line after the directive sets the terminal prompt text.
+- Used when you need to show a different prompt format.
+- Example:
   ```
   prompt:
   ~(as pavel):
   ```
 
 ### `input:`
-- Следующая строка — ввод пользователя, который печатается «вручную».
-- Поддерживает встроенные задержки через маркер `%{delay N}` (N в миллисекундах).
-- Пример:
+- The line after the directive is user input typed “manually”.
+- Supports inline delays with the `%{delay N}` marker (N in milliseconds).
+- Example:
   ```
   input:
   %{delay 500}ls -l
   ```
 
 ### `paste:`
-- Следующая строка — вставка текста (появляется быстрее, как «paste»).
-- Также поддерживает `%{delay N}`.
-- Пример:
+- The line after the directive is pasted text (appears faster, like a paste).
+- Also supports `%{delay N}`.
+- Example:
   ```
   paste:
   %{delay 500}sudo apt-get update
   ```
 
 ### `output:`
-- Блок вывода терминала. Считывается построчно до следующей директивы или конца файла.
-- Поддерживает:
-  - `%{delay N}` — пауза между частями строки.
-  - Цветовые маркеры: `%{begin:BGm;FGm}` … `%{end:BGm;FGm}` (ANSI-цвета).
-- Пример:
+- Terminal output block. Read line-by-line until the next directive or end of file.
+- Supports:
+  - `%{delay N}` — pause between parts of a line.
+  - Color markers: `%{begin:BGm;FGm}` … `%{end:BGm;FGm}` (ANSI colors).
+- Example:
   ```
   output:
   Hello world
@@ -57,33 +57,33 @@
   ```
 
 ### `delay:`
-- Следующая строка — число миллисекунд, пауза между действиями.
-- Пример:
+- The line after the directive is a number of milliseconds, a pause between actions.
+- Example:
   ```
   delay:
   1000
   ```
 
 ### `clear:`
-- Очищает терминал. Данных не требуется.
-- Пример:
+- Clears the terminal. No data required.
+- Example:
   ```
   clear:
   ```
 
 ### `scroll_lines:`
-- Следующая строка — целое число, количество строк прокрутки (положительное — вниз, отрицательное — вверх).
-- Пример:
+- The line after the directive is an integer: number of lines to scroll (positive down, negative up).
+- Example:
   ```
   scroll_lines:
   -37
   ```
 
-## Особенности задержек
-- `%{delay N}` можно вставлять в `input:`, `paste:` и `output:` строки для пауз внутри строки.
-- В `output:` текст разбивается на части и отображается с паузами.
+## Delay details
+- `%{delay N}` can be inserted into `input:`, `paste:`, and `output:` lines to pause within a line.
+- In `output:`, the text is split into parts and displayed with pauses.
 
-## Практические рекомендации
-- Держите действия в логическом порядке: `audio:` ➜ `prompt:` ➜ `input:`/`paste:` ➜ `output:` ➜ `delay:` ➜ `clear:`.
-- Всегда указывайте миллисекунды целым числом.
-- Для читаемости используйте пустые строки между директивами.
+## Practical recommendations
+- Keep actions in a logical order: `audio:` ➜ `prompt:` ➜ `input:`/`paste:` ➜ `output:` ➜ `delay:` ➜ `clear:`.
+- Always specify milliseconds as an integer.
+- For readability, use blank lines between directives.
