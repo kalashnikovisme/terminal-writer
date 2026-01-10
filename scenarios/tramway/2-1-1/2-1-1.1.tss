@@ -9,9 +9,21 @@ margin-y:
 
 input:
 %{begin:35m}@user%{end:35m} = tramway_form %{begin:34m}User%{end:34m}.find(1)
+
+input:
 puts %{begin:35m}@user%{end:35m}.name %{begin:90m}# => Pasha%{end:90m}
+
+input:
 params = { user: { name: %{begin:32m}"Igor"%{end:32m} } }
 
+input:
 %{begin:35m}@user%{end:35m}.submit params[:user]
+
+input:
+   
+
+input:
 puts %{begin:35m}@user%{end:35m}.name %{begin:90m}# => Igor%{end:90m}
+
+input:
 %{begin:35m}@user%{end:35m}.initial_object.name %{begin:90m}# => Pasha%{end:90m}
