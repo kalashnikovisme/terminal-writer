@@ -1,5 +1,8 @@
 # terminal-writer
-Terminal-writer will help courses writers to render video with a practice easy
+Terminal-writer will help create video code snippets.
+
+### Do not write scenarios for videos yourself
+**Fork this project and use AI tools instead. This project has a solid AGENTS.md that helps you generate proper scenarios.**
 
 https://github.com/user-attachments/assets/d8499734-6298-4c10-907f-5e3e5b05cdfd
 
