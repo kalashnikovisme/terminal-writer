@@ -35,6 +35,20 @@ const typing = (command, typingTimeout) => {
   })
 }
 
+const writeColorBegin = ({ backgroundColor, textColor }) => {
+  if (backgroundColor && textColor) {
+    term.write(`\x1B[0;${textColor}\x1B[${backgroundColor}`)
+    return
+  }
+  if (textColor) {
+    term.write(`\x1B[0;${textColor}`)
+    return
+  }
+  if (backgroundColor) {
+    term.write(`\x1B[${backgroundColor}`)
+  }
+}
+
 const runPastePart = (data, index) => {
   const part = data[index]
   let timeoutBeforeTheNext;
@@ -43,6 +57,16 @@ const runPastePart = (data, index) => {
       case 'insert': {
         term.write(part.data)
         timeoutBeforeTheNext = 100
+        break
+      }
+      case 'colorBegin': {
+        writeColorBegin(part.data)
+        timeoutBeforeTheNext = 0
+        break
+      }
+      case 'colorEnd': {
+        term.write('\x1B[0m')
+        timeoutBeforeTheNext = 0
         break
       }
       case 'delay': {
@@ -87,6 +111,16 @@ const runInputPart = (data, index) => {
       case 'typing': {
         typing(part.data, typingTimeout)
         timeoutBeforeTheNext = part.data.length * typingTimeout
+        break
+      }
+      case 'colorBegin': {
+        writeColorBegin(part.data)
+        timeoutBeforeTheNext = 0
+        break
+      }
+      case 'colorEnd': {
+        term.write('\x1B[0m')
+        timeoutBeforeTheNext = 0
         break
       }
       case 'delay': {
@@ -141,7 +175,7 @@ const showPart = (output, index) => {
         break
       }
       case 'colorBegin': {
-        term.write(`\x1B[0;${part.data.textColor}\x1B[${part.data.backgroundColor}`)
+        writeColorBegin(part.data)
         break
       }
       case 'colorEnd': {
@@ -274,22 +308,51 @@ const runScenario = (actions) => {
   runAction(actions, 0)
 }
 
+const parseColorCode = (colorValue) => {
+  const parts = colorValue.split(';')
+  if (parts.length === 2) {
+    return { backgroundColor: parts[0], textColor: parts[1] }
+  }
+  return { textColor: parts[0] }
+}
+
+const parseColorToken = (token) => {
+  const colorValue = token.replace('%{begin:', '').replace('}', '')
+  return { type: 'colorBegin', data: parseColorCode(colorValue) }
+}
+
+const parseInlineData = (line, textType) => {
+  const tokensRegex = /(\%\{delay \d+\}|\%\{begin:[^}]+\}|\%\{end:[^}]+\})/g
+  const millisecondsRegex = /\d+/
+  let data = []
+  let lastIndex = 0
+  let match
+  while ((match = tokensRegex.exec(line)) !== null) {
+    if (match.index > lastIndex) {
+      data.push({ type: textType, data: line.slice(lastIndex, match.index) })
+    }
+    const token = match[0]
+    if (token.startsWith('%{delay')) {
+      const mil = parseInt(token.match(millisecondsRegex)[0])
+      data.push({ type: 'delay', data: mil })
+    } else if (token.startsWith('%{begin:')) {
+      data.push(parseColorToken(token))
+    } else if (token.startsWith('%{end:')) {
+      data.push({ type: 'colorEnd' })
+    }
+    lastIndex = tokensRegex.lastIndex
+  }
+  if (lastIndex < line.length) {
+    data.push({ type: textType, data: line.slice(lastIndex) })
+  }
+  return data.length ? data : [{ type: textType, data: line }]
+}
+
 const parsePaste = (line) => {
   const action = {
     action: 'paste', 
   }
-  let data
-  if (line.match(delayRegex)) {
-    const millisecondsRegex = /\d+/
-    const mil = parseInt(line.match(delayRegex)[0].match(millisecondsRegex)[0])
-    data = [
-      { type: 'insert', data: line.split(delayRegex)[0] },
-      { type: 'delay', data: mil },
-      { type: 'insert', data: line.split(delayRegex)[1] },
-    ]
-  } else {
-    data = [{ type: 'insert', data: line }]
-  }
+  const data = parseInlineData(line, 'insert')
   return { ...action, data }
 }
 
@@ -297,21 +360,7 @@ const parseInput = (line) => {
   const action = {
     action: 'input', 
   }
-  let data = []
-  if (line.match(delayRegex)) {
-    const millisecondsRegex = /\d+/
-    const delays = line.match(delayRegex)
-    const parts = line.split(delayRegex)
-    _.each(parts, (part, i) => {
-      data.push({ type: 'typing', data: part })
-      if (delays.length >= (i + 1)) {
-        const mil = parseInt(delays[i].match(millisecondsRegex)[0])
-        data.push({ type: 'delay', data: mil })
-      }
-    })
-  } else {
-    data = [{ type: 'typing', data: line }]
-  }
+  const data = parseInlineData(line, 'typing')
   return { ...action, data }
 }
 
