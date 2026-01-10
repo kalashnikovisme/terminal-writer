@@ -2,11 +2,13 @@
   "name": "terminal-writer",
   "version": "0.1.0",
   "scripts": {
+    "render": "node scripts/render-scenario.js"
   },
   "dependencies": {
     "underscore": "latest",
     "xterm": "latest"
   },
   "devDependencies": {
+    "playwright": "latest"
   }
 }
