@@ -2,6 +2,7 @@ let bashPrompt = '~:'
 let term = new Terminal({ cols: 120, rows: 26, fontSize: '30' });
 const baseTypingTimeout = 100
 let typingSpeed = 1
+let fontSize = 30
 const directives = [
   'input',
   'output',
@@ -15,6 +16,7 @@ const directives = [
   'margin-x',
   'margin-y',
   'typing_speed',
+  'font_size',
 ]
 const newLine = '\n\r'
 const delayRegex = /\%\{delay \d+\}/g;
@@ -69,6 +71,10 @@ const applyCursorVisibility = () => {
     return
   }
   terminalElement.classList.toggle('cursor-hidden', !cursorVisible)
+}
+
+const applyFontSize = () => {
+  term.setOption('fontSize', fontSize)
 }
 
 const typing = (command, typingTimeout) => {
@@ -335,6 +341,18 @@ const changeTypingSpeed = (speedSetting, actions, index) => {
   }, 100)
 }
 
+const changeFontSize = (sizeSetting, actions, index) => {
+  const parsedSize = parseInt(sizeSetting, 10)
+  if (Number.isFinite(parsedSize) && parsedSize > 0) {
+    fontSize = parsedSize
+    applyFontSize()
+  }
+  setTimeout(() => {
+    runAction(actions, index + 1)
+    console.log(`Change Font Size ends at ${time}`)
+  }, 100)
+}
+
 const runAction = (actions, index) => {
   const action = actions[index]
   if (action) {
@@ -385,6 +403,10 @@ const runAction = (actions, index) => {
       }
       case 'typing_speed': {
         changeTypingSpeed(action.data, actions, index)
+        break
+      }
+      case 'font_size': {
+        changeFontSize(action.data, actions, index)
         break
       }
     }
@@ -609,6 +631,13 @@ const readSingleFile = (e) => {
         }
         case 'typing_speed': {
           actions.push({ action: 'typing_speed', data: getDirectiveValue(parsed, lines, i) })
+          if (usesNextLine(parsed)) {
+            i++
+          }
+          break
+        }
+        case 'font_size': {
+          actions.push({ action: 'font_size', data: getDirectiveValue(parsed, lines, i) })
           if (usesNextLine(parsed)) {
             i++
           }

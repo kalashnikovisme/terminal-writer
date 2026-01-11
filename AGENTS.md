@@ -118,6 +118,15 @@ This repository uses a simple `.tss` scenario language to replay actions in a te
   2
   ```
 
+### `font_size:`
+- Sets the terminal font size in pixels.
+- The value is written on the next line or on the same line.
+- Example:
+  ```
+  font_size:
+  12
+  ```
+
 ## Delay details
 - `%{delay N}` can be inserted into `input:`, `paste:`, and `output:` lines to pause within a line.
 - In `output:`, the text is split into parts and displayed with pauses.
