@@ -2,7 +2,7 @@ let bashPrompt = '~:'
 const baseTypingTimeout = 100
 let typingSpeed = 1
 let fontSize = 30
-let term = new Terminal({ cols: 120, rows: 26, fontSize });
+let term
 const directives = [
   'input',
   'output',
@@ -660,6 +660,7 @@ const pressEnter = () => {
 }
 
 window.addEventListener('load', () => {
+  term = new Terminal({ cols: 120, rows: 26, fontSize })
   term.open(document.getElementById('terminal'));
   term.onKey((key, ev) => {
     if (key.domEvent.key == 'Enter') {
