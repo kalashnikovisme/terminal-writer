@@ -342,7 +342,7 @@ const changeTypingSpeed = (speedSetting, actions, index) => {
 }
 
 const changeFontSize = (sizeSetting, actions, index) => {
-  const parsedSize = parseInt(sizeSetting, 10)
+  const parsedSize = parseFloat(sizeSetting)
   if (Number.isFinite(parsedSize) && parsedSize > 0) {
     fontSize = parsedSize
     applyFontSize()
