@@ -1,8 +1,8 @@
 let bashPrompt = '~:'
-let term = new Terminal({ cols: 120, rows: 26, fontSize: '30' });
 const baseTypingTimeout = 100
 let typingSpeed = 1
 let fontSize = 30
+let term = new Terminal({ cols: 120, rows: 26, fontSize });
 const directives = [
   'input',
   'output',
