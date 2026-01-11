@@ -1,7 +1,7 @@
 let bashPrompt = '~:'
 const baseTypingTimeout = 100
 let typingSpeed = 1
-let fontSize = 30
+let fontSize = '30'
 let term
 const directives = [
   'input',
@@ -74,7 +74,7 @@ const applyCursorVisibility = () => {
 }
 
 const applyFontSize = () => {
-  term.setOption('fontSize', fontSize)
+  term.options.fontSize = parseFloat(fontSize)
 }
 
 const typing = (command, typingTimeout) => {
@@ -344,7 +344,7 @@ const changeTypingSpeed = (speedSetting, actions, index) => {
 const changeFontSize = (sizeSetting, actions, index) => {
   const parsedSize = parseFloat(sizeSetting)
   if (Number.isFinite(parsedSize) && parsedSize > 0) {
-    fontSize = parsedSize
+    fontSize = parsedSize.toString()
     applyFontSize()
   }
   setTimeout(() => {
