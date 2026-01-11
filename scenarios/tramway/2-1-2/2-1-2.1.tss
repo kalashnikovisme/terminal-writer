@@ -1,0 +1,20 @@
+prompt:
+false
+
+margin-x:
+200
+
+margin-y:
+100
+
+input:
+%{begin:35m}<%=%{end:35m} %{begin:36m}tramway_container%{end:36m} %{begin:33m}id:%{end:33m} %{begin:32m}'user-settings'%{end:32m}, %{begin:33m}class:%{end:33m} %{begin:32m}'bg-transparent'%{end:32m} %{begin:34m}do%{end:34m} %{begin:35m}%>%{end:35m}
+
+input:
+  %{begin:36m}<h2%{end:36m} %{begin:33m}class=%{end:33m}%{begin:32m}"text-xl font-semibold"%{end:32m}%{begin:36m}>%{end:36m}Settings%{begin:36m}</h2>%{end:36m}
+
+input:
+  %{begin:36m}<p%{end:36m} %{begin:33m}class=%{end:33m}%{begin:32m}"mt-2 text-gray-600"%{end:32m}%{begin:36m}>%{end:36m}Update your preferences below.%{begin:36m}</p>%{end:36m}
+
+input:
+%{begin:35m}<%%{end:35m} %{begin:34m}end%{end:34m} %{begin:35m}%>%{end:35m}
