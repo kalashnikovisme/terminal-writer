@@ -8,7 +8,7 @@ margin-y:
 100
 
 font_size:
-12
+20
 
 input:
 %{begin:35m}<%=%{end:35m} %{begin:36m}tramway_container%{end:36m} %{begin:33m}id:%{end:33m} %{begin:32m}'user-settings'%{end:32m}, %{begin:33m}class:%{end:33m} %{begin:32m}'bg-transparent'%{end:32m} %{begin:34m}do%{end:34m} %{begin:35m}%>%{end:35m}
