@@ -2,7 +2,7 @@ audio:
 tramway/2-2/output.mp3
 
 typing_speed:
-2
+4
 
 cursor:
 false
@@ -20,43 +20,43 @@ font_size:
 30
 
 delay:
-900
+850
 
 input:
 %{begin:32m}sleep%{end:32m} %{begin:36m}0.2%{end:36m}
 
 delay:
-1200
+1300
 
 input:
 %{begin:32m}sleep%{end:32m} %{begin:36m}0.4%{end:36m}
 
 delay:
-1100
+1150
 
 input:
 %{begin:32m}sleep%{end:32m} %{begin:36m}0.6%{end:36m}
 
 delay:
-1300
+1450
 
 input:
 %{begin:32m}sleep%{end:32m} %{begin:36m}0.8%{end:36m}
 
 delay:
-1400
+1500
 
 input:
 %{begin:32m}sleep%{end:32m} %{begin:36m}1.0%{end:36m}
 
 delay:
-1600
+1700
 
 input:
 %{begin:32m}sleep%{end:32m} %{begin:36m}1.2%{end:36m}
 
 delay:
-1900
+2000
 
 input:
 %{begin:32m}sleep%{end:32m} %{begin:36m}1.5%{end:36m}
