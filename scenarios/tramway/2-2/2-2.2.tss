@@ -1,0 +1,65 @@
+audio:
+tramway/2-2/output.mp3
+
+typing_speed:
+2
+
+cursor:
+false
+
+prompt:
+false
+
+margin-x:
+300
+
+margin-y:
+100
+
+font_size:
+30
+
+input:
+%{begin:32m}sleep%{end:32m} %{begin:36m}0.3%{end:36m}
+
+input:
+%{begin:32m}sleep%{end:32m} %{begin:36m}0.2%{end:36m}
+
+input:
+%{begin:32m}sleep%{end:32m} %{begin:36m}0.4%{end:36m}
+
+input:
+%{begin:32m}sleep%{end:32m} %{begin:36m}0.6%{end:36m}
+
+input:
+%{begin:32m}sleep%{end:32m} %{begin:36m}0.5%{end:36m}
+
+input:
+%{begin:32m}sleep%{end:32m} %{begin:36m}0.7%{end:36m}
+
+input:
+%{begin:32m}sleep%{end:32m} %{begin:36m}0.4%{end:36m}
+
+input:
+%{begin:32m}sleep%{end:32m} %{begin:36m}0.9%{end:36m}
+
+input:
+%{begin:32m}sleep%{end:32m} %{begin:36m}0.6%{end:36m}
+
+input:
+%{begin:32m}sleep%{end:32m} %{begin:36m}1.0%{end:36m}
+
+input:
+%{begin:32m}sleep%{end:32m} %{begin:36m}0.8%{end:36m}
+
+input:
+%{begin:32m}sleep%{end:32m} %{begin:36m}1.2%{end:36m}
+
+input:
+%{begin:32m}sleep%{end:32m} %{begin:36m}1.5%{end:36m}
+
+input:
+%{begin:32m}sleep%{end:32m} %{begin:36m}2.0%{end:36m}
+
+input:
+%{begin:32m}sleep%{end:32m} %{begin:36m}3.9%{end:36m}
