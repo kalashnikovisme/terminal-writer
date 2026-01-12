@@ -22,44 +22,86 @@ font_size:
 input:
 %{begin:32m}sleep%{end:32m} %{begin:36m}0.3%{end:36m}
 
+delay:
+150
+
 input:
 %{begin:32m}sleep%{end:32m} %{begin:36m}0.2%{end:36m}
+
+delay:
+120
 
 input:
 %{begin:32m}sleep%{end:32m} %{begin:36m}0.4%{end:36m}
 
+delay:
+180
+
 input:
 %{begin:32m}sleep%{end:32m} %{begin:36m}0.6%{end:36m}
+
+delay:
+200
 
 input:
 %{begin:32m}sleep%{end:32m} %{begin:36m}0.5%{end:36m}
 
+delay:
+160
+
 input:
 %{begin:32m}sleep%{end:32m} %{begin:36m}0.7%{end:36m}
+
+delay:
+220
 
 input:
 %{begin:32m}sleep%{end:32m} %{begin:36m}0.4%{end:36m}
 
+delay:
+140
+
 input:
 %{begin:32m}sleep%{end:32m} %{begin:36m}0.9%{end:36m}
+
+delay:
+240
 
 input:
 %{begin:32m}sleep%{end:32m} %{begin:36m}0.6%{end:36m}
 
+delay:
+200
+
 input:
 %{begin:32m}sleep%{end:32m} %{begin:36m}1.0%{end:36m}
+
+delay:
+260
 
 input:
 %{begin:32m}sleep%{end:32m} %{begin:36m}0.8%{end:36m}
 
+delay:
+220
+
 input:
 %{begin:32m}sleep%{end:32m} %{begin:36m}1.2%{end:36m}
+
+delay:
+280
 
 input:
 %{begin:32m}sleep%{end:32m} %{begin:36m}1.5%{end:36m}
 
+delay:
+320
+
 input:
 %{begin:32m}sleep%{end:32m} %{begin:36m}2.0%{end:36m}
+
+delay:
+360
 
 input:
 %{begin:32m}sleep%{end:32m} %{begin:36m}3.9%{end:36m}
