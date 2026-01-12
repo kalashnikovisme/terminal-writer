@@ -162,12 +162,17 @@ const ensureFfmpeg = () => {
   }
 };
 
-const convertToMp4 = (inputPath, outputPath) => {
+const convertToMp4 = (inputPath, outputPath, audioPath = null) => {
   ensureFfmpeg();
-  const result = spawnSync('ffmpeg', [
+  const ffmpegArgs = [
     '-y',
     '-i',
     inputPath,
+  ];
+  if (audioPath) {
+    ffmpegArgs.push('-i', audioPath, '-map', '0:v:0', '-map', '1:a:0', '-shortest');
+  }
+  ffmpegArgs.push(
     '-c:v',
     'libx264',
     '-pix_fmt',
@@ -177,7 +182,8 @@ const convertToMp4 = (inputPath, outputPath) => {
     '-movflags',
     '+faststart',
     outputPath,
-  ], { stdio: 'inherit' });
+  );
+  const result = spawnSync('ffmpeg', ffmpegArgs, { stdio: 'inherit' });
 
   if (result.status !== 0) {
     throw new Error('ffmpeg failed to create mp4 output.');
@@ -206,6 +212,10 @@ const main = async () => {
   const rootDir = path.resolve(__dirname, '..');
   const outputPath = path.resolve(args.output);
   validateAudioPaths(scenarioPath, rootDir);
+  const audioPaths = findAudioPaths(scenarioPath);
+  const resolvedAudioPath = audioPaths[0]
+    ? path.resolve(rootDir, 'scenarios', audioPaths[0].trim())
+    : null;
 
   const { server, port } = await serveStatic(rootDir);
 
@@ -234,7 +244,7 @@ const main = async () => {
     await context.close();
 
     const webmPath = await video.path();
-    convertToMp4(webmPath, outputPath);
+    convertToMp4(webmPath, outputPath, resolvedAudioPath);
     fs.rmSync(videoDir, { recursive: true, force: true });
 
     console.log(`Recording saved to ${outputPath}`);
