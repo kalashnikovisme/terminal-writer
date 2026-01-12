@@ -62,6 +62,56 @@ const contentTypes = {
   '.woff2': 'font/woff2',
 };
 
+const directivePattern = /^([a-z_-]+):(?:\s*(.*))?$/;
+
+const readScenarioLines = (scenarioPath) =>
+  fs.readFileSync(scenarioPath, 'utf8').split('\n');
+
+const getDirectiveValue = (parsed, lines, index) => {
+  if (parsed.data !== undefined && parsed.data !== '') {
+    return parsed.data;
+  }
+  return lines[index + 1];
+};
+
+const findAudioPaths = (scenarioPath) => {
+  const lines = readScenarioLines(scenarioPath);
+  const audioPaths = [];
+
+  for (let i = 0; i < lines.length; i += 1) {
+    const match = lines[i].match(directivePattern);
+    if (!match) {
+      continue;
+    }
+
+    const directive = match[1];
+    if (directive !== 'audio') {
+      continue;
+    }
+
+    const audioPath = getDirectiveValue({ data: match[2] }, lines, i);
+    if (audioPath) {
+      audioPaths.push(audioPath);
+    }
+  }
+
+  return audioPaths;
+};
+
+const validateAudioPaths = (scenarioPath, rootDir) => {
+  const audioPaths = findAudioPaths(scenarioPath);
+  const missingPaths = audioPaths.filter((audioPath) => {
+    const resolvedPath = path.resolve(rootDir, 'scenarios', audioPath.trim());
+    return !fs.existsSync(resolvedPath);
+  });
+
+  if (missingPaths.length > 0) {
+    throw new Error(
+      `Audio file(s) not found for scenario ${scenarioPath}: ${missingPaths.join(', ')}`,
+    );
+  }
+};
+
 const serveStatic = (rootDir) => {
   const server = http.createServer((req, res) => {
     const requestPath = decodeURIComponent(req.url.split('?')[0]);
@@ -112,12 +162,17 @@ const ensureFfmpeg = () => {
   }
 };
 
-const convertToMp4 = (inputPath, outputPath) => {
+const convertToMp4 = (inputPath, outputPath, audioPath = null) => {
   ensureFfmpeg();
-  const result = spawnSync('ffmpeg', [
+  const ffmpegArgs = [
     '-y',
     '-i',
     inputPath,
+  ];
+  if (audioPath) {
+    ffmpegArgs.push('-i', audioPath, '-map', '0:v:0', '-map', '1:a:0', '-shortest');
+  }
+  ffmpegArgs.push(
     '-c:v',
     'libx264',
     '-pix_fmt',
@@ -127,7 +182,8 @@ const convertToMp4 = (inputPath, outputPath) => {
     '-movflags',
     '+faststart',
     outputPath,
-  ], { stdio: 'inherit' });
+  );
+  const result = spawnSync('ffmpeg', ffmpegArgs, { stdio: 'inherit' });
 
   if (result.status !== 0) {
     throw new Error('ffmpeg failed to create mp4 output.');
@@ -155,6 +211,11 @@ const main = async () => {
 
   const rootDir = path.resolve(__dirname, '..');
   const outputPath = path.resolve(args.output);
+  validateAudioPaths(scenarioPath, rootDir);
+  const audioPaths = findAudioPaths(scenarioPath);
+  const resolvedAudioPath = audioPaths[0]
+    ? path.resolve(rootDir, 'scenarios', audioPaths[0].trim())
+    : null;
 
   const { server, port } = await serveStatic(rootDir);
 
@@ -183,7 +244,7 @@ const main = async () => {
     await context.close();
 
     const webmPath = await video.path();
-    convertToMp4(webmPath, outputPath);
+    convertToMp4(webmPath, outputPath, resolvedAudioPath);
     fs.rmSync(videoDir, { recursive: true, force: true });
 
     console.log(`Recording saved to ${outputPath}`);
