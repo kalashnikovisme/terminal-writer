@@ -20,43 +20,43 @@ font_size:
 30
 
 delay:
-850
+1500
 
 input:
 %{begin:32m}sleep%{end:32m} %{begin:36m}0.2%{end:36m}
 
 delay:
-1300
+2100
 
 input:
 %{begin:32m}sleep%{end:32m} %{begin:36m}0.4%{end:36m}
 
 delay:
-1150
+1800
 
 input:
 %{begin:32m}sleep%{end:32m} %{begin:36m}0.6%{end:36m}
 
 delay:
-1450
+2300
 
 input:
 %{begin:32m}sleep%{end:32m} %{begin:36m}0.8%{end:36m}
 
 delay:
-1500
+2500
 
 input:
 %{begin:32m}sleep%{end:32m} %{begin:36m}1.0%{end:36m}
 
 delay:
-1700
+2700
 
 input:
 %{begin:32m}sleep%{end:32m} %{begin:36m}1.2%{end:36m}
 
 delay:
-2000
+3000
 
 input:
 %{begin:32m}sleep%{end:32m} %{begin:36m}1.5%{end:36m}
