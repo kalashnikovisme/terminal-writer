@@ -1,0 +1,53 @@
+prompt:
+false
+
+margin-x:
+200
+
+margin-y:
+100
+
+font_size:
+20
+
+input:
+%{begin:34m}Tramway%{end:34m}.configure %{begin:34m}do%{end:34m} |%{begin:36m}config%{end:36m}|
+
+input:
+  %{begin:36m}config%{end:36m}.entities = [
+
+input:
+    {
+
+input:
+      %{begin:33m}name:%{end:33m} %{begin:35m}:user%{end:35m},
+
+input:
+      %{begin:33m}pages:%{end:33m} [
+
+input:
+        { %{begin:33m}action:%{end:33m} %{begin:35m}:index%{end:35m} },
+
+input:
+        { %{begin:33m}action:%{end:33m} %{begin:35m}:show%{end:35m} },
+
+input:
+        { %{begin:33m}action:%{end:33m} %{begin:35m}:create%{end:35m} },
+
+input:
+        { %{begin:33m}action:%{end:33m} %{begin:35m}:update%{end:35m} },
+
+input:
+        { %{begin:33m}action:%{end:33m} %{begin:35m}:destroy%{end:35m} }
+
+input:
+      ],
+
+input:
+    }
+
+input:
+  ]
+
+input:
+%{begin:34m}end%{end:34m}
