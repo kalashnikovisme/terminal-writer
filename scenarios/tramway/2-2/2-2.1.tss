@@ -11,34 +11,34 @@ font_size:
 20
 
 input:
-%{begin:34m}Tramway%{end:34m}.configure %{begin:34m}do%{end:34m} |%{begin:36m}config%{end:36m}|
+%{begin:94m}Tramway%{end:94m}.configure %{begin:95m}do%{end:95m} |%{begin:96m}config%{end:96m}|
 
 input:
-  %{begin:36m}config%{end:36m}.entities = [
+  %{begin:96m}config%{end:96m}.entities = [
 
 input:
     {
 
 input:
-      %{begin:33m}name:%{end:33m} %{begin:35m}:user%{end:35m},
+      %{begin:93m}name:%{end:93m} %{begin:95m}:user%{end:95m},
 
 input:
-      %{begin:33m}pages:%{end:33m} [
+      %{begin:93m}pages:%{end:93m} [
 
 input:
-        { %{begin:33m}action:%{end:33m} %{begin:35m}:index%{end:35m} },
+        { %{begin:93m}action:%{end:93m} %{begin:95m}:index%{end:95m} },
 
 input:
-        { %{begin:33m}action:%{end:33m} %{begin:35m}:show%{end:35m} },
+        { %{begin:93m}action:%{end:93m} %{begin:95m}:show%{end:95m} },
 
 input:
-        { %{begin:33m}action:%{end:33m} %{begin:35m}:create%{end:35m} },
+        { %{begin:93m}action:%{end:93m} %{begin:95m}:create%{end:95m} },
 
 input:
-        { %{begin:33m}action:%{end:33m} %{begin:35m}:update%{end:35m} },
+        { %{begin:93m}action:%{end:93m} %{begin:95m}:update%{end:95m} },
 
 input:
-        { %{begin:33m}action:%{end:33m} %{begin:35m}:destroy%{end:35m} }
+        { %{begin:93m}action:%{end:93m} %{begin:95m}:destroy%{end:95m} }
 
 input:
       ],
@@ -50,4 +50,4 @@ input:
   ]
 
 input:
-%{begin:34m}end%{end:34m}
+%{begin:95m}end%{end:95m}
