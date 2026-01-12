@@ -1,14 +1,23 @@
+audio:
+output.mp3
+
+typing_speed:
+2
+
+cursor:
+false
+
 prompt:
 false
 
 margin-x:
-200
+300
 
 margin-y:
 100
 
 font_size:
-20
+30
 
 input:
 %{begin:94m}Tramway%{end:94m}.configure %{begin:95m}do%{end:95m} |%{begin:96m}config%{end:96m}|
