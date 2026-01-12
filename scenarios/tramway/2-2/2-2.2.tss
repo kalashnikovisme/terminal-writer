@@ -19,89 +19,44 @@ margin-y:
 font_size:
 30
 
-input:
-%{begin:32m}sleep%{end:32m} %{begin:36m}0.3%{end:36m}
-
 delay:
-150
+900
 
 input:
 %{begin:32m}sleep%{end:32m} %{begin:36m}0.2%{end:36m}
 
 delay:
-120
+1200
 
 input:
 %{begin:32m}sleep%{end:32m} %{begin:36m}0.4%{end:36m}
 
 delay:
-180
+1100
 
 input:
 %{begin:32m}sleep%{end:32m} %{begin:36m}0.6%{end:36m}
 
 delay:
-200
-
-input:
-%{begin:32m}sleep%{end:32m} %{begin:36m}0.5%{end:36m}
-
-delay:
-160
-
-input:
-%{begin:32m}sleep%{end:32m} %{begin:36m}0.7%{end:36m}
-
-delay:
-220
-
-input:
-%{begin:32m}sleep%{end:32m} %{begin:36m}0.4%{end:36m}
-
-delay:
-140
-
-input:
-%{begin:32m}sleep%{end:32m} %{begin:36m}0.9%{end:36m}
-
-delay:
-240
-
-input:
-%{begin:32m}sleep%{end:32m} %{begin:36m}0.6%{end:36m}
-
-delay:
-200
-
-input:
-%{begin:32m}sleep%{end:32m} %{begin:36m}1.0%{end:36m}
-
-delay:
-260
+1300
 
 input:
 %{begin:32m}sleep%{end:32m} %{begin:36m}0.8%{end:36m}
 
 delay:
-220
+1400
+
+input:
+%{begin:32m}sleep%{end:32m} %{begin:36m}1.0%{end:36m}
+
+delay:
+1600
 
 input:
 %{begin:32m}sleep%{end:32m} %{begin:36m}1.2%{end:36m}
 
 delay:
-280
+1900
 
 input:
 %{begin:32m}sleep%{end:32m} %{begin:36m}1.5%{end:36m}
-
-delay:
-320
-
-input:
-%{begin:32m}sleep%{end:32m} %{begin:36m}2.0%{end:36m}
-
-delay:
-360
-
-input:
-%{begin:32m}sleep%{end:32m} %{begin:36m}3.9%{end:36m}
