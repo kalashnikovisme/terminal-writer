@@ -233,14 +233,7 @@ const showPart = (output, index) => {
   if (part) {
     switch(part.type) {
       case 'text': {
-        const nextPart = output[index + 1] 
-        if (index != output.length - 1) {
-          if (nextPart && ['colorBegin', 'colorEnd', 'delay'].includes(nextPart.type)) {
-            term.write(part.data)
-          } else {
-            term.write(part.data + newLine)
-          }
-        }
+        term.write(part.data)
         break
       }
       case 'colorBegin': {
@@ -253,6 +246,10 @@ const showPart = (output, index) => {
       }
       case 'delay': {
         timeoutBeforeTheNext = part.data
+        break
+      }
+      case 'lineBreak': {
+        term.write(newLine)
         break
       }
     }
@@ -497,31 +494,9 @@ const parseOutput = (lines, index) => {
   for (var j = index + 1; j < lines.length; j++) {
     const line = lines[j]
     if (!isDirectiveLine(line)) {
-      const beginRegex = /\%\{begin:\d+m;\d+m}/
-      const endRegex = /\%\{end:\d+m;\d+m}/
-      const colorRegex = /\%\{begin:\d+m;\d+m\}.*\%\{end:\d+m;\d+m\}/
-      if (line.match(colorRegex)) {
-        const colorCodeRegex = /\d+\m/g
-        const backgroundColor = line.match(colorRegex)[0].match(colorCodeRegex)[0]
-        const textColor = line.match(colorRegex)[0].match(colorCodeRegex)[1]
-        data.push({ type: 'text', data: line.split(beginRegex)[0] })
-        data.push({ type: 'colorBegin', data: { backgroundColor, textColor } })
-        data.push({ type: 'text', data: line.split(beginRegex)[1].split(endRegex)[0] })
-        data.push({ type: 'colorEnd', data: { backgroundColor, textColor } })
-        data.push({ type: 'text', data: line.split(endRegex)[1] })
-      } else if (line.match(delayRegex)) {
-        const millisecondsRegex = /\d+/
-        const delays = line.match(delayRegex)
-        const parts = line.split(delayRegex)
-        _.each(parts, (part, i) => {
-          data.push({ type: 'text', data: part })
-          if (delays.length >= (i + 1)) {
-            const mil = parseInt(delays[i].match(millisecondsRegex)[0])
-            data.push({ type: 'delay', data: mil })
-          }
-        })
-      } else {
-        data.push({ type: 'text', data: line })
+      data = data.concat(parseInlineData(line, 'text'))
+      if (j + 1 < lines.length && !isDirectiveLine(lines[j + 1])) {
+        data.push({ type: 'lineBreak' })
       }
     } else {
       break
