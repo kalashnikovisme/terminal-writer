@@ -164,13 +164,33 @@ const ensureFfmpeg = () => {
 
 const convertToMp4 = (inputPath, outputPath, audioPath = null) => {
   ensureFfmpeg();
-  const ffmpegArgs = [
+  const trimmedPath = outputPath.replace(/\.mp4$/, '') + '.trimmed.webm';
+  const trimArgs = [
     '-y',
     '-i',
     inputPath,
+    '-vf',
+    'trim=start_frame=1,setpts=PTS-STARTPTS',
+    '-c:v',
+    'libvpx-vp9',
+    '-an',
+    trimmedPath,
+  ];
+  const trimResult = spawnSync('ffmpeg', trimArgs, { stdio: 'inherit' });
+  if (trimResult.status !== 0) {
+    throw new Error('ffmpeg failed to trim the first frame.');
+  }
+
+  const ffmpegArgs = [
+    '-y',
+    '-i',
+    trimmedPath,
   ];
   if (audioPath) {
-    ffmpegArgs.push('-i', audioPath, '-map', '0:v:0', '-map', '1:a:0', '-shortest');
+    ffmpegArgs.push('-i', audioPath);
+  }
+  if (audioPath) {
+    ffmpegArgs.push('-map', '0:v:0', '-map', '1:a:0', '-shortest');
   }
   ffmpegArgs.push(
     '-c:v',
@@ -188,6 +208,7 @@ const convertToMp4 = (inputPath, outputPath, audioPath = null) => {
   if (result.status !== 0) {
     throw new Error('ffmpeg failed to create mp4 output.');
   }
+  fs.rmSync(trimmedPath, { force: true });
 };
 
 const main = async () => {

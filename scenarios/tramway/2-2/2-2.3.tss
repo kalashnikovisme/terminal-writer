@@ -19,11 +19,14 @@ margin-y:
 font_size:
 30
 
+delay:
+100
+
 input:
 %{begin:94m}Tramway%{end:94m}.configure%{delay 700} %{begin:95m}do%{end:95m} |%{begin:96m}config%{end:96m}|
 
 delay:
-2000
+1900
 
 input:
   %{begin:96m}config%{end:96m}.entities %{delay 300}= [
@@ -39,7 +42,7 @@ input:
 
 
 delay:
-2000
+1900
 
 output:
       %{begin:93m}pages:%{end:93m} [
