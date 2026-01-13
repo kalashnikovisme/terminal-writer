@@ -1,0 +1,62 @@
+audio:
+tramway/2-2/output.mp3
+
+typing_speed:
+4
+
+cursor:
+false
+
+prompt:
+false
+
+margin-x:
+300
+
+margin-y:
+100
+
+font_size:
+30
+
+delay:
+1500
+
+input:
+%{begin:32m}sleep%{end:32m} %{begin:36m}0.2%{end:36m}
+
+delay:
+2100
+
+input:
+%{begin:32m}sleep%{end:32m} %{begin:36m}0.4%{end:36m}
+
+delay:
+1800
+
+input:
+%{begin:32m}sleep%{end:32m} %{begin:36m}0.6%{end:36m}
+
+delay:
+2300
+
+input:
+%{begin:32m}sleep%{end:32m} %{begin:36m}0.8%{end:36m}
+
+delay:
+2500
+
+input:
+%{begin:32m}sleep%{end:32m} %{begin:36m}1.0%{end:36m}
+
+delay:
+2700
+
+input:
+%{begin:32m}sleep%{end:32m} %{begin:36m}1.2%{end:36m}
+
+delay:
+3000
+
+input:
+%{begin:32m}sleep%{end:32m} %{begin:36m}1.5%{end:36m}
