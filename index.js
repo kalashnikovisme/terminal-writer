@@ -495,7 +495,7 @@ const parseOutput = (lines, index) => {
     const line = lines[j]
     if (!isDirectiveLine(line)) {
       data = data.concat(parseInlineData(line, 'text'))
-      if (!isDirectiveLine(lines[j + 1]) && j + 1 < lines.length) {
+      if (j + 1 < lines.length && !isDirectiveLine(lines[j + 1])) {
         data.push({ type: 'lineBreak' })
       }
     } else {
