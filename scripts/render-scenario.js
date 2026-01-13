@@ -168,11 +168,16 @@ const convertToMp4 = (inputPath, outputPath, audioPath = null) => {
     '-y',
     '-i',
     inputPath,
-    '-vf',
-    'trim=start_frame=1,setpts=PTS-STARTPTS',
   ];
   if (audioPath) {
-    ffmpegArgs.push('-i', audioPath, '-map', '0:v:0', '-map', '1:a:0', '-shortest');
+    ffmpegArgs.push('-i', audioPath);
+  }
+  ffmpegArgs.push(
+    '-vf',
+    'trim=start_frame=1,setpts=PTS-STARTPTS',
+  );
+  if (audioPath) {
+    ffmpegArgs.push('-map', '0:v:0', '-map', '1:a:0', '-shortest');
   }
   ffmpegArgs.push(
     '-c:v',
