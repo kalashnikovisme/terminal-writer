@@ -1,0 +1,101 @@
+audio:
+tramway/2-2/output.mp3
+
+typing_speed:
+2
+
+cursor:
+false
+
+prompt:
+false
+
+margin-x:
+300
+
+margin-y:
+100
+
+font_size:
+30
+
+input:
+%{begin:94m}Tramway%{end:94m}.configure %{begin:95m}do%{end:95m} |%{begin:96m}config%{end:96m}|
+
+delay:
+200
+
+input:
+  %{begin:96m}config%{end:96m}.entities = [
+
+delay:
+180
+
+input:
+    {
+
+delay:
+160
+
+input:
+      %{begin:93m}name:%{end:93m} %{begin:95m}:user%{end:95m},
+
+delay:
+180
+
+input:
+      %{begin:93m}pages:%{end:93m} [
+
+delay:
+160
+
+input:
+        { %{begin:93m}action:%{end:93m} %{begin:95m}:index%{end:95m} },
+
+delay:
+140
+
+input:
+        { %{begin:93m}action:%{end:93m} %{begin:95m}:show%{end:95m} },
+
+delay:
+140
+
+input:
+        { %{begin:93m}action:%{end:93m} %{begin:95m}:create%{end:95m} },
+
+delay:
+140
+
+input:
+        { %{begin:93m}action:%{end:93m} %{begin:95m}:update%{end:95m} },
+
+delay:
+140
+
+input:
+        { %{begin:93m}action:%{end:93m} %{begin:95m}:destroy%{end:95m} }
+
+delay:
+200
+
+input:
+      ],
+
+delay:
+180
+
+input:
+    }
+
+delay:
+160
+
+input:
+  ]
+
+delay:
+200
+
+input:
+%{begin:95m}end%{end:95m}
