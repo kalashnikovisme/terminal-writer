@@ -37,5 +37,21 @@ delay:
 input:
       %{begin:93m}name:%{end:93m} %{begin:95m}:user%{end:95m},
 
+
+delay:
+2000
+
 output:
       %{begin:93m}pages:%{end:93m} [
+        { %{begin:93m}action:%{end:93m} %{begin:95m}:index%{end:95m} },
+        { %{begin:93m}action:%{end:93m} %{begin:95m}:show%{end:95m} },
+        { %{begin:93m}action:%{end:93m} %{begin:95m}:create%{end:95m} },
+        { %{begin:93m}action:%{end:93m} %{begin:95m}:update%{end:95m} },
+        { %{begin:93m}action:%{end:93m} %{begin:95m}:destroy%{end:95m} }
+      ],
+    }
+  ]
+%{begin:95m}end%{end:95m}
+
+delay:
+2000
