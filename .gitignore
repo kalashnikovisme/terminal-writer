@@ -2,3 +2,4 @@ node_modules/
 yarn.lock
 *.mp3
 *.mp4
+tmp-*
