@@ -19,31 +19,42 @@ margin-y:
 font_size:
 30
 
-output:
-%{begin:35m}<%=%{end:35m} %{begin:36m}tramway_button%{end:36m} %{begin:33m}path:%{end:33m} %{begin:32m}'/projects'%{end:32m}, %{begin:33m}text:%{end:33m} %{begin:32m}'Projects'%{end:32m} %{begin:35m}%>%{end:35m}
+delay:
+100
 
-#=> %{begin:36m}<a%{end:36m} %{begin:33m}href=%{end:33m}%{begin:32m}'/projects'%{end:32m} %{begin:33m}class=%{end:33m}%{begin:32m}"..."%{end:32m}%{begin:36m}>%{end:36m}Projects%{begin:36m}</a>%{end:36m}
+input:
+%{begin:94m}Tramway%{end:94m}.configure%{delay 700} %{begin:95m}do%{end:95m} |%{begin:96m}config%{end:96m}|
+
+delay:
+1900
+
+input:
+  %{begin:96m}config%{end:96m}.entities %{delay 300}= [
+
+input:
+    {
+
+delay:
+1000
+
+input:
+      %{begin:93m}name:%{end:93m} %{begin:95m}:user%{end:95m},
+
+
+delay:
+1900
+
+output:
+      %{begin:93m}pages:%{end:93m} [
+        { %{begin:93m}action:%{end:93m} %{begin:95m}:index%{end:95m} },
+        { %{begin:93m}action:%{end:93m} %{begin:95m}:show%{end:95m} },
+        { %{begin:93m}action:%{end:93m} %{begin:95m}:create%{end:95m} },
+        { %{begin:93m}action:%{end:93m} %{begin:95m}:update%{end:95m} },
+        { %{begin:93m}action:%{end:93m} %{begin:95m}:destroy%{end:95m} }
+      ],
+    }
+  ]
+%{begin:95m}end%{end:95m}
 
 delay:
 2000
-
-clear:
-
-output:
-%{begin:35m}<%=%{end:35m} %{begin:36m}tramway_button%{end:36m} %{begin:33m}path:%{end:33m} %{begin:32m}'/projects/1'%{end:32m}, %{begin:33m}text:%{end:33m} %{begin:32m}'Destroy'%{end:32m}, %{begin:33m}method:%{end:33m} %{begin:95m}:delete%{end:95m} %{begin:35m}%>%{end:35m}
-
-#> %{begin:36m}<form%{end:36m} %{begin:33m}action=%{end:33m}%{begin:32m}"/projects/1"%{end:32m}  %{begin:33m}method=%{end:33m}%{begin:32m}"post"%{end:32m}%{begin:36m}>%{end:36m}
-#>   ....
-#>   %{begin:36m}<button%{end:36m} %{begin:33m}class:%{end:33m} %{begin:32m}"..."%{end:32m} %{begin:33m}type=%{end:33m}%{begin:32m}"submit"%{end:32m}%{begin:36m}>%{end:36m}
-#>     Delete
-#>   %{begin:36m}</button>%{end:36m}
-
-delay:
-2000
-
-clear:
-
-output:
-%{begin:35m}<%=%{end:35m} %{begin:36m}tramway_button%{end:36m} %{begin:33m}path:%{end:33m} %{begin:32m}'/projects/1'%{end:32m}, %{begin:33m}text:%{end:33m} %{begin:32m}'Edit'%{end:32m}, %{begin:33m}tag:%{end:33m} %{begin:95m}:button%{end:95m} %{begin:35m}%>%{end:35m}
-
-#> %{begin:36m}<button%{end:36m} %{begin:33m}onclick=%{end:33m}%{begin:32m}"window.location.href='/projects/1'%{end:32m} %{begin:33m}class=%{end:33m}%{begin:32m}"..."%{end:32m}%{begin:36m}>%{end:36m}Edit%{begin:36m}</button>%{end:36m}
