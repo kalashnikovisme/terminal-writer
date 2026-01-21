@@ -17,7 +17,7 @@ font_size:
 25
 
 input:
-%{begin:35m}<%=%{end:35m} %{begin:36m}tramway_button%{end:36m} %{begin:33m}path:%{end:33m} %{begin:32m}'/projects'%{end:32m}, %{begin:33m}text:%{end:33m} %{begin:32m}'Projects'%{end:32m} %{begin:35m}%>%{end:35m}
+%{begin:95m}<%=%{end:95m} %{begin:96m}tramway_button%{end:96m} %{begin:93m}path:%{end:93m} %{begin:92m}'/projects'%{end:92m}, %{begin:93m}text:%{end:93m} %{begin:92m}'Projects'%{end:92m} %{begin:95m}%>%{end:95m}
  
 input:
    
@@ -29,7 +29,7 @@ input:
    
 
 input:
-=> %{begin:36m}<a%{end:36m} %{begin:33m}href=%{end:33m}%{begin:32m}'/projects'%{end:32m} %{begin:33m}class=%{end:33m}%{begin:32m}"..."%{end:32m}%{begin:36m}>%{end:36m}Projects%{begin:36m}</a>%{end:36m}
+=> %{begin:96m}<a%{end:96m} %{begin:93m}href=%{end:93m}%{begin:92m}'/projects'%{end:92m} %{begin:93m}class=%{end:93m}%{begin:92m}"..."%{end:92m}%{begin:96m}>%{end:96m}Projects%{begin:96m}</a>%{end:96m}
 
 delay:
 2000
@@ -37,7 +37,7 @@ delay:
 clear:
 
 input:
-%{begin:35m}<%=%{end:35m} %{begin:36m}tramway_button%{end:36m} %{begin:33m}path:%{end:33m} %{begin:32m}'/projects/1'%{end:32m}, %{begin:33m}text:%{end:33m} %{begin:32m}'Destroy'%{end:32m}, %{begin:33m}method:%{end:33m} %{begin:95m}:delete%{end:95m} %{begin:35m}%>%{end:35m}
+%{begin:95m}<%=%{end:95m} %{begin:96m}tramway_button%{end:96m} %{begin:93m}path:%{end:93m} %{begin:92m}'/projects/1'%{end:92m}, %{begin:93m}text:%{end:93m} %{begin:92m}'Destroy'%{end:92m}, %{begin:93m}method:%{end:93m} %{begin:95m}:delete%{end:95m} %{begin:95m}%>%{end:95m}
 
 input:
    
@@ -49,19 +49,19 @@ input:
    
 
 input:
-=> %{begin:36m}<form%{end:36m} %{begin:33m}action=%{end:33m}%{begin:32m}"/projects/1"%{end:32m}  %{begin:33m}method=%{end:33m}%{begin:32m}"post"%{end:32m}%{begin:36m}>%{end:36m}
+=> %{begin:96m}<form%{end:96m} %{begin:93m}action=%{end:93m}%{begin:92m}"/projects/1"%{end:92m}  %{begin:93m}method=%{end:93m}%{begin:92m}"post"%{end:92m}%{begin:96m}>%{end:96m}
 
 input:
 =>   ....
 
 input:
-=>   %{begin:36m}<button%{end:36m} %{begin:33m}class:%{end:33m} %{begin:32m}"..."%{end:32m} %{begin:33m}type=%{end:33m}%{begin:32m}"submit"%{end:32m}%{begin:36m}>%{end:36m}
+=>   %{begin:96m}<button%{end:96m} %{begin:93m}class:%{end:93m} %{begin:92m}"..."%{end:92m} %{begin:93m}type=%{end:93m}%{begin:92m}"submit"%{end:92m}%{begin:96m}>%{end:96m}
 
 input:
 =>     Delete
 
 input:
-=>   %{begin:36m}</button>%{end:36m}
+=>   %{begin:96m}</button>%{end:96m}
 
 delay:
 2000
@@ -69,7 +69,7 @@ delay:
 clear:
 
 input:
-%{begin:35m}<%=%{end:35m} %{begin:36m}tramway_button%{end:36m} %{begin:33m}path:%{end:33m} %{begin:32m}'/projects/1'%{end:32m}, %{begin:33m}text:%{end:33m} %{begin:32m}'Edit'%{end:32m}, %{begin:33m}tag:%{end:33m} %{begin:95m}:button%{end:95m} %{begin:35m}%>%{end:35m}
+%{begin:95m}<%=%{end:95m} %{begin:96m}tramway_button%{end:96m} %{begin:93m}path:%{end:93m} %{begin:92m}'/projects/1'%{end:92m}, %{begin:93m}text:%{end:93m} %{begin:92m}'Edit'%{end:92m}, %{begin:93m}tag:%{end:93m} %{begin:95m}:button%{end:95m} %{begin:95m}%>%{end:95m}
 
 input:
    
@@ -81,4 +81,4 @@ input:
    
 
 input:
-=> %{begin:36m}<button%{end:36m} %{begin:33m}onclick=%{end:33m}%{begin:32m}"window.location.href='/projects/1'%{end:32m} %{begin:33m}class=%{end:33m}%{begin:32m}"..."%{end:32m}%{begin:36m}>%{end:36m}Edit%{begin:36m}</button>%{end:36m}
+=> %{begin:96m}<button%{end:96m} %{begin:93m}onclick=%{end:93m}%{begin:92m}"window.location.href='/projects/1'%{end:92m} %{begin:93m}class=%{end:93m}%{begin:92m}"..."%{end:92m}%{begin:96m}>%{end:96m}Edit%{begin:96m}</button>%{end:96m}
